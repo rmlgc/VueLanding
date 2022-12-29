@@ -152,11 +152,13 @@ contact_mail
           $ 🎥 Content creator 🐒
         </p>
       </section>
+      <hr/>
       <section style="display: none;" id="elService" ref="elService" class="content section-card">
         <h2 class="text-h3"> Service </h2>
+      <hr/>
       </section>
       <section id="elResume" ref="elResume" class="content section-card">
-        <h2 class="text-h4"> Experience </h2>
+        <h2 class="text-h3"> Resume </h2>
         <div class="resume-content">
           <div class="resume-item resume-item--fullstack">
             <h3> FullStack</h3>
@@ -259,12 +261,31 @@ contact_mail
             </ol>
           </div>
         </div>
-        <h2 class=""> Resume </h2>
         <h3>Academic grade</h3>
+        <ul>
+          <li>
+            FP grado superior DAW (Desarrollo de Aplicaciones Web)
+          </li>
+          <li>
+            FP grado medio SMR (Sistemas Microinformaticos y Redes)
+          </li>
+        </ul>
         <h3>Jobs trajectory</h3>
+        <ul>
+          <li>
+            GF-tic
+          </li>
+          <li>
+            RefineriaWeb
+          </li>
+          <li>
+            Boomeraling
+          </li>
+        </ul>
       </section>
+      <hr/>
       <section id="elPortfolio" ref="elPortfolio" class="content section-card wrap-center">
-        <h2 class="text-h6"> Portfolio: </h2>
+        <h2 class="text-h3"> Portfolio: </h2>
         <div>
           <h3>Amigaria WebApp</h3>
           <p>Amigaria is an accessible web platform for social integration.</p>
@@ -280,6 +301,7 @@ contact_mail
         </div>
 
       </section>
+      <hr/>
       <section id="elContact" ref="elContact" class="content section-card wrap-center">
         <a href="mailto:rommelgarcia4b@gmail.com" class="active">
           <h2 class="text-h3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contact me &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
