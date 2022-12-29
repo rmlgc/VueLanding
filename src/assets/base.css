@@ -2,12 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;500;700;900&family=Poppins:wght@400;500;700;900&display=swap');
 
 :root {
-    --text-color: hsl(36deg 17% 77%);
-    --text-color-opacity: hsl(36deg 17% 77% /50%);
-    --background-color: hsl(204deg 44% 13%);
-    --background-color-opacity: hsl(204deg 44% 13% /50%);
-    --link-color: hsl(192deg 84% 65%);
-    --link-color-opacity: hsl(192deg 84% 65% /50%);
+    --text-color: hsl(36deg 23% 79%);
+    --text-color-opacity: hsl(36deg 23% 79% / 50%);
+    --background-color: hsl(205deg 43% 13%);
+    --background-color-opacity: hsl(205deg 43% 13% / 50%);
+    --link-color: hsl(252deg 57% 21%);
+    --link-color-opacity: hsl(252deg 57% 21% / 50%);
+    --link-background-color: hsl(120deg 85% 54%);
+    --link-background-color-opacity: hsl(120deg 85% 54% / 50%);
+
 }
 
 /* semantic color variables for this project */
@@ -49,11 +52,15 @@ body {
 
 h1, .text-h1, h2, .text-h2, h3, .text-h3,
 h4, .text-h4, h5, .text-h5, h6, .text-h6 {
-    margin: 20px 4px 0px 4px;
+    margin: 20px 4px 8px 4px;
 }
 
-.text-body1, .text-body2 {
+p, .text-body1, .text-body2 {
     margin: 0px 4px 20px 4px;
+}
+hr {
+    margin-top:20px;
+    margin-bottom:20px;
 }
 
 .text-body2 {
@@ -91,4 +98,7 @@ h6, .text-h6 {
 
 .text-right {
     text-align: right;
+}
+.inline-block{
+    display: inline-block;
 }

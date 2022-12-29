@@ -11,7 +11,8 @@ header, footer
 
 .content {
     max-width: 1900px;
-    margin: 0px 8px;
+    margin-right: 8px;
+    margin-left: 8px;
 }
 
 .content-full {
@@ -22,17 +23,20 @@ header, footer
 .wrap-center {
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 a.active,
 a {
-    color: hsl(192deg 84% 65%);
+    color: var(--link-color);
     transition: all 0.1s cubic-bezier(.68, -0.55, .27, 1.55);
     cursor: pointer;
+    padding: 0px 8px;
 }
 a:hover,
 a.active {
-    background-color: hsla(160, 100%, 37%, 0.2);
+    background-color: var(--link-background-color-opacity);
 }
 
 .wrap-center {
@@ -68,7 +72,7 @@ a.active {
 
 @media (hover: hover) {
     a:hover {
-        background-color: hsla(160, 100%, 37%, 0.2);
+        background-color: var(--link-background-color-opacity);
     }
 }
 
@@ -84,11 +88,12 @@ footer {
 
 main,
 section {
-    min-height: 100vh;
+    min-height: 90vh;
 }
 section {
     padding: 32px 0px ;
     margin-bottom: 32px;
+    margin-top: 32px;
 }
 
 header {
@@ -100,4 +105,8 @@ header {
 }
 header.open{
     width: 100vw;
+}
+.main-content{
+    padding-left: 20px;
+    max-width: 800px;
 }
