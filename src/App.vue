@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {ref, onMounted} from 'vue'
+import {onMounted, ref} from 'vue'
 import {useIntersectionObserver} from '@vueuse/core'
 
 import WipPage from '@/components/Landing/WipPage.vue'
@@ -36,7 +36,8 @@ onMounted(()=>{
     margin:'10%',
   }
 
-  initIntersection(elWip.value.$el, elWipIsVisible, document.querySelector('body'), options)
+  const {$el}: any = elWip.value;
+  initIntersection($el, elWipIsVisible, document.querySelector('body'), options)
   initIntersection(elHome.value, elHomeIsVisible, document.querySelector('body'), options)
   initIntersection(elAboutMe.value, elAboutMeIsVisible, document.querySelector('body'), options)
   initIntersection(elService.value, elServiceIsVisible, document.querySelector('body'), options)
