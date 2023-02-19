@@ -17,6 +17,6 @@ module.exports = {
   ],
   parserOptions: {
     ecmaVersion: 'latest',
-    project: ["./tsconfig.eslint.json"],
+    // project: ["./tsconfig.eslint.json"],
   },
 };

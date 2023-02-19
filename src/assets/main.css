@@ -14,12 +14,18 @@ header, footer
     margin-right: 8px;
     margin-left: 8px;
 }
-
+.content-tablet {
+    max-width: 960px;
+    margin-right: 8px;
+    margin-left: 8px;
+}
 .content-full {
     max-width: 2900px;
     margin: 0px;
 }
-
+.m-auto{
+    margin:auto;
+}
 .wrap-center {
     display: flex;
     justify-content: center;
@@ -79,7 +85,16 @@ a.active {
 main {
     display: flex;
     display: grid;
-    grid-template-columns: 60px minmax(300px, 1fr);
+    grid-template-columns: 1fr ;
+    grid-template-areas:
+    'body'
+    'header';
+}
+@media only screen and (min-width:676px){
+    main {
+        grid-template-columns: 45px minmax(300px, 1fr);
+        grid-template-areas:'header body ';
+    }
 }
 
 footer {
@@ -98,10 +113,19 @@ section {
 
 header {
     position: sticky;
-    top: 0px;
+    bottom: 0px;
     height: calc(100vh - calc(100vh - 100%));
     max-height: 100vh;
     z-index: 1;
+    grid-area: header;
+}
+.main-content{
+    grid-area: body;
+}
+@media only screen and (min-width:676px){
+    header {
+        top: 0px;
+    }
 }
 header.open{
     width: 100vw;

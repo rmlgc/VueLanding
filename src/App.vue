@@ -74,6 +74,7 @@ const initIntersection = (element: any, elementIsVisible: any, elementScroll: an
 
 <template>
   <WipPage id="elWip" ref="elWip" class="content-full"></WipPage>
+  <div class="content-tablet m-auto">
   <main v-show="pageIsLoad">
     <header @click.self="isMenuOpen=!isMenuOpen" :class="`${isMenuOpen ? 'open bg-glass' : ''}`">
       <div
@@ -128,27 +129,27 @@ contact_mail
           I have a 2 year career as a 'web developer' && <span class="inline-block">2 years of learning pregress with my own projects</span>
         </p>
         <hr>
-        <p class="text-body2">🧑‍🎓 Professional Formation Grade as Web Application Developer 👨‍💻</p>
-        <p class="text-h6">
+        <p class="text-body1">🧑‍🎓 Professional Formation Grade as Web Application Developer 👨‍💻</p>
+        <p class="text-body1">
           $ ✨🖥️ Frontend web developer 📐📱
         </p>
-        <p class="text-h6">
+        <p class="text-body2">
           $ 📱✨ FullStack web developer 🗄️🖥️
         </p>
-        <p class="text-body1">
-          $ <span class="text-body2">🖥️🗄️ Backend web developer 💽🖥️</span>
+        <p class="text-body2">
+          $ 🖥️🗄️ Backend web developer 💽🖥️
         </p>
-        <p class="text-body1">
-          $ <small class="text-body2">🧰 Helpdesk Operator 🖱️</small>
+        <p class="text-body2">
+          $ 🧰 Helpdesk Operator 🖱️
         </p>
         <hr>
-        <p>
+        <p class="text-body2">
           🧑‍🎨 my free time:
         </p>
-        <p class="text-body1">
-          $ <small class="text-body2">👾 Play Videogames 🎲</small>
+        <p class="text-body2">
+          $ 👾 Play Videogames 🎲
         </p>
-        <p class="text-h6">
+        <p class="text-body2">
           $ 🎥 Content creator 🐒
         </p>
       </section>
@@ -158,7 +159,24 @@ contact_mail
       <hr/>
       </section>
       <section id="elResume" ref="elResume" class="content section-card">
-        <h2 class="text-h3"> Resume </h2>
+        <h2 class="text-h2"> Resume </h2>
+        
+        <h3>Jobs trajectory</h3>
+        <ul>
+          <li data-jobStart="July 2022" data-jobEnd="Genuary 2023">
+            GF-tic - <small>FrontEnd Web Developer</small>
+          </li>
+          <li data-jobStart="June 2018" data-jobEnd="Novenber 2019">
+            RefineriaWeb - <small>FullStack Web Developer</small> 
+          </li>
+          <li data-jobStart="October 2013" data-jobEnd="Novenber 2013">
+            <h4>Boomeraling - <small>FullStack Web Developer (practice)</small> </h4>
+            <p>
+              
+            </p>
+          </li>
+        </ul>
+
         <div class="resume-content">
           <div class="resume-item resume-item--fullstack">
             <h3> FullStack</h3>
@@ -270,18 +288,7 @@ contact_mail
             FP grado medio SMR (Sistemas Microinformaticos y Redes)
           </li>
         </ul>
-        <h3>Jobs trajectory</h3>
-        <ul>
-          <li>
-            GF-tic
-          </li>
-          <li>
-            RefineriaWeb
-          </li>
-          <li>
-            Boomeraling
-          </li>
-        </ul>
+        
       </section>
       <hr/>
       <section id="elPortfolio" ref="elPortfolio" class="content section-card wrap-center">
@@ -312,6 +319,7 @@ contact_mail
       </footer>
     </div>
   </main>
+</div>
 </template>
 
 <style scoped lang="scss">
@@ -348,7 +356,9 @@ contact_mail
     }
   }
 }
-
+header{
+  box-shadow: 0px 0px 10px 1px inset;
+}
 .header-menu {
   z-index: 10;
   font-size: inherit;
@@ -359,9 +369,18 @@ contact_mail
   border-right: chocolate 2px solid;
   border-right-color: var(--link-color);
   border-bottom-color: var(--link-color);
-  width: 60px;
+  width: 100%;
   max-width: 800px;
+  display: flex;
+  flex-flow: row;
+  .open &{
+      flex-flow: column;
+    }
+  @media only screen and (min-width:676px){
+    flex-flow: column;
+    width: 60px;
 
+  }
   &:after {
     position: absolute;
     top: 100%;
@@ -394,17 +413,27 @@ contact_mail
     margin: auto;
     cursor: pointer;
   }
-
+  &-head{
+    display: flex;
+    flex-flow: row;
+    @media only screen and (min-width:676px){
+      flex-flow: column;
+    }
+  }
   &-content {
     display: flex;
-    flex-flow: column;
+    flex-flow: row;
     justify-content: center;
     align-items: center;
-    @media screen and (max-width: 700px) {
-      //overflow-y: scroll;
-      max-height: 265px;
-    }
     box-shadow: inset black 0px 0px 5px;
+    flex: 1;
+    .open &{
+      flex-flow: column;
+    }
+    @media only screen and (min-width:676px){
+      max-height: 265px;
+      flex-flow: column;
+    }
   }
 
   &-full {
@@ -425,9 +454,11 @@ contact_mail
     text-align: left;
     cursor: pointer;
     flex: 1 0 100%;
-    min-height: 60px;
-    width: 100%;
-
+    min-height: 45px;
+    flex:1;
+    @media only screen and (min-width:676px){
+      width: 100%;
+    }
     &.active {
       animation: BgNeonLink 4s linear infinite;
     }
