@@ -126,7 +126,7 @@ contact_mail
       <section id="elAboutMe" ref="elAboutMe" class="content section-card">
         <h2 class="text-h6"> 👋 Hi There? I’m Rommel</h2>
         <p class="text-body2">
-          I have a 2 year career as a 'web developer' && <span class="inline-block">2 years of learning pregress with my own projects</span>
+          I have a 2 year career as a 'web developer' && <span class="inline-block">2 years of learning progress by my own projects</span>
         </p>
         <hr>
         <p class="text-body1">🧑‍🎓 Professional Formation Grade as Web Application Developer 👨‍💻</p>
@@ -159,19 +159,24 @@ contact_mail
       <hr/>
       </section>
       <section id="elResume" ref="elResume" class="content section-card">
-        <h2 class="text-h2"> Resume </h2>
-        
-        <h3>Jobs trajectory</h3>
+        <h2>Jobs trajectory</h2>
         <ul>
           <li data-jobStart="July 2022" data-jobEnd="Genuary 2023">
-            GF-tic - <small>FrontEnd Web Developer</small>
+            <h4>GF-tic - <small>FrontEnd Web Developer</small></h4>
+            <p data-tecnologiesUsed="Tecnologies like Cakephp, Vue3, Html, CSS, JavaScript was using day by day.">
+              I did craft webApps, ERP and CMS for Hotels and enterprise and even maintenance support and unit test.
+            </p>
           </li>
           <li data-jobStart="June 2018" data-jobEnd="Novenber 2019">
-            RefineriaWeb - <small>FullStack Web Developer</small> 
+            <h4>RefineriaWeb - <small>FullStack Web Developer</small></h4>
+            <p data-tecnologiesUsed="Tecnologies like PHP, Laravel, Html, Wordpress, CSS, Javascript.">
+              I did develop, craft and deploy web Apps/CMS. besides, craft newsletters and email signs digital.
+              Resolve users questions/issues and start/continue news projects were part of my day-to-day life
+            </p>
           </li>
           <li data-jobStart="October 2013" data-jobEnd="Novenber 2013">
             <h4>Boomeraling - <small>FullStack Web Developer (practice)</small> </h4>
-            <p>
+            <p data-tecnologiesUsed="Tecnologies like PHP, Laravel, Html, Wordpress, CSS, Javascript.">
               
             </p>
           </li>
