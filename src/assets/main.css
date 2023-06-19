@@ -90,7 +90,7 @@ main {
     'body'
     'header';
 }
-@media only screen and (min-width:676px){
+@media only screen and (min-width:777px){
     main {
         grid-template-columns: 45px minmax(300px, 1fr);
         grid-template-areas:'header body ';

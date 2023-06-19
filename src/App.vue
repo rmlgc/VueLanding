@@ -74,7 +74,7 @@ const initIntersection = (element: any, elementIsVisible: any, elementScroll: an
 
 <template>
   <WipPage id="elWip" ref="elWip" class="content-full"></WipPage>
-  <div class="content-tablet m-auto">
+  <div class="content-tablet ">
   <main v-show="pageIsLoad">
     <header @click.self="isMenuOpen=!isMenuOpen" :class="`${isMenuOpen ? 'open bg-glass' : ''}`">
       <div
@@ -381,7 +381,7 @@ header{
   .open &{
       flex-flow: column;
     }
-  @media only screen and (min-width:676px){
+  @media only screen and (min-width:777px){
     flex-flow: column;
     width: 60px;
 
@@ -421,7 +421,7 @@ header{
   &-head{
     display: flex;
     flex-flow: row;
-    @media only screen and (min-width:676px){
+    @media only screen and (min-width:777px){
       flex-flow: column;
     }
   }
@@ -435,7 +435,7 @@ header{
     .open &{
       flex-flow: column;
     }
-    @media only screen and (min-width:676px){
+    @media only screen and (min-width:777px){
       max-height: 265px;
       flex-flow: column;
     }
@@ -461,7 +461,7 @@ header{
     flex: 1 0 100%;
     min-height: 45px;
     flex:1;
-    @media only screen and (min-width:676px){
+    @media only screen and (min-width:777px){
       width: 100%;
     }
     &.active {
