@@ -161,6 +161,14 @@ contact_mail
       <section id="elResume" ref="elResume" class="content section-card">
         <h2>Jobs trajectory</h2>
         <ul>
+          <li data-jobStart="March 2023" data-jobEnd="May 2023">
+            <h4>Hoteligy - <small>FullStack Web Developer</small></h4>
+            <p data-tecnologiesUsed="Tecnologies like PHP/smarty, Html/Jquery, HereMapsApi, TraccarApi ">
+              Daily maintenance of legacy webApp in PHP with "smarty" mannaged template into ERP and Html/JQuery for frontend.
+
+              Was necessary learn HereMapsApi and TraccarApi for new integration of tracking vehicles.
+            </p>
+          </li>
           <li data-jobStart="July 2022" data-jobEnd="Genuary 2023">
             <h4>GF-tic - <small>FrontEnd Web Developer</small></h4>
             <p data-tecnologiesUsed="Tecnologies like Cakephp, Vue3, Html, CSS, JavaScript was using day by day.">
@@ -177,7 +185,7 @@ contact_mail
           <li data-jobStart="October 2013" data-jobEnd="Novenber 2013">
             <h4>Boomeraling - <small>FullStack Web Developer (practice)</small> </h4>
             <p data-tecnologiesUsed="Tecnologies like PHP, Laravel, Html, Wordpress, CSS, Javascript.">
-              
+              Wordpress maintenance and aplying new styles for new webs/blogs
             </p>
           </li>
         </ul>
@@ -256,6 +264,9 @@ contact_mail
                   </li>
                   <li>
                     Framework CakePhP
+                  </li>
+                  <li>
+                    Smarty Template
                   </li>
                 </ul>
               </li>
