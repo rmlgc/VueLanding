@@ -90,12 +90,7 @@ main {
     'body'
     'header';
 }
-@media only screen and (min-width:777px){
-    main {
-        grid-template-columns: 45px minmax(300px, 1fr);
-        grid-template-areas:'header body ';
-    }
-}
+
 
 footer {
     min-height: 6vh;
@@ -131,6 +126,15 @@ header.open{
     width: 100vw;
 }
 .main-content{
-    padding-left: 20px;
+    padding-left: 0px;
     max-width: 800px;
+}
+@media only screen and (min-width:777px){
+    main {
+        grid-template-columns: 45px minmax(300px, 1fr);
+        grid-template-areas:'header body ';
+    }
+    .main-content{
+        padding-left: 20px;
+    }
 }

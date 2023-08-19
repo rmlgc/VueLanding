@@ -95,6 +95,7 @@ $textBorderColorOpen: var(--text-color);
 
 .wrap-wip {
   min-height: 60vh;
+  cursor: pointer;
 }
 
 @keyframes firstAnimationIncrease {
