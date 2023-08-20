@@ -11,13 +11,6 @@ header, footer
 
 .content {
     max-width: 1900px;
-    margin-right: 8px;
-    margin-left: 8px;
-}
-.content-tablet {
-    max-width: 960px;
-    margin-right: 8px;
-    margin-left: 8px;
 }
 .content-full {
     max-width: 2900px;
@@ -84,11 +77,7 @@ a.active {
 
 main {
     display: flex;
-    display: grid;
-    grid-template-columns: 1fr ;
-    grid-template-areas:
-    'body'
-    'header';
+    flex-wrap: wrap;
 }
 
 
@@ -105,26 +94,14 @@ section {
     margin-bottom: 32px;
     margin-top: 32px;
 }
-
-header {
+.section-card{
+    max-width: 800px;
+    align-self: first baseline;
+    flex: 1 0 33%;
     position: sticky;
-    bottom: 0px;
-    height: calc(100vh - calc(100vh - 100%));
-    max-height: 100vh;
-    z-index: 1;
-    grid-area: header;
+    top: 0;
 }
-.main-content{
-    grid-area: body;
-}
-@media only screen and (min-width:676px){
-    header {
-        top: 0px;
-    }
-}
-header.open{
-    width: 100vw;
-}
+
 .main-content{
     padding-left: 0px;
     max-width: 800px;
@@ -133,8 +110,5 @@ header.open{
     main {
         grid-template-columns: 45px minmax(300px, 1fr);
         grid-template-areas:'header body ';
-    }
-    .main-content{
-        padding-left: 20px;
     }
 }

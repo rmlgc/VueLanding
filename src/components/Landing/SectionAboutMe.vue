@@ -31,6 +31,25 @@
         <p class="text-body2">
           $ 🎥 Content creator 🐒
         </p>
+        <div class="resume-item resume-item--fullstack">
+      <h3> FullStack</h3>
+      <p>
+        <small>
+          I have little experience with apache servers, just enough to manage a web server. I am currently
+          interested in learning how to manage/deploy serverless web/App
+        </small>
+      </p>
+      <p>
+        I feel more confident designing and developing the client side (<a href="#resumeFrontend"
+                                                                            :class="`bg-glass active`">FrontEnd</a>)
+      </p>
+      <p>
+        however, developing the server side is always a challenge, it's not my best path, but being constantly
+        learning is rewarding(<a href="#resumeFrontend"
+                                  :class="`bg-glass active`">BackEnd</a>)
+      </p>
+    </div>
+  <hr/>
       </section>
 </template>
 <style scoped lang="scss">
