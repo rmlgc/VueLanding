@@ -1,40 +1,14 @@
 <script setup lang="ts">
 import {onMounted, ref} from 'vue'
 import {useIntersectionObserver} from '@vueuse/core'
-import jsondata from '@/assets/json-data.json'
-
 import WipPage from '@/components/Landing/WipPage.vue'
+import SectionAboutMe from '@/components/Landing/SectionAboutMe.vue'
+import SectionResume from '@/components/Landing/SectionResume.vue'
+import SectionPortfolio from '@/components/Landing/SectionPortfolio.vue'
+import SectionContact from '@/components/Landing/SectionContact.vue'
 
-const jsonData = jsondata;
 
-const elHome = ref(null)
-const elHomeIsVisible = ref(false)
-const elWip = ref(null)
-const elWipIsVisible = ref(false)
-const elAboutMe = ref(null)
-const elAboutMeIsVisible = ref(false)
-const elService = ref(null)
-const elServiceIsVisible = ref(false)
-const elResume = ref(null)
-const elResumeIsVisible = ref(false)
-const elPortfolio = ref(null)
-const elPortfolioIsVisible = ref(false)
-const elContact = ref(null)
-const elContactIsVisible = ref(false)
 const pageIsLoad = ref(false)
-
-const isMenuOpen = ref(false)
-
-const scrollTo = (elemento: any) => {
-  console.log(elemento)
-  let targetElemnt = elemento;
-  if (elemento.value) {
-    const {$el}: any = elemento.value;
-    targetElemnt = $el
-  }
-  targetElemnt.scrollIntoView({behavior: "smooth"})
-  isMenuOpen.value = false;
-}
 
 onMounted(() => {
   let options = {}
@@ -45,15 +19,6 @@ onMounted(() => {
       console.log('PAGE LOADED')
     }
   }
-
-  const {$el}: any = elWip.value;
-  initIntersection($el, elWipIsVisible, document.querySelector('body'), options)
-  initIntersection(elAboutMe.value, elAboutMeIsVisible, document.querySelector('body'), options)
-  initIntersection(elService.value, elServiceIsVisible, document.querySelector('body'), options)
-  initIntersection(elResume.value, elResumeIsVisible, document.querySelector('body'), options)
-  initIntersection(elPortfolio.value, elPortfolioIsVisible, document.querySelector('body'), options)
-  initIntersection(elContact.value, elContactIsVisible, document.querySelector('body'), options)
-
 })
 
 const initIntersection = (element: any, elementIsVisible: any, elementScroll: any, newOptions = {}) => {
@@ -78,246 +43,24 @@ const initIntersection = (element: any, elementIsVisible: any, elementScroll: an
 <template>
   <WipPage id="elWip" ref="elWip" class="content-full"></WipPage>
   <div class="content-tablet ">
-  <main v-show="pageIsLoad">
-    <header @click.self="isMenuOpen=!isMenuOpen" :class="`${isMenuOpen ? 'open bg-glass' : ''}`">
-      <div
-        :class="`header-menu ${isMenuOpen ? 'header-menu-full bg-glass--fat' : 'bg-glass--slim'} bg-glass-secondary `">
-        <div class="header-menu-head text-center">
-          <a href="https://linktr.ee/rommelgc" target="_blank"
-             class="header-menu-title decoration-none text-spacing-none">
-            <span class="text-increase">R</span>
-            <span class="text-reduces">ommel</span>
-            <span class="text-increase">G</span>
-            <span class="text-reduces">arcia</span>
-            <span class="text-increase">C</span>
-            <span class="text-reduces">oronado</span>
-          </a>
-          <div class="header-menu-btn" @click="isMenuOpen=!isMenuOpen">
-            <span v-if="isMenuOpen" class="material-symbols-rounded">close</span>
-            <span v-else class="material-symbols-rounded">menu</span>
-          </div>
-        </div>
-        <div class="header-menu-content">
-          <a @click="scrollTo(elAboutMe)"
-             :class="`header-menu-link ${elAboutMeIsVisible ? 'active bg-glass' : ''}`"><span
-            class="material-symbols-rounded">
-person
-</span> About me</a>
-          <a style="display: none;" @click="scrollTo(elService)"
-             :class="`header-menu-link ${elServiceIsVisible ? 'active bg-glass' : ''}`"><span
-            class="material-symbols-rounded">
-design_services
-</span> Service</a>
-          <a @click="scrollTo(elResume)" :class="`header-menu-link ${elResumeIsVisible ? 'active bg-glass' : ''}`"><span
-            class="material-symbols-rounded">
-school
-</span> Resume</a>
-          <a @click="scrollTo(elPortfolio)"
-             :class="`header-menu-link ${elPortfolioIsVisible ? 'active bg-glass' : ''}`"><span
-            class="material-symbols-rounded">
-important_devices
-</span> Portfolio</a>
-          <a @click="scrollTo(elContact)"
-             :class="`header-menu-link ${elContactIsVisible ? 'active bg-glass' : ''}`"><span
-            class="material-symbols-rounded">
-contact_mail
-</span> Contact</a>
-        </div>
-      </div>
-    </header>
-    <div class="main-content">
-      <section id="elAboutMe" ref="elAboutMe" class="content section-card">
-        <h2 class="text-h6"> 👋 Hi There? I’m Rommel</h2>
-        <p class="text-body2">
-          I have a 2 year career as a 'web developer' && <span class="inline-block">2 years of learning progress by my own projects</span>
-        </p>
-        <hr>
-        <p class="text-body1">🧑‍🎓 Professional Formation Grade as Web Application Developer 👨‍💻</p>
-        <p class="text-body1">
-          $ ✨🖥️ Frontend web developer 📐📱
-        </p>
-        <p class="text-body2">
-          $ 📱✨ FullStack web developer 🗄️🖥️
-        </p>
-        <p class="text-body2">
-          $ 🖥️🗄️ Backend web developer 💽🖥️
-        </p>
-        <p class="text-body2">
-          $ 🧰 Helpdesk Operator 🖱️
-        </p>
-        <hr>
-        <p class="text-body2">
-          🧑‍🎨 my free time:
-        </p>
-        <p class="text-body2">
-          $ 👾 Play Videogames 🎲
-        </p>
-        <p class="text-body2">
-          $ 🎥 Content creator 🐒
-        </p>
-      </section>
-      <hr/>
-      <section style="display: none;" id="elService" ref="elService" class="content section-card">
-        <h2 class="text-h3"> Service </h2>
-      <hr/>
-      </section>
-      <section id="elResume" ref="elResume" class="content section-card">
-        <h2>Jobs trajectory</h2>
-         <div class="trajectory-timeline">
-          <div v-for="trajectory in jsonData.jobs_trajectory" v-bind="index" class="trajectory-timeline-job">
-            <div class="trajectory-timeline-date">
-                <span>{{trajectory.date_start}}</span>
-                <span>{{trajectory.date_end}}</span>
-            </div>
-            <div class="trajectory-timeline-content">
-              <h4>{{trajectory.job}} - <small>{{trajectory.company}}</small></h4>
-              <p data-tecnologiesUsed="Tecnologies like PHP/smarty, Html/Jquery, HereMapsApi, TraccarApi ">
-                {{trajectory.description}}
-              </p>
-            </div>
-          </div>
-         </div>
-
-        <div class="resume-content">
-          <div class="resume-item resume-item--fullstack">
-            <h3> FullStack</h3>
-            <p>
-              <small>
-                I have little experience with apache servers, just enough to manage a web server. I am currently
-                interested in learning how to manage/deploy serverless web/App
-              </small>
-            </p>
-            <p>
-              I feel more confident designing and developing the client side (<a href="#resumeFrontend"
-                                                                                 :class="`bg-glass active`">FrontEnd</a>)
-            </p>
-            <p>
-              however, developing the server side is always a challenge, it's not my best path, but being constantly
-              learning is rewarding(<a href="#resumeFrontend"
-                                       :class="`bg-glass active`">BackEnd</a>)
-            </p>
-          </div>
-          <div id="resumeFrontend" class="resume-item resume-item--frontend">
-            <h3>FrontEnd</h3>
-            <p class="text-body2">my knowledge:</p>
-            <ol>
-              <li>
-                Html
-              </li>
-              <li>
-                Css
-                <ul>
-                  <li>
-                    scss
-                  </li>
-                  <li>
-                    sass
-                  </li>
-                  <li>
-                    PostCSS
-                  </li>
-                  <li>
-                    less
-                  </li>
-                </ul>
-              </li>
-              <li>
-                Javascript
-                <ul>
-                  <li>
-                    Vue3
-                  </li>
-                  <li>
-                    Angular
-                  </li>
-                  <li>
-                    React
-                  </li>
-                  <li>
-                    Svelt
-                  </li>
-                </ul>
-              </li>
-            </ol>
-          </div>
-          <div class="resume-item resume-item--backend">
-            <h3>Backend</h3>
-            <p class="text-body2">my knowledge</p>
-            <ol>
-              <li>
-                php
-                <ul>
-                  <li>
-                    Framework Laravel
-                  </li>
-                  <li>
-                    Framework CakePhP
-                  </li>
-                  <li>
-                    Smarty Template
-                  </li>
-                </ul>
-              </li>
-              <li>
-                Javascript
-                <ul>
-                  <li>
-                    NodeJS
-                  </li>
-                  <li>
-                    Deno
-                  </li>
-                </ul>
-              </li>
-              <li>
-                others
-                <ul>
-                  <li>
-                    python
-                  </li>
-                  <li>
-                    Java
-                  </li>
-                </ul>
-              </li>
-            </ol>
-          </div>
-        </div>
-        <h3>Academic grade</h3>
-        <ul>
-          <li>
-            FP grado superior DAW (Desarrollo de Aplicaciones Web)
-          </li>
-          <li>
-            FP grado medio SMR (Sistemas Microinformaticos y Redes)
-          </li>
-        </ul>
+    <main v-show="pageIsLoad">
+      
+      <div class="main-content">
+        <SectionAboutMe id="elAboutMe" ref="elAboutMe" class="content section-card"></SectionAboutMe>
         
-      </section>
-      <hr/>
-      <section id="elPortfolio" ref="elPortfolio" class="content section-card wrap-center">
-        <h2 class="text-h3"> Portfolio: </h2>
-        <div>
-          <h3>Amigaria WebApp</h3>
-          <p>Amigaria is an accessible web platform for social integration.</p>
-          <p>developed in group in EOI frontend develop course, doing Agile methods and publish git versions.</p>
-          <a class="active" href="https://amigaria.com/">Amigaria</a>
-        </div>
-        <div>
-          <h3>Vue Dummyportfolio</h3>
-          <p>Work In Progress</p>
-          <p>Simple Web App. render, connect to Rest Apis and list data</p>
-          <p>Developed in Vue, using Quasar VueJs Components. for a simple mobile and desktop style design</p>
-          <a class="active" href="https://rmlgc.github.io/dummyportfolio-vue/">Web</a>
-        </div>
+        <hr/>
+        <section style="display: none;" id="elService" ref="elService" class="content section-card">
+          <h2 class="text-h3"> Service </h2>
+          <hr/>
+        </section>
+        <SectionResume id="elResume" ref="elResume" class="content section-card"></SectionResume>
+        
+        <hr/>
+        <SectionPortfolio id="elPortfolio" ref="elPortfolio" class="content section-card wrap-center"></SectionPortfolio>
+        
+        <hr/>
+        <SectionContact id="elContact" ref="elContact" class="content section-card wrap-center"></SectionContact>
 
-      </section>
-      <hr/>
-      <section id="elContact" ref="elContact" class="content section-card wrap-center">
-        <a href="mailto:rommelgarcia4b@gmail.com" class="active">
-          <h2 class="text-h3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contact me &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
-        </a>
-      </section>
       <footer>
         <a href="https://linktr.ee/rommelgc" target="_blank">Rommel Garcia Coronado</a>
       </footer>
