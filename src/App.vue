@@ -1,8 +1,11 @@
 <script setup lang="ts">
 import {onMounted, ref} from 'vue'
 import {useIntersectionObserver} from '@vueuse/core'
+import jsondata from '@/assets/json-data.json'
 
 import WipPage from '@/components/Landing/WipPage.vue'
+
+const jsonData = jsondata;
 
 const elHome = ref(null)
 const elHomeIsVisible = ref(false)
@@ -160,35 +163,20 @@ contact_mail
       </section>
       <section id="elResume" ref="elResume" class="content section-card">
         <h2>Jobs trajectory</h2>
-        <ul>
-          <li data-jobStart="March 2023" data-jobEnd="May 2023">
-            <h4>Hoteligy - <small>FullStack Web Developer</small></h4>
-            <p data-tecnologiesUsed="Tecnologies like PHP/smarty, Html/Jquery, HereMapsApi, TraccarApi ">
-              Daily maintenance of legacy webApp in PHP with "smarty" mannaged template into ERP and Html/JQuery for frontend.
-
-              Was necessary learn HereMapsApi and TraccarApi for new integration of tracking vehicles.
-            </p>
-          </li>
-          <li data-jobStart="July 2022" data-jobEnd="Genuary 2023">
-            <h4>GF-tic - <small>FrontEnd Web Developer</small></h4>
-            <p data-tecnologiesUsed="Tecnologies like Cakephp, Vue3, Html, CSS, JavaScript was using day by day.">
-              I did craft webApps, ERP and CMS for Hotels and enterprise and even maintenance support and unit test.
-            </p>
-          </li>
-          <li data-jobStart="June 2018" data-jobEnd="Novenber 2019">
-            <h4>RefineriaWeb - <small>FullStack Web Developer</small></h4>
-            <p data-tecnologiesUsed="Tecnologies like PHP, Laravel, Html, Wordpress, CSS, Javascript.">
-              I did develop, craft and deploy web Apps/CMS. besides, craft newsletters and email signs digital.
-              Resolve users questions/issues and start/continue news projects were part of my day-to-day life
-            </p>
-          </li>
-          <li data-jobStart="October 2013" data-jobEnd="Novenber 2013">
-            <h4>Boomeraling - <small>FullStack Web Developer (practice)</small> </h4>
-            <p data-tecnologiesUsed="Tecnologies like PHP, Laravel, Html, Wordpress, CSS, Javascript.">
-              Wordpress maintenance and aplying new styles for new webs/blogs
-            </p>
-          </li>
-        </ul>
+         <div class="trajectory-timeline">
+          <div v-for="trajectory in jsonData.jobs_trajectory" v-bind="index" class="trajectory-timeline-job">
+            <div class="trajectory-timeline-date">
+                <span>{{trajectory.date_start}}</span>
+                <span>{{trajectory.date_end}}</span>
+            </div>
+            <div class="trajectory-timeline-content">
+              <h4>{{trajectory.job}} - <small>{{trajectory.company}}</small></h4>
+              <p data-tecnologiesUsed="Tecnologies like PHP/smarty, Html/Jquery, HereMapsApi, TraccarApi ">
+                {{trajectory.description}}
+              </p>
+            </div>
+          </div>
+         </div>
 
         <div class="resume-content">
           <div class="resume-item resume-item--fullstack">
@@ -509,5 +497,32 @@ header{
     border-radius: 5px;
   }
 
+}
+
+.trajectory-timeline {
+  &-job{
+    display: flex;
+    min-height: 450px;
+    border-bottom: 1px solid white;
+    &--right{
+      flex-flow: row-reverse;
+    }
+  }
+  &-content{
+    padding: 20px 8px;
+  }
+  &-date{
+    writing-mode: sideways-lr;
+    text-orientation: mixed;
+    display: flex;
+    justify-content: space-around;
+    border-right: 1px solid white;
+    padding: 20px 8px;
+    background: var(--text-color);
+    color:var(--background-color);
+    &--right{
+
+    }
+  }
 }
 </style>
