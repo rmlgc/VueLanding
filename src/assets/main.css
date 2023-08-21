@@ -95,20 +95,24 @@ section {
     margin-top: 32px;
 }
 .section-card{
-    max-width: 800px;
     align-self: first baseline;
-    flex: 1 0 33%;
-    position: sticky;
+    flex: 1 0 100%;
+    position: relative;
     top: 0;
+    width: 100%;
 }
 
 .main-content{
     padding-left: 0px;
     max-width: 800px;
 }
-@media only screen and (min-width:777px){
-    main {
-        grid-template-columns: 45px minmax(300px, 1fr);
-        grid-template-areas:'header body ';
+.simplebar-scrollbar::before {
+    background-image: linear-gradient(-131deg, rgb(231, 176, 43) 0%, rgb(193, 62, 81) 100%);
+}
+@media only screen and (min-width:820px){
+    .section-card{
+        position: sticky;
+        width: 100%;
+        flex: 1 0 50%;
     }
 }

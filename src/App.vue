@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import Simplebar from 'simplebar-vue';
+import 'simplebar-vue/dist/simplebar.min.css';
 import {onMounted, ref} from 'vue'
 import {useIntersectionObserver} from '@vueuse/core'
 import WipPage from '@/components/Landing/WipPage.vue'
@@ -44,6 +46,7 @@ const initIntersection = (element: any, elementIsVisible: any, elementScroll: an
 <template>
   <WipPage id="elWip" ref="elWip" class="content-full"></WipPage>
   <main v-show="pageIsLoad" class=" ">
+
     <SectionAboutMe id="elAboutMe" ref="elAboutMe" class="content section-card"></SectionAboutMe>
     <SectionResume id="elResume" ref="elResume" class="content section-card"></SectionResume>
   </main>
@@ -61,6 +64,12 @@ const initIntersection = (element: any, elementIsVisible: any, elementScroll: an
 .f {
   text-decoration: none;
 }
+#elAboutMe{
 
+  @media only screen and (min-width:820px){
+    min-width: 400px;
+    max-width: 40dvw;
+  }
+}
 
 </style>

@@ -46,14 +46,15 @@ const jsonData = jsondata;
     padding: 20px 8px;
   }
   &-date{
-    writing-mode: sideways-lr;
+    writing-mode: vertical-lr;
     text-orientation: mixed;
+    transform: rotate(180deg);
     display: flex;
     justify-content: space-around;
     border-right: 1px solid white;
     padding: 20px 8px;
     background: var(--text-color);
-    color:var(--background-color);
+    color: var(--background-color);
     &--right{
 
     }

@@ -21,6 +21,8 @@
     "@vueuse/components": "^9.9.0",
     "@vueuse/core": "^9.9.0",
     "pinia": "^2.0.28",
+    "simplebar": "^6.2.5",
+    "simplebar-vue": "^2.3.3",
     "typeit": "^8.7.1",
     "vite": "^4.0.0",
     "vue": "^3.2.45",
