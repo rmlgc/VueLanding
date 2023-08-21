@@ -46,15 +46,14 @@ const initIntersection = (element: any, elementIsVisible: any, elementScroll: an
 <template>
   <WipPage id="elWip" ref="elWip" class="content-full"></WipPage>
   <main v-show="pageIsLoad" class=" ">
-
-    <SectionAboutMe id="elAboutMe" ref="elAboutMe" class="content section-card"></SectionAboutMe>
-    <SectionResume id="elResume" ref="elResume" class="content section-card"></SectionResume>
+    <SectionAboutMe id="elAboutMe" ref="elAboutMe" class="content section-card main-content"></SectionAboutMe>
+    <SectionResume id="elResume" ref="elResume" class="content section-card main-content"></SectionResume>
   </main>
   <main v-show="pageIsLoad" class=" ">
-    <SectionMyKnowledge id="elKnowledge" ref="elResume" class="content section-card"></SectionMyKnowledge>
-    <SectionPortfolio id="elPortfolio" ref="elPortfolio" class="content section-card"></SectionPortfolio>
+    <SectionMyKnowledge id="elKnowledge" ref="elResume" class="content section-card main-content"></SectionMyKnowledge>
+    <SectionPortfolio id="elPortfolio" ref="elPortfolio" class="content section-card main-content"></SectionPortfolio>
   </main>
-  <SectionContact id="elContact" ref="elContact" class="content section-card wrap-center"></SectionContact>
+  <SectionContact id="elContact" ref="elContact" class="content section-card main-content wrap-center"></SectionContact>
   <footer>
     <a href="https://linktr.ee/rommelgc" target="_blank">Rommel Garcia Coronado</a>
   </footer>
