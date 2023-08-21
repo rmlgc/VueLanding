@@ -90,7 +90,7 @@ const openAccordion = (title:string, event:Event)=>{
     max-height: 60vh;
 }
 .accordion{
-  border: 1px solid var(--text-color);
+  border: 1px solid var(--text-color-opacity);
   &-header{
     display: flex;
     background: var(--text-color);

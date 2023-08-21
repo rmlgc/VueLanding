@@ -37,7 +37,7 @@ const jsonData = jsondata;
   &-job{
     display: flex;
     min-height: 450px;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid var(--text-color-opacity);
     &--right{
       flex-flow: row-reverse;
     }
@@ -51,7 +51,8 @@ const jsonData = jsondata;
     transform: rotate(180deg);
     display: flex;
     justify-content: space-around;
-    border-right: 1px solid white;
+    border-right: 1px solid var(--text-color-opacity);
+    border-left: 1px solid var(--text-color-opacity);
     padding: 20px 8px;
     background: var(--text-color);
     color: var(--background-color);

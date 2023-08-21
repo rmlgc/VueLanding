@@ -19,10 +19,10 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --text-color: hsl(36deg 23% 79%);
-        --text-color-opacity: hsl(36deg 23% 79% / 50%);
-        --background-color: hsl(205deg 43% 13%);
-        --background-color-opacity: hsl(205deg 43% 13% / 50%);
+        --text-color: hsl(205deg 43% 13%);
+        --text-color-opacity: hsl(205deg 43% 13% / 50%);
+        --background-color: hsl(36deg 23% 79%);
+        --background-color-opacity: hsl(36deg 23% 79% / 50%);
         --link-color: hsl(252deg 57% 21%);
         --link-color-opacity: hsl(252deg 57% 21% / 50%);
         --link-background-color: hsl(120deg 85% 54%);
@@ -68,6 +68,10 @@ p, .text-body1, .text-body2 {
 hr {
     margin-top:20px;
     margin-bottom:20px;
+    border-top-color: var(--text-color-opacity);
+    border-left-color: var(--text-color-opacity);
+    border-bottom-color: var(--background-color-opacity);
+    border-right-color: var(--background-color-opacity);
 }
 
 .text-body2 {
