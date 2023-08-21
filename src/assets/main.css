@@ -32,6 +32,7 @@ a {
     transition: all 0.1s cubic-bezier(.68, -0.55, .27, 1.55);
     cursor: pointer;
     padding: 0px 8px;
+    margin: 0px 5px;
 }
 a:hover,
 a.active {
