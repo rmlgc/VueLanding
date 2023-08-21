@@ -18,7 +18,7 @@ const props = defineProps({
   accordion: Object as PropType<accordion>
 })
 const openAccordion = (title:string, event:Event)=>{
-  const currentEl = event.currentTarget;
+  const currentEl = event.currentTarget as Element;
   const element = document.getElementById(title)
   if(currentEl== null)return
   if(element== null)return

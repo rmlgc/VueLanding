@@ -1,16 +1,18 @@
 <script setup lang="ts">
+import { onMounted } from "vue"
 import simplebar from 'simplebar-vue';
 
 const openAccordion = (title:string, event:Event)=>{
-  const currentEl = event.currentTarget;
+  const currentEl = event.currentTarget as Element;
   const element = document.getElementById(title)
   if(currentEl== null)return
   if(element== null)return
+  if(currentEl.classList== null)return
   currentEl.classList.toggle("open");
-  console.log(event.currentTarget);
-  console.log(element.getElementsByClassName("accordion-content")[0].classList.toggle("open"));
-
+  element.getElementsByClassName("accordion-content")[0].classList.toggle("open")
 }
+
+
 
 </script>
 <template>
