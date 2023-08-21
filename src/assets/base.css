@@ -19,7 +19,14 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
-
+        --text-color: hsl(36deg 23% 79%);
+        --text-color-opacity: hsl(36deg 23% 79% / 50%);
+        --background-color: hsl(205deg 43% 13%);
+        --background-color-opacity: hsl(205deg 43% 13% / 50%);
+        --link-color: hsl(252deg 57% 21%);
+        --link-color-opacity: hsl(252deg 57% 21% / 50%);
+        --link-background-color: hsl(120deg 85% 54%);
+        --link-background-color-opacity: hsl(120deg 85% 54% / 50%);
     }
 }
 
