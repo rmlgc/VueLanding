@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import Simplebar from 'simplebar-vue';
+
 import 'simplebar-vue/dist/simplebar.min.css';
 import {onMounted, ref} from 'vue'
 import {useIntersectionObserver} from '@vueuse/core'
 import WipPage from '@/components/Landing/WipPage.vue'
+import NavMenu from '@/components/Landing/NavMenu.vue'
 import SectionAboutMe from '@/components/Landing/SectionAboutMe.vue'
 import SectionResume from '@/components/Landing/SectionResume.vue'
 import SectionMyKnowledge from '@/components/Landing/SectionMyKnowledge.vue'
@@ -40,17 +41,44 @@ const initIntersection = (element: any, elementIsVisible: any, elementScroll: an
     options
   )
 }
-
+const menuLinks = [
+  {
+    title:'elAboutMe',
+    href:'elAboutMe',
+    scrollTo:true,
+  },
+  {
+    title:'elResume',
+    href:'elResume',
+    scrollTo:true,
+  },
+  {
+    title:'elKnowledge',
+    href:'elKnowledge',
+    scrollTo:true,
+  },
+  {
+    title:'elPortfolio',
+    href:'elPortfolio',
+    scrollTo:true,
+  },
+  {
+    title:'elContact',
+    href:'elContact',
+    scrollTo:true,
+  },
+]
 </script>
 
 <template>
+  <NavMenu v-show="pageIsLoad" :menuLinks="menuLinks"></NavMenu>
   <WipPage id="elWip" ref="elWip" class="content-full"></WipPage>
   <main v-show="pageIsLoad" class=" ">
     <SectionAboutMe id="elAboutMe" ref="elAboutMe" class="content section-card main-content"></SectionAboutMe>
     <SectionResume id="elResume" ref="elResume" class="content section-card main-content"></SectionResume>
   </main>
   <main v-show="pageIsLoad" class=" ">
-    <SectionMyKnowledge id="elKnowledge" ref="elResume" class="content section-card main-content"></SectionMyKnowledge>
+    <SectionMyKnowledge id="elKnowledge" ref="elKnowledge" class="content section-card main-content"></SectionMyKnowledge>
     <SectionPortfolio id="elPortfolio" ref="elPortfolio" class="content section-card main-content"></SectionPortfolio>
   </main>
   <SectionContact id="elContact" ref="elContact" class="content section-card main-content wrap-center"></SectionContact>
