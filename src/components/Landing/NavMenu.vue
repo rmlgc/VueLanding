@@ -15,11 +15,12 @@ const props = defineProps({
   menuLinks: Array<menuLinks>
 })
 
-const scrollTo = (elementId:string)=>{
+const scrollTo = (elementId:string, event:Event)=>{
   const bodyRect = document.body.getBoundingClientRect();
   if(elementId == null)return
-  if(document.getElementById(elementId) == null)return
-  const elemRect = document.getElementById(elementId).getBoundingClientRect();
+  const elementToScroll = document.getElementById(elementId);
+  if(elementToScroll == null)return
+  const elemRect = elementToScroll.getBoundingClientRect();
   const offset   = elemRect.top - bodyRect.top;
   
   window.scrollTo({
@@ -42,7 +43,7 @@ const openMenu = ()=>{
 </script>
 <template>
   <header id="headerMenu">
-    <a v-for="link in props.menuLinks" :href="link.href" @click="scrollTo(link.href); openMenu();" :key="link.title">{{link.title}}</a>
+    <a v-for="link in props.menuLinks" :href="link.href" @click="scrollTo(link.href, $event); openMenu();" :key="link.title">{{link.title}}</a>
   </header>
   <divi id="headerMenuBtn" class="btn-hamburguer" @click="openMenu"></divi>
 </template>
