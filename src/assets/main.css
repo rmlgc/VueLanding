@@ -27,14 +27,15 @@ header, footer
 }
 
 a.active,
-a {
+a { 
     color: var(--link-color);
     transition: all 0.1s cubic-bezier(.68, -0.55, .27, 1.55);
     cursor: pointer;
-    padding: 0px 8px;
-    margin: 0px 5px;
+    padding: 0px 12px 6px;
     margin: 0px 5px 8px;
     display: inline-block;
+    background-color: var(--text-color-opacity);
+
 }
 a:hover,
 a.active {
