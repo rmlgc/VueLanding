@@ -14,8 +14,7 @@
 }
 
 /* semantic color variables for this project */
-:root {
-}
+:root {}
 
 @media (prefers-color-scheme: dark) {
     :root {
@@ -38,8 +37,10 @@
     position: relative;
 }
 
+/* font-size: 20px; */
+
 html {
-    font-size: 20px;
+    font-size: clamp(1.0625rem, 1.0294rem + 0.1765vw, 1.25rem);
 }
 
 body {
@@ -48,26 +49,74 @@ body {
     background: var(--background-color);
     color: var(--text-color);
     line-height: 1.4;
-    letter-spacing: .03rem;
     font-family: 'Noto Sans JP', 'Poppins', sans-serif, Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
-    Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+        Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     scroll-behavior: smooth;
 }
 
-h1, .text-h1, h2, .text-h2, h3, .text-h3,
-h4, .text-h4, h5, .text-h5, h6, .text-h6 {
-    margin: 20px 4px 8px 4px;
+p {
+    /* font-size: 1rem; */
+    /* Or within the acceptable range */
 }
 
-p, .text-body1, .text-body2 {
-    margin: 0px 4px 20px 4px;
+h1 {
+    font-size: clamp(2rem, calc(2rem + 0.5vw), 2.5rem);
+    /* Example using clamp for responsiveness */
 }
+
+h2 {
+    font-size: clamp(1.6rem, calc(1.6rem + 0.4vw), 2rem);
+}
+
+h3 {
+    font-size: clamp(1.3rem, calc(1.3rem + 0.3vw), 1.6rem);
+}
+
+h4 {
+    font-size: clamp(1.1rem, calc(1.1rem + 0.2vw), 1.3rem);
+}
+
+h5 {
+    font-size: clamp(1rem, calc(1rem + 0.1vw), 1.1rem);
+}
+
+h6 {
+    font-size: clamp(0.9rem, calc(0.9rem + 0.05vw), 1rem);
+}
+
+small {
+    font-size: 0.8rem;
+    /* Or within the acceptable range */
+}
+
+h1,
+.text-h1,
+h2,
+.text-h2,
+h3,
+.text-h3,
+h4,
+.text-h4,
+h5,
+.text-h5,
+h6,
+.text-h6 {
+    margin: 1rem 0.5rem 0.75rem 0.5rem;
+    letter-spacing: 0.1em;
+}
+
+p,
+.text-body1,
+.text-body2 {
+    margin: 0rem 0.5rem 1rem 0.5rem;
+}
+
 hr {
-    margin-top:20px;
-    margin-bottom:20px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     border-top-color: var(--text-color-opacity);
     border-left-color: var(--text-color-opacity);
     border-bottom-color: var(--background-color-opacity);
@@ -78,30 +127,36 @@ hr {
     font-weight: 100;
 }
 
-h1, .text-h1 {
+/* h1,
+.text-h1 {
     font-size: 3.2rem;
     line-height: 1.2;
 }
 
-h2, .text-h2 {
+h2,
+.text-h2 {
     font-size: 2.8rem;
 }
 
-h3, .text-h3 {
+h3,
+.text-h3 {
     font-size: 1.8rem;
 }
 
-h4, .text-h4 {
+h4,
+.text-h4 {
     font-size: 1.4rem;
 }
 
-h5, .text-h5 {
+h5,
+.text-h5 {
     font-size: 1.4rem;
 }
 
-h6, .text-h6 {
+h6,
+.text-h6 {
     font-size: 1.2rem;
-}
+} */
 
 .text-center {
     text-align: center;
@@ -110,9 +165,20 @@ h6, .text-h6 {
 .text-right {
     text-align: right;
 }
-.inline-block{
+
+.inline-block {
     display: inline-block;
 }
-small {
+
+/* small {
     font-size: 75%;
+} */
+
+ul {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+li {
+    margin-bottom: 0.75rem;
 }

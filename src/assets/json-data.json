@@ -1,32 +1,45 @@
 {
     "jobs_trajectory": [
         {
-            "job":"FullStack Web Developer",
-            "company":"Hoteligy",
-            "description":"Daily maintenance of legacy webApp in PHP with \"smarty\" mannaged template into ERP and Html/JQuery for frontend. Was necessary learn HereMapsApi and TraccarApi for new integration of tracking vehicles. ",
-            "date_start":"March 2023",
-            "date_end":"May 2023"
+            "job": "fullstack/Chief Technology Officer (CTO)",
+            "company": "Hoteligy",
+            "description": "Responsible for the design and implementation of the architecture in a social media network. Full stack development, task and time management. Server maintenance, Git, integrations and deployments.",
+            "date_start": "Febrary 2024",
+            "date_end": "Actually",
+            "tech_stack": [
+                {
+                    "name": "a"
+                }
+            ],
+            "sort_order": 1
         },
         {
-            "job":"FrontEnd Web Developer",
-            "company":"GF-tic",
-            "description":"I did craft webApps, ERP and CMS for Hotels and enterprise and even maintenance support and unit test.",
-            "date_start":"July 2022",
-            "date_end":"Genuary 2023"
+            "job": "FullStack Web Developer",
+            "company": "Hoteligy",
+            "description": "Daily maintenance of legacy webApp in PHP with \"smarty\" mannaged template into ERP and Html/JQuery for frontend. Was necessary learn HereMapsApi and TraccarApi for new integration of tracking vehicles. ",
+            "date_start": "March 2023",
+            "date_end": "May 2023"
         },
         {
-            "job":"FullStack Web Developer",
-            "company":"RefineriaWeb ",
-            "description":"I did develop, craft and deploy web Apps/CMS. besides, craft newsletters and email signs digital. Resolve users questions/issues and start/continue news projects were part of my day-to-day life ",
-            "date_start":"June 2018",
-            "date_end":"Novenber 2019"
+            "job": "FrontEnd Web Developer",
+            "company": "GF-tic",
+            "description": "I did craft webApps, ERP and CMS for Hotels and enterprise and even maintenance support and unit test.",
+            "date_start": "July 2022",
+            "date_end": "Genuary 2023"
         },
         {
-            "job":"FullStack Web Developer (practice)",
-            "company":"Boomeraling ",
-            "description":"Wordpress maintenance and aplying new styles for new webs/blogs",
-            "date_start":"October 2013",
-            "date_end":"Novenber 2013"
+            "job": "FullStack Web Developer",
+            "company": "RefineriaWeb ",
+            "description": "I did develop, craft and deploy web Apps/CMS. besides, craft newsletters and email signs digital. Resolve users questions/issues and start/continue news projects were part of my day-to-day life ",
+            "date_start": "June 2018",
+            "date_end": "Novenber 2019"
+        },
+        {
+            "job": "FullStack Web Developer (practice)",
+            "company": "Boomeraling ",
+            "description": "Wordpress maintenance and aplying new styles for new webs/blogs",
+            "date_start": "October 2013",
+            "date_end": "Novenber 2013"
         }
     ]
 }

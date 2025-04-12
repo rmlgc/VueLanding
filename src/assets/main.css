@@ -4,21 +4,24 @@
     margin: 0 auto;
 }
 
-header, footer
-.content-full {
+header,
+footer .content-full {
     max-width: 2900px;
 }
 
 .content {
     max-width: 1900px;
 }
+
 .content-full {
     max-width: 2900px;
     margin: 0px;
 }
-.m-auto{
-    margin:auto;
+
+.m-auto {
+    margin: auto;
 }
+
 .wrap-center {
     display: flex;
     justify-content: center;
@@ -27,7 +30,7 @@ header, footer
 }
 
 a.active,
-a { 
+a {
     color: var(--link-color);
     transition: all 0.1s cubic-bezier(.68, -0.55, .27, 1.55);
     cursor: pointer;
@@ -37,41 +40,40 @@ a {
     background-color: var(--text-color-opacity);
 
 }
+
 a:hover,
 a.active {
     background-color: var(--link-background-color-opacity);
 }
 
-.wrap-center {
+.wrap-center {}
 
-}
-
-.bg-glass-primary{
+.bg-glass-primary {
     background-color: var(--background-color-opacity);
     backdrop-filter: blur(7px);
 }
-.bg-glass-secondary{
+
+.bg-glass-secondary {
     background-color: var(--text-color-opacity);
     backdrop-filter: blur(7px);
 }
-.bg-glass-accent{
+
+.bg-glass-accent {
     background-color: var(--link-color-opacity);
     backdrop-filter: blur(7px);
 }
 
-.bg-glass{
+.bg-glass {
     backdrop-filter: blur(7px);
 }
 
-.bg-glass--slim{
+.bg-glass--slim {
     backdrop-filter: blur(2px);
 }
 
-.bg-glass--fat{
+.bg-glass--fat {
     backdrop-filter: blur(12px);
 }
-
-
 
 @media (hover: hover) {
     a:hover {
@@ -93,30 +95,38 @@ main,
 section {
     min-height: 90vh;
 }
+
 section {
-    padding: 32px 0px ;
-    margin-bottom: 32px;
-    margin-top: 32px;
+    padding: 1rem 0px;
+    margin-bottom: 1rem;
 }
-.section-card{
+
+.section-card {
     align-self: first baseline;
+    align-self: flex-start;
     flex: 1 0 100%;
     position: relative;
     top: 0;
     width: 100%;
 }
 
-.main-content{
+.main-content {
     padding-left: 0px;
     max-width: 800px;
 }
+
 .simplebar-scrollbar::before {
     background-image: linear-gradient(-131deg, rgb(231, 176, 43) 0%, rgb(193, 62, 81) 100%);
 }
-@media only screen and (min-width:820px){
-    .section-card{
-        position: sticky;
+
+@media only screen and (min-width:820px) {
+    .section-card {
         width: 100%;
         flex: 1 0 50%;
+    }
+
+    .section-card--sticky {
+        position: sticky;
+
     }
 }
