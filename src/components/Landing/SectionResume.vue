@@ -19,17 +19,17 @@ const jsonData = jsondata;
         </div>
       </div>
     </div>
-
-    <h3 class="title-tag">Academic grade</h3>
-    <ul>
-      <li>
-        FP grado superior DAW (Desarrollo de Aplicaciones Web)
-      </li>
-      <li>
-        FP grado medio SMR (Sistemas Microinformaticos y Redes)
-      </li>
-    </ul>
-
+    <div class="academic-timeline">
+      <h3 class="title-tag">Academic grade</h3>
+      <ul class="academic-timeline-content">
+        <li>
+          FP grado superior DAW (Desarrollo de Aplicaciones Web)
+        </li>
+        <li>
+          FP grado medio SMR (Sistemas Microinformaticos y Redes)
+        </li>
+      </ul>
+    </div>
   </section>
 </template>
 <style scoped lang="scss">
@@ -62,6 +62,18 @@ const jsonData = jsondata;
     font-size: 0.75rem;
 
     &--right {}
+  }
+}
+
+.academic-timeline {
+  padding: 1rem 0px;
+
+  &-content {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: row;
+    gap: 2rem;
   }
 }
 </style>

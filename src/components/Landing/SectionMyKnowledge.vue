@@ -4,87 +4,224 @@ const jsonData = jsondata;
 </script>
 <template>
   <section>
+    <div class="title-tag">
+      <h3 class="text-body1">
+        Dominio Tecnológico
+      </h3>
+      <p class="text-body2">
+        Conocimientos Técnicos
+      </p>
+    </div>
     <div class="resume-content">
       <div id="resumeFrontend" class="resume-item resume-item--frontend">
-        <h3>FrontEnd</h3>
-        <p class="text-body2">my knowledge:</p>
+        <h4 class="text-body1">🪄 Frontend</h4>
+        <small class="text-body2">El Arte de la Ilusión Visual</small>
         <ol>
           <li>
-            Html
-          </li>
-          <li>
-            Css
+            HTML & CSS
             <ul>
               <li>
-                scss
+                <span>HTML5</span>
               </li>
               <li>
-                sass
+                <span>CSS3</span>
               </li>
               <li>
-                PostCSS
+                <span>SCSS</span>
+                <span>SASS</span>
+                <span>PostCSS</span>
+                <span>LESS</span>
               </li>
               <li>
-                less
+                <span>Tailwind</span>
+                <span>Bootstrap</span>
+                <span>Material UI</span>
               </li>
             </ul>
           </li>
           <li>
-            Javascript
+            JavaScript & Frameworks
             <ul>
               <li>
-                Vue3
+                <span>Vanilla JS</span>
               </li>
               <li>
-                Angular
+                <span>Vue</span>
+                <span>React</span>
+                <span>Angular</span>
+                <span>Svelte</span>
+                <span>Alpine</span>
+              </li>
+            </ul>
+          </li>
+          <li>
+            Diseño
+            <ul>
+              <li>
+                <span>Figma</span>
+                <span>Adobe XD</span>
+                <span>Storybook</span>
               </li>
               <li>
-                React
-              </li>
-              <li>
-                Svelt
+                <span>Animaciones</span>
+                <span>Canvas</span>
+                <span>SVG</span>
               </li>
             </ul>
           </li>
         </ol>
       </div>
       <div class="resume-item resume-item--backend">
-        <h3>Backend</h3>
-        <p class="text-body2">my knowledge</p>
+        <h4 class="text-body1">🧙‍♂️ Backend</h4>
+        <small class="text-body2">El Dominio de las Profundidades</small>
         <ol>
           <li>
-            php
+            Lenguajes
             <ul>
               <li>
-                Framework Laravel
+                Node.js, Deno
               </li>
               <li>
-                Framework CakePhP
-              </li>
-              <li>
-                Smarty Template
+                PHP, Python, Java
               </li>
             </ul>
           </li>
           <li>
-            Javascript
+            Frameworks
             <ul>
               <li>
-                NodeJS
-              </li>
-              <li>
-                Deno
+                Laravel, CakePHP, Express, NestJS
               </li>
             </ul>
           </li>
           <li>
-            others
+            APIs y Plantillas
             <ul>
               <li>
-                python
+                REST, GraphQL, Smarty
+              </li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+      <div class="resume-item resume-item--others">
+        <h4>📚 Otros Conjuros</h4>
+        <small class="text-body2">Saberes Complementarios</small>
+        <ol>
+          <li>
+            Bases de Datos
+            <ul>
+              <li>
+                MySQL, PostgreSQL, MongoDB
               </li>
               <li>
-                Java
+                Redis, Prisma
+              </li>
+            </ul>
+          </li>
+          <li>
+            Testing
+            <ul>
+              <li>
+                Jest, Mocha, Cypress
+              </li>
+            </ul>
+          </li>
+          <li>
+            Herramientas
+            <ul>
+              <li>
+                Git, SEO, Accesibilidad, PWA
+              </li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+      <div class="resume-item resume-item--others">
+        <h4>🧠 Magia del Archimago</h4>
+        <small class="text-body2">Conocimientos como CTO</small>
+        <ol>
+          <li>
+            DevOps & Infraestructura
+            <ul>
+              <li>
+                Plesk, CloudPanel, cPanel
+              </li>
+              <li>
+                Docker, Kubernetes
+              </li>
+              <li>
+                NGINX, Certbot, AWS
+              </li>
+            </ul>
+          </li>
+          <li>
+            Arquitectura
+            <ul>
+              <li>
+                Microservicios, Monolitos, Serverless
+              </li>
+              <li>
+                CDN, Balanceadores
+              </li>
+            </ul>
+          </li>
+          <li>
+            Gestión
+            <ul>
+              <li>
+                Agile, Scrum
+              </li>
+              <li>
+                Documentación, Liderazgo
+              </li>
+              <li>
+                Comunicación técnica
+              </li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+      <div class="resume-item resume-item--others">
+        <h4>📜 Artes del Liderazgo & Comunicación</h4>
+        <small class="text-body2">Comunicación & Gestión</small>
+        <ol>
+          <li>
+            Herramientas de Comunicación
+            <ul>
+              <li>
+                Slack, Discord, etc.
+              </li>
+              <li>
+                Docker, Kubernetes
+              </li>
+              <li>
+                NGINX, Certbot, AWS
+              </li>
+            </ul>
+          </li>
+          <li>
+            Gestión de Proyectos
+            <ul>
+              <li>
+                Jira, Trello, etc.
+              </li>
+              <li>
+                CDN, Balanceadores
+              </li>
+            </ul>
+          </li>
+          <li>
+            Flujos y Metodologías
+            <ul>
+              <li>
+                Agile, Scrum, Kanban
+              </li>
+              <li>
+                Documentación, Liderazgo
+              </li>
+              <li>
+                Comunicación técnica
               </li>
             </ul>
           </li>
@@ -121,5 +258,15 @@ const jsonData = jsondata;
 
     &--right {}
   }
+}
+
+.resume-content {
+  display: flex;
+  gap: 2rem;
+  flex-flow: row;
+  flex-wrap: nowrap;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
 }
 </style>
