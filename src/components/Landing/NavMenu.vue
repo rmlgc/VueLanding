@@ -76,7 +76,7 @@ const openMenu = () => {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 2rem;
   }
 
   &-socials {
@@ -84,7 +84,7 @@ const openMenu = () => {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 2rem;
   }
 }
 
@@ -97,7 +97,7 @@ const openMenu = () => {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 2rem;
 
   &-header {
     overflow: hidden;

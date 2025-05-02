@@ -99,7 +99,7 @@ const openAccordion = (title: string, event: Event) => {
     color: var(--background-color);
     justify-content: space-between;
     align-items: center;
-    gap: 10px;
+    gap: 2rem;
     padding: 0.5rem 1rem;
     padding-left: 20px;
     padding-right: 20px;

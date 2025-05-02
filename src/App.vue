@@ -91,8 +91,8 @@ const menuLinks = [
   <main v-show="pageIsLoad" class=" ">
     <SectionPortfolio id="elPortfolio" ref="elPortfolio" class="content section-card "></SectionPortfolio>
   </main>
-  <SectionContact v-show="pageIsLoad" id="elContact" ref="elContact"
-    class="content section-card main-content wrap-center"></SectionContact>
+  <SectionContact v-show="pageIsLoad" id="elContact" ref="elContact" class="content main-content wrap-center">
+  </SectionContact>
   <footer>
     <a href="https://linktr.ee/rommelgc" target="_blank">Rommel Garcia Coronado</a>
   </footer>
