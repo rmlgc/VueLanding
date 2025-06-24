@@ -3,7 +3,6 @@
 </script>
 <template>
   <section>
-    <h2 class="text-h3"> Portfolio: </h2>
     <header class="title-tag" role="banner">
       <h1 id="knowledge-title" class="text-body1">
         Portfolio

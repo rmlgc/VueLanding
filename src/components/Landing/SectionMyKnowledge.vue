@@ -303,25 +303,6 @@ section {
 	background: var(--background-color);
 	color: var(--text-color);
 
-	// .title-tag {
-	// 	// text-align: center;
-	// 	margin-bottom: 2rem;
-	// 	padding: 1rem 0;
-	// 	// --background-color
-
-	// 	h1 {
-	// 		margin-bottom: 0.5rem;
-	// 		font-size: 2rem;
-	// 		line-height: 1.2;
-	// 		//   color: var(--text-color);
-	// 	}
-
-	// 	p {
-	// 		// color: var(--text-color-opacity);
-	// 		font-size: 1.1rem;
-	// 	}
-	// }
-
 	.resume-content {
 		margin-top: 1rem;
 		margin-bottom: 1rem;
@@ -457,11 +438,6 @@ section {
 	@media (max-width: 768px) {
 		.resume-content {
 			grid-template-columns: 1fr;
-		}
-
-		.title-tag {
-			margin-bottom: 1.5rem;
-			padding: 1rem 0;
 		}
 
 		.resume-item {
