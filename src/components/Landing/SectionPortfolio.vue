@@ -4,6 +4,15 @@
 <template>
   <section>
     <h2 class="text-h3"> Portfolio: </h2>
+    <header class="title-tag" role="banner">
+      <h1 id="knowledge-title" class="text-body1">
+        Portfolio
+      </h1>
+      <p class="text-body2" aria-hidden="true">
+        The highlights reel.
+        <!-- A peek at what I'm most proud of. -->
+      </p>
+    </header>
     <div class="portfolio-box">
       <div class="portfolio-item">
         <h3>Amigaria WebApp</h3>
@@ -29,14 +38,14 @@
     display: flex;
     gap: 2rem;
     flex-wrap: wrap;
-
+    padding: 1rem 0px;
   }
 
   &-item {
     flex: 1 1 calc(50% - 2rem);
     position: sticky;
-    min-height: 320px; 
-    min-width: 320px; 
+    min-height: 320px;
+    min-width: 320px;
     border: 1px solid var(--text-color-opacity);
     box-shadow: 1px 1px 1px 1px var(--text-color-opacity);
     background-color: var(--text-color-opacity);

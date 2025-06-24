@@ -1,36 +1,36 @@
 <script setup lang="ts">
-import jsondata from '@/assets/json-data.json'
-const jsonData = jsondata;
+	import jsondata from '@/assets/json-data.json'
+	const jsonData = jsondata;
 </script>
 <template>
-  <section>
-    <div class="trajectory-timeline">
-      <h2 class="title-tag">Jobs trajectory</h2>
-      <div v-for="trajectory in jsonData.jobs_trajectory" :key="trajectory.company" class="trajectory-timeline-job">
-        <div class="trajectory-timeline-date">
-          <span>{{ trajectory.date_start }}</span>
-          <span>{{ trajectory.date_end }}</span>
-        </div>
-        <div class="trajectory-timeline-content">
-          <h4>{{ trajectory.job }} - <small>{{ trajectory.company }}</small></h4>
-          <p data-tecnologiesUsed="Tecnologies like PHP/smarty, Html/Jquery, HereMapsApi, TraccarApi ">
-            {{ trajectory.description }}
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="academic-timeline">
-      <h3 class="title-tag">Academic grade</h3>
-      <ul class="academic-timeline-content">
-        <li>
-          FP grado superior DAW (Desarrollo de Aplicaciones Web)
-        </li>
-        <li>
-          FP grado medio SMR (Sistemas Microinformaticos y Redes)
-        </li>
-      </ul>
-    </div>
-  </section>
+	<section>
+		<div class="trajectory-timeline">
+			<h2 class="title-tag">Jobs trajectory</h2>
+			<div v-for="trajectory in jsonData.jobs_trajectory" :key="trajectory.company" class="trajectory-timeline-job">
+				<div class="trajectory-timeline-date">
+					<span>{{ trajectory.date_start }}</span>
+					<span>{{ trajectory.date_end }}</span>
+				</div>
+				<div class="trajectory-timeline-content">
+					<h4>{{ trajectory.job }} - <small>{{ trajectory.company }}</small></h4>
+					<p data-tecnologiesUsed="Tecnologies like PHP/smarty, Html/Jquery, HereMapsApi, TraccarApi ">
+						{{ trajectory.description }}
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="academic-timeline">
+			<h3 class="title-tag">Academic grade</h3>
+			<ul class="academic-timeline-content">
+				<li>
+					FP grado superior DAW (Desarrollo de Aplicaciones Web)
+				</li>
+				<li>
+					FP grado medio SMR (Sistemas Microinformaticos y Redes)
+				</li>
+			</ul>
+		</div>
+	</section>
 </template>
 <style scoped lang="scss">
 .trajectory-timeline {

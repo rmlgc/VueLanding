@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {ref} from 'vue'
+import { ref } from 'vue'
 
 const open = ref(false)
 </script>
@@ -7,17 +7,17 @@ const open = ref(false)
   <section class="wrap-center wrap-wip" @click="open = !open">
     <span class="material-symbols-outlined">touch_app</span>
     <h1 :class="`text--interact text-center ${open ? 'open' : ''}`">
-      <span :class="`${ open ? 'inline-block' : '' }`">
+      <span :class="`${open ? 'inline-block' : ''}`">
         <span class="text--wip text-increase">W</span>
         <span class="text--wip text-reduces">ork&nbsp;</span>
       </span>
-      <span :class="`${ open ? 'inline-block' : '' }`">
-      <span class="text--wip text-increase">I</span>
-      <span class="text--wip text-reduces">n&nbsp;</span>
+      <span :class="`${open ? 'inline-block' : ''}`">
+        <span class="text--wip text-increase">I</span>
+        <span class="text--wip text-reduces">n&nbsp;</span>
       </span>
-      <span :class="`${ open ? 'inline-block' : '' }`">
-      <span class="text--wip text-increase">P</span>
-      <span class="text--wip text-reduces">rogress</span>
+      <span :class="`${open ? 'inline-block' : ''}`">
+        <span class="text--wip text-increase">P</span>
+        <span class="text--wip text-reduces">rogress</span>
       </span>
     </h1>
     <span class="material-symbols-outlined">touch_app</span>
@@ -33,9 +33,11 @@ $textBorderColorOpen: var(--text-color);
 
 @function makelongshadow($deep, $color, $borderColor) {
   $val: 0px 0px 3px $borderColor;
+
   @for $i from 1 through ($deep - 1) {
     $val: #{$val}, #{$i}px #{$i}px #{$color};
   }
+
   $val: #{$val}, #{$deep}px #{$deep}px 3px $borderColor;
   @return $val;
 }
@@ -59,7 +61,7 @@ $textBorderColorOpen: var(--text-color);
   &-increase {
     font-size: 7.5rem;
     transition: font-size 1s cubic-bezier(.68, -0.55, .27, 1.55),
-    text-shadow 1.5s cubic-bezier(.68, -0.55, .27, 1.55);
+      text-shadow 1.5s cubic-bezier(.68, -0.55, .27, 1.55);
     font-weight: 900;
     animation: firstAnimationIncrease 3s cubic-bezier(.68, -0.55, .27, 1.55);
 
@@ -73,7 +75,7 @@ $textBorderColorOpen: var(--text-color);
   &-reduces {
     font-size: 0;
     transition: font-size 1s cubic-bezier(.68, -0.55, .27, 1.55),
-    text-shadow 1.5s cubic-bezier(.68, -0.55, .27, 1.55);
+      text-shadow 1.5s cubic-bezier(.68, -0.55, .27, 1.55);
     font-weight: 900;
     animation: firstAnimationReduces 2.5s cubic-bezier(.68, -0.55, .27, 1.55);
 
@@ -94,7 +96,7 @@ $textBorderColorOpen: var(--text-color);
 }
 
 .wrap-wip {
-  min-height: 60vh;
+  min-height: 90vh;
   cursor: pointer;
 }
 
@@ -102,12 +104,15 @@ $textBorderColorOpen: var(--text-color);
   0% {
     font-size: 4.7rem;
   }
+
   40% {
     font-size: 6rem;
   }
+
   80% {
     font-size: 7rem;
   }
+
   100% {
     font-size: 7.5rem;
   }
@@ -117,12 +122,15 @@ $textBorderColorOpen: var(--text-color);
   0% {
     font-size: 3.5rem;
   }
+
   40% {
     font-size: 3rem;
   }
+
   80% {
     font-size: 1rem;
   }
+
   100% {
     font-size: -2rem;
   }

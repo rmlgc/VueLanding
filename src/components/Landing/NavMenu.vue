@@ -1,59 +1,69 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import Simplebar from 'simplebar-vue';
+import { ref, computed } from 'vue'
 
-const hamburguerSize = ref(40 + 'px')
-const socialLinkTranslateY = ref(100 + 'px')
+const hamburguerSizePx = ref(40)
+const socialLinkTranslateYPx = ref(100)
 
-interface menuLinks {
+const hamburguerSize = computed(() => `${hamburguerSizePx.value}px`)
+const socialLinkTranslateY = computed(() => `${socialLinkTranslateYPx.value}px`)
+
+interface MenuLinkItem {
   title: string
   href: string
-  scrollTo?: boolean
-  icon?: string
 }
 
 const props = defineProps({
-  menuLinks: Array<menuLinks>
+  menuLinks: {
+    type: Array as () => MenuLinkItem[],
+    default: () => []
+  }
 })
 
-const scrollTo = (elementId: string, event: Event) => {
-  const bodyRect = document.body.getBoundingClientRect();
-  if (elementId == null) return
-  const elementToScroll = document.getElementById(elementId);
-  if (elementToScroll == null) return
-  const elemRect = elementToScroll.getBoundingClientRect();
-  const offset = elemRect.top - bodyRect.top;
 
-  window.scrollTo({
-    top: offset,
-    behavior: "smooth",
-  })
-  event.preventDefault();
-  return false;
+const isMenuOpen = ref(false)
+
+
+const scrollToElement = (elementId: string, event: Event) => {
+
+  if (elementId.startsWith('#')) {
+    event.preventDefault()
+    const targetId = elementId.substring(1)
+    const elementToScroll = document.getElementById(targetId)
+
+    if (elementToScroll) {
+      const elementRect = elementToScroll.getBoundingClientRect()
+      const elementPosition = elementRect.top + window.pageYOffset
+      const offsetPosition = elementPosition - 100
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      })
+    }
+  }
+
 }
 
-const openMenu = () => {
-  const currentEl = document.getElementById('headerMenuBtn');
-  const hedaerEl = document.getElementById('headerMenu');
-  if (currentEl == null) return
-  if (hedaerEl == null) return
-  if (currentEl.classList == null) return
-  hedaerEl.classList.toggle("open");
-  currentEl.classList.toggle("open");
+
+const toggleMenu = () => {
+  isMenuOpen.value = !isMenuOpen.value
 }
 </script>
+
 <template>
-  <header id="headerMenu">
-    <a v-for="link in props.menuLinks" :href="link.href" @click="scrollTo(link.href, $event); openMenu();"
-      :key="link.title">{{ link.title }}</a>
+  <header id="headerMenu" :class="{ 'open': isMenuOpen }">
+    <a v-for="link in props.menuLinks" :href="link.href" @click="scrollToElement(link.href, $event); toggleMenu();"
+      :key="link.title">
+      {{ link.title }}
+    </a>
   </header>
-  <div class="social-header header-btns">
-    <divi id="headerMenuBtn" class="btn-hamburguer" @click="openMenu"></divi>
+  <div class="header social-header header-btns">
+    <div id="headerMenuBtn" class="btn-hamburguer" :class="{ 'open': isMenuOpen }" @click="toggleMenu"></div>
     <div class="header-socials">
-      <a href="about:blank" class="social-link" target="_blank" rel="noopener noreferrer">
-        <img class="social-icon" src="https://linktr.ee/favicon.ico">
+      <a href="https://linktr.ee/" class="social-link" target="_blank" rel="noopener noreferrer">
+        <img class="social-icon" src="https://linktr.ee/favicon.ico" alt="Linktree Icon">
       </a>
-      <a href="about:blank" class="social-link" target="_blank" rel="noopener noreferrer">
+      <a href="https://github.com/" class="social-link" target="_blank" rel="noopener noreferrer">
         <svg aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32" data-view-component="true"
           class="octicon octicon-mark-github social-icon">
           <path
@@ -64,10 +74,11 @@ const openMenu = () => {
     </div>
   </div>
 </template>
+
 <style scoped lang="scss">
 .header {
   &-btns {
-    width: calc(v-bind(hamburguerSize));
+    width: v-bind(hamburguerSize);
     z-index: 1;
     position: fixed;
     top: calc(v-bind(hamburguerSize) + 2dvh);
@@ -85,176 +96,153 @@ const openMenu = () => {
     justify-content: center;
     align-items: center;
     gap: 2rem;
+
+    .social-link {
+      cursor: pointer;
+      z-index: 1;
+      top: 0px;
+      border: 2px solid var(--text-color);
+      box-shadow: inset 0px 0px 1px 4px var(--background-color);
+      border-radius: 50px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0px;
+      margin: 0px;
+      transition: all .75s ease-in-out;
+
+      &:hover {
+        border: 2px solid var(--link-background-color-opacity);
+        box-shadow: inset 0px 0px 1px 4px var(--text-color-opacity);
+      }
+    }
+
+    .social-icon {
+      height: 20px;
+      object-fit: contain;
+
+    }
   }
-}
 
-.social {
-  z-index: 1;
-  position: relative;
-  top: calc(v-bind(hamburguerSize) + 2dvh);
-  left: calc(95dvw - v-bind(hamburguerSize));
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-
-  &-header {
-    overflow: hidden;
-  }
-
-  &-link {
-    cursor: pointer;
+  header {
+    position: fixed;
+    top: 0%;
+    left: -200%;
+    background-color: var(--text-color-opacity);
     z-index: 1;
-    top: 0px;
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-wrap: wrap;
+    padding: 32px 12px;
+    width: calc(100% - 2 * v-bind(hamburguerSize));
+    transition: left .75s ease-in-out;
+
+    & a {
+      isolation: isolate;
+      mix-blend-mode: light;
+      display: block;
+      padding: 10px 15px;
+      color: var(--link-color, white);
+      text-decoration: none;
+      font-size: 1.2rem;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+    }
+
+    &.open {
+      left: 0%;
+    }
+  }
+
+
+  .btn-hamburguer {
+    cursor: pointer;
+    width: v-bind(hamburguerSize);
+    height: v-bind(hamburguerSize);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
     border: 2px solid var(--text-color);
     box-shadow: inset 0px 0px 1px 4px var(--background-color);
-    border-radius: 50px;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0px;
-    margin: 0px;
     transition: all .75s ease-in-out;
 
-    &:hover {
-      border: 2px solid var(--link-background-color-opacity);
-      box-shadow: inset 0px 0px 1px 4px var(--text-color-opacity);
+    &::before,
+    &::after {
+      content: "";
+      height: calc(v-bind(hamburguerSize) / 7);
+      width: 70%;
+      background-color: var(--text-color);
+      position: absolute;
+      transition: transform .75s ease-in-out,
+        box-shadow .75s .5s ease-in-out,
+        margin-top .5s .75s ease-in-out,
+        opacity .25s .15s ease-in-out;
     }
-  }
 
-  &-icon {
-    height: 20px;
-    object-fit: contain;
-    // filter: brightness(0);
-  }
-}
-
-header {
-  position: fixed;
-  top: 0%;
-  left: -200%;
-  background-color: var(--text-color-opacity);
-  z-index: 1;
-  backdrop-filter: blur(5px);
-  display: flex;
-  flex-wrap: wrap;
-  padding: 32px 12px;
-  width: calc(100% - 2 * v-bind(hamburguerSize));
-  transition: left .75s ease-in-out;
-
-  & a {
-    isolation: isolate;
-    mix-blend-mode: light;
-  }
-
-  &.open {
-    left: 0%;
-  }
-}
-
-.btn-hamburguer {
-  cursor: pointer;
-  display: block;
-  border: solid 1px var(--text-color-opacity);
-  height: v-bind(hamburguerSize);
-  width: v-bind(hamburguerSize);
-  border-radius: 8px;
-  box-shadow: 1px 1px 1px 1px var(--text-color-opacity), inset 0px 0px 0px 0px var(--text-color-opacity);
-  transition: box-shadow .15s ease-in-out;
-  background-color: var(--text-color-opacity);
-
-  &::before,
-  &::after {
-    content: "";
-    height: calc(v-bind(hamburguerSize) / 7);
-    width: 70%;
-    display: block;
-    background-color: var(--link-color);
-    margin: auto;
-    margin-top: calc(v-bind(hamburguerSize) / 7);
-    border-radius: 8px;
-    transition:
-      transform .75s ease-in-out,
-      box-shadow .75s .5s ease-in-out,
-      margin-top .5s .75s ease-in-out,
-      opacity .25s .15s ease-in-out;
-  }
-
-  &::after {
-    margin-top: calc((-1* v-bind(hamburguerSize) / 7));
-    box-shadow: 0px calc(2*(v-bind(hamburguerSize) / 7)) 1px 0px var(--link-color),
-      0px calc(2*(-1* v-bind(hamburguerSize) / 7)) 1px 0px var(--link-color);
-  }
-
-  &::before {
-    opacity: 0;
-    margin-top: calc(3*(v-bind(hamburguerSize) / 7));
-    transform: rotate(0deg);
-  }
-
-  &.open {
-    box-shadow: 0px 0px 0px 0px var(--text-color-opacity), inset 1px 1px 1px 1px var(--text-color-opacity);
-    background-color: var(--text-color);
 
     &::before {
-      opacity: 1;
-      transform: rotate(45deg);
+      transform: translateY(calc(-1 * v-bind(hamburguerSize) / 4));
     }
+
+
+    &::before {
+      box-shadow: 0px 10px 0px 0px var(--text-color);
+    }
+
 
     &::after {
-      transform: rotate(-45deg) translate(calc(v-bind(hamburguerSize)/10), calc(v-bind(hamburguerSize)/-10));
-      margin-top: 0px;
-      box-shadow: 0px 0px 0px 0px var(--link-color);
+      transform: translateY(calc(v-bind(hamburguerSize) / 4));
     }
 
-    &::after,
-    &::before {
-      background-color: var(--link-background-color-opacity);
-      transition:
-        transform .5s .75s ease-in-out,
-        box-shadow .5s ease-in-out,
-        margin-top .5s .5s ease-in-out,
-        background-color .5s 1s ease-in-out,
-        opacity .5s .25s ease-in-out;
+    &.open {
+      box-shadow: 0px 0px 0px 0px var(--text-color-opacity), inset 1px 1px 1px 1px var(--text-color-opacity);
+      background-color: var(--text-color);
+
+      &::before {
+        opacity: 1;
+        transform: rotate(45deg);
+        margin-top: 0;
+      }
+
+      &::after {
+        transform: rotate(-45deg);
+        margin-top: 0;
+      }
+
+      &::before,
+      &::after {
+        background-color: var(--link-background-color-opacity);
+        transition: transform .5s .75s ease-in-out,
+          background-color .5s 1s ease-in-out;
+      }
     }
   }
-}
 
-.social-link {
-  opacity: 0;
-  transition: opacity 0.75s 0s ease 0s,
-    transform 1.75s ease 0s;
-  -webkit-transform: translateY(calc(-100 * v-bind(socialLinkTranslateY)));
-  transform: translateY(calc(-100 * v-bind(socialLinkTranslateY)));
-}
+  .header-socials {
+    .social-link {
+      opacity: 0;
+      transform: translateY(v-bind(socialLinkTranslateY));
 
-.social-link:nth-child(1) {
-  -webkit-transform: translateY(calc(-1 * v-bind(socialLinkTranslateY)));
-  transform: translateY(calc(-1 * v-bind(socialLinkTranslateY)));
-  // transition-duration: 1s;
-  // transition-delay: 0s;
 
-}
+      @for $i from 1 through 2 {
 
-.social-link:nth-child(2) {
-  -webkit-transform: translateY(calc(-2 * v-bind(socialLinkTranslateY)));
-  transform: translateY(calc(-2 * v-bind(socialLinkTranslateY)));
-  // transition-duration: 1s;
-  // transition-delay: 0s;
-}
+        &:nth-child(#{$i}) {
+          transition: opacity 0.75s (($i * 0.1) + 0s) ease,
+            transform 1.75s (($i * 0.1) + 0s) ease;
+        }
+      }
+    }
+  }
 
-.btn-hamburguer.open~.header-socials {
-  .social-link {
-    -webkit-transform: translateY(0px);
+  .btn-hamburguer.open~.header-socials .social-link {
     transform: translateY(0px);
     opacity: 1;
   }
-
-  .social-link:nth-child(1) {}
-
-  .social-link:nth-child(2) {}
 }
 </style>

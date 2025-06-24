@@ -1,4 +1,25 @@
 {
   "extends": "./tsconfig.json",
-  "include": ["src/**/*.ts", "src/**/*.js", "test/**/*.ts"]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.js",
+    "src/**/*.vue",
+    "test/**/*.ts",
+    "e2e/**/*.ts",
+    "playwright.config.ts",
+    "vite.config.ts",
+    "env.d.ts",
+    "*.js",
+    "*.vue"
+  ],
+  "exclude": [
+    "dist/**/*",
+    "node_modules/**/*"
+  ],
+  "compilerOptions": {
+    "composite": false,
+    "strict": false,
+    "noEmit": true,
+    "types": ["vite/client"]
+  }
 }
