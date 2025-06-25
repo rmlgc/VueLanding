@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Redireccionando...</title>
+    <script type="text/javascript">
+        sessionStorage.redirect = location.href;
+        // Redirige a la página principal (index.html)
+        // Sustituye '/VueLanding/' por el nombre de tu repositorio si es un project page
+        // Si es un user/organization page (ej. rmlgc.github.io), usa '/'
+        location.replace(location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/VueLanding/' + '#/' + location.pathname.slice(1) + location.search);
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
