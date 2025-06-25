@@ -327,7 +327,6 @@ section {
 			border-radius: 8px;
 			position: relative;
 			overflow: hidden;
-			// max-width: 600px;
 			width: 100%;
 			padding: 1.5rem;
 			background: var(--background-color);

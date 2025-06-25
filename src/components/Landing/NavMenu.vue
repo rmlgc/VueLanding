@@ -10,6 +10,9 @@ const socialLinkTranslateY = computed(() => `${socialLinkTranslateYPx.value}px`)
 interface MenuLinkItem {
   title: string
   href: string
+  scrollTo?: {
+    id: string
+  }
 }
 
 const props = defineProps({
@@ -22,6 +25,33 @@ const props = defineProps({
 
 const isMenuOpen = ref(false)
 
+
+const handleMenuLinkClick = (link: MenuLinkItem, event: Event) => {
+  if (link.scrollTo && link.scrollTo.id) {
+    event.preventDefault();
+    performScroll(link.scrollTo.id, true, link.href);
+  }
+  toggleMenu();
+};
+
+const performScroll = (targetDomId: string, updateHash: boolean = true, hrefSlug: string = '') => {
+  const elementToScroll = document.getElementById(targetDomId);
+  if (elementToScroll) {
+    const elementRect = elementToScroll.getBoundingClientRect();
+    const elementPosition = elementRect.top + window.pageYOffset;
+    const offsetPosition = elementPosition - 100;
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
+
+    if (updateHash && hrefSlug) {
+      history.pushState(null, '', `#${hrefSlug}`);
+    }
+  } else {
+    console.warn(`Element with ID '${targetDomId}' not found for scrolling.`);
+  }
+};
 
 const scrollToElement = (elementId: string, event: Event) => {
 
@@ -41,41 +71,89 @@ const scrollToElement = (elementId: string, event: Event) => {
       })
     }
   }
-
+  return false;
 }
 
 
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value
+  return false;
 }
+
+const externalScrollByHref = (hrefSlug: string) => {
+  const foundLink = props.menuLinks.find(link => link.href === hrefSlug && link.scrollTo);
+  if (foundLink && foundLink.scrollTo) {
+    performScroll(foundLink.scrollTo.id, false);
+  } else {
+    console.warn(`No scrollable link found for href slug: '${hrefSlug}'`);
+  }
+};
+
+defineExpose({
+  externalScrollByHref
+});
 </script>
 
 <template>
-  <header id="headerMenu" :class="{ 'open': isMenuOpen }">
-    <a v-for="link in props.menuLinks" :href="link.href" @click="scrollToElement(link.href, $event); toggleMenu();"
-      :key="link.title">
-      {{ link.title }}
-    </a>
-  </header>
-  <div class="header social-header header-btns">
-    <div id="headerMenuBtn" class="btn-hamburguer" :class="{ 'open': isMenuOpen }" @click="toggleMenu"></div>
-    <div class="header-socials">
-      <a href="https://linktr.ee/" class="social-link" target="_blank" rel="noopener noreferrer">
-        <img class="social-icon" src="https://linktr.ee/favicon.ico" alt="Linktree Icon">
+  <div>
+    <header id="headerMenu" :class="{ 'open': isMenuOpen }">
+      <a v-for="link in props.menuLinks" :href="link.scrollTo ? `#${link.href}` : link.href"
+        @click="handleMenuLinkClick(link, $event)" :key="link.title">
+        {{ link.title }}
       </a>
-      <a href="https://github.com/" class="social-link" target="_blank" rel="noopener noreferrer">
-        <svg aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32" data-view-component="true"
-          class="octicon octicon-mark-github social-icon">
-          <path
-            d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z">
-          </path>
-        </svg>
-      </a>
+    </header>
+    <div class="header social-header header-btns">
+      <div id="headerMenuBtn" class="btn-hamburguer" :class="{ 'open': isMenuOpen }" @click="toggleMenu"></div>
+      <div class="header-socials">
+        <a href="https://linktr.ee/" class="social-link" target="_blank" rel="noopener noreferrer">
+          <img class="social-icon" src="https://linktr.ee/favicon.ico" alt="Linktree Icon">
+        </a>
+        <a href="https://github.com/" class="social-link" target="_blank" rel="noopener noreferrer">
+          <svg aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32" data-view-component="true"
+            class="octicon octicon-mark-github social-icon">
+            <path
+              d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z">
+            </path>
+          </svg>
+        </a>
+      </div>
     </div>
   </div>
 </template>
 
 <style scoped lang="scss">
+header {
+  position: fixed;
+  top: 0%;
+  left: -200%;
+  background-color: var(--text-color-opacity);
+  z-index: 1;
+  backdrop-filter: blur(5px);
+  display: flex;
+  flex-wrap: wrap;
+  padding: 32px 12px;
+  width: calc(100% - 2 * v-bind(hamburguerSize));
+  transition: left .75s ease-in-out;
+
+  & a {
+    isolation: isolate;
+    mix-blend-mode: light;
+    display: block;
+    padding: 10px 15px;
+    color: var(--link-color, white);
+    text-decoration: none;
+    font-size: 1.2rem;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  &.open {
+    left: 0%;
+  }
+}
+
 .header {
   &-btns {
     width: v-bind(hamburguerSize);
@@ -126,37 +204,7 @@ const toggleMenu = () => {
     }
   }
 
-  header {
-    position: fixed;
-    top: 0%;
-    left: -200%;
-    background-color: var(--text-color-opacity);
-    z-index: 1;
-    backdrop-filter: blur(5px);
-    display: flex;
-    flex-wrap: wrap;
-    padding: 32px 12px;
-    width: calc(100% - 2 * v-bind(hamburguerSize));
-    transition: left .75s ease-in-out;
 
-    & a {
-      isolation: isolate;
-      mix-blend-mode: light;
-      display: block;
-      padding: 10px 15px;
-      color: var(--link-color, white);
-      text-decoration: none;
-      font-size: 1.2rem;
-
-      &:hover {
-        background-color: rgba(255, 255, 255, 0.1);
-      }
-    }
-
-    &.open {
-      left: 0%;
-    }
-  }
 
 
   .btn-hamburguer {

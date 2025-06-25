@@ -14,11 +14,54 @@ import SectionContact from '@/components/Landing/SectionContact.vue'
 
 const pageIsLoad = ref(false)
 
+interface MenuLinkItem {
+	title: string;
+	href: string;
+	scrollTo?: {
+		id: string;
+	};
+}
+const menuLinks: MenuLinkItem[] = [
+	{
+		title: 'About Me',
+		href: 'about-me',
+		scrollTo: {
+			id: 'elAboutMe',
+		},
+	},
+	{
+		title: 'Resume',
+		href: 'resume',
+		scrollTo: {
+			id: 'elResume',
+		},
+	},
+	{
+		title: 'Knowledges',
+		href: 'knowledge',
+		scrollTo: {
+			id: 'elKnowledge',
+		},
+	},
+	{
+		title: 'Portfolio',
+		href: 'portfolio',
+		scrollTo: {
+			id: 'elPortfolio',
+		},
+	},
+	{
+		title: 'Contact',
+		href: 'mailto:rommelgarcia4b@gmail.com?subject=Consulta%20desde%20tu%20portfolio!&body=Buenas%20Rommel%2C%20Me%20gustaria%20saber%20mas%20sobre...%0A%0A...%0A%0ASaludos%2C%0A',
+		scrollTo: false,
+	},
+]
+const headerMenuRef = ref<InstanceType<typeof NavMenu> | null>(null);
+
 onMounted(() => {
 	let options = {}
 	isDocumentReadyStateComplete()
-	console.log(document.readyState)
-	document.onreadystatechange = () => { //To load the app only after all libraries are loaded
+	document.onreadystatechange = () => {
 		isDocumentReadyStateComplete()
 	}
 })
@@ -26,8 +69,26 @@ const isDocumentReadyStateComplete = () => {
 	if (document.readyState == "complete") {
 		setTimeout(() => {
 			pageIsLoad.value = true;
-			console.log('PAGE LOADED')
-			//
+
+			let targetSlug = '';
+			const currentHash = window.location.hash;
+			if (currentHash) {
+				targetSlug = currentHash.substring(1);
+			} else {
+				const pathname = window.location.pathname;
+				const pathSegments = pathname.split('/').filter(segment => segment);
+				if (pathSegments.length > 0) {
+					targetSlug = pathSegments[pathSegments.length - 1];
+				}
+			}
+			if (targetSlug) {
+				if (headerMenuRef.value && typeof headerMenuRef.value.externalScrollByHref === 'function') {
+					setTimeout(() => {
+						headerMenuRef.value.externalScrollByHref(targetSlug);
+					}, 250);
+				}
+			}
+
 		}, 2750);
 	}
 }
@@ -37,8 +98,6 @@ const initIntersection = (element: any, elementIsVisible: any, elementScroll: an
 		...newOptions
 	}
 
-	console.log(element)
-	console.log(options)
 	useIntersectionObserver(
 		element,
 		([{ isIntersecting }], observerElement) => {
@@ -47,37 +106,10 @@ const initIntersection = (element: any, elementIsVisible: any, elementScroll: an
 		options
 	)
 }
-const menuLinks = [
-	{
-		title: 'elAboutMe',
-		href: 'elAboutMe',
-		scrollTo: true,
-	},
-	{
-		title: 'elResume',
-		href: 'elResume',
-		scrollTo: true,
-	},
-	{
-		title: 'elKnowledge',
-		href: 'elKnowledge',
-		scrollTo: true,
-	},
-	{
-		title: 'elPortfolio',
-		href: 'elPortfolio',
-		scrollTo: true,
-	},
-	{
-		title: 'elContact',
-		href: 'elContact',
-		scrollTo: true,
-	},
-]
 </script>
 
 <template>
-	<NavMenu v-show="pageIsLoad" :menuLinks="menuLinks"></NavMenu>
+	<NavMenu v-show="pageIsLoad" :menuLinks="menuLinks" ref="headerMenuRef"></NavMenu>
 	<WipPage id="elWip" ref="elWip" class="content-full"></WipPage>
 	<main v-show="pageIsLoad" class=" ">
 		<SectionAboutMe id="elAboutMe" ref="elAboutMe" class="content section-card section-card--sticky main-content">
