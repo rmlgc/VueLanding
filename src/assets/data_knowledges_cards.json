@@ -1,0 +1,1119 @@
+{
+    "tech_stack_cards": {
+        "meta": {
+            "version": "1.0",
+            "author": "Rommel",
+            "last_updated": "2023-11-15",
+            "card_style": "TCG (Magic/Hearthstone inspired)"
+        },
+        "categories": [
+            {
+                "id": "frontend",
+                "name": "🪄 Frontend",
+                "description": "El Arte de la Ilusión Visual",
+                "tcg_theme": {
+                    "primary_color": "#a1c4fd",
+                    "secondary_color": "#c2e9fb"
+                },
+                "cards": [
+                    {
+                        "id": "html5",
+                        "name": "HTML5",
+                        "type": "Markup language",
+                        "tcg_type": "artifact",
+                        "level": "expert",
+                        "icon": "html5-icon.svg",
+                        "quote": "La semántica es la base del reino digital.",
+                        "description": "Maquetación  avanzada, accesible y SEO-friendly. Dominio de microdatos, Web Components y APIs del DOM.",
+                        "projects": [
+                            "Amigaria",
+                            "Portfolio v3"
+                        ],
+                        "features": [
+                            "SEO avanzado",
+                            "Accesibilidad WCAG AA",
+                            "Web Components"
+                        ],
+                        "interactions": {
+                            "click_action": "show_details",
+                            "hover_effect": "glow"
+                        },
+                        "tags": [
+                            "SEO",
+                            "Accesibilidad",
+                            "Web Components"
+                        ]
+                    },
+                    {
+                        "id": "css3",
+                        "name": "CSS3",
+                        "type": "language",
+                        "tcg_type": "artifact",
+                        "level": "expert",
+                        "quote": "Donde el diseño cobra vida",
+                        "description": "Animaciones fluidas, layouts con Grid/Flexbox y diseño responsive adaptable. Uso avanzado de variables CSS y blend modes.",
+                        "features": [
+                            "Animaciones CSS",
+                            "Variables CSS",
+                            "Responsive Design"
+                        ]
+                    },
+                    {
+                        "id": "css-preprocessors",
+                        "name": "Preprocesadores CSS",
+                        "type": "tool",
+                        "tcg_type": "enhancement",
+                        "level": "advanced",
+                        "quote": "El poder de la abstracción en estilos",
+                        "description": "SCSS/SASS, PostCSS y LESS para escritura modular y mantenible. Mixins avanzados y arquitectura ITCSS.",
+                        "subtypes": [
+                            "SCSS",
+                            "SASS",
+                            "PostCSS",
+                            "LESS"
+                        ]
+                    },
+                    {
+                        "id": "tailwind",
+                        "name": "Tailwind CSS",
+                        "type": "framework",
+                        "tcg_type": "utility",
+                        "level": "advanced",
+                        "quote": "Estilo rápido sin sacrificar control",
+                        "description": "Desarrollo ágil con clases utilitarias. Configuración avanzada de temas y plugins personalizados.",
+                        "strengths": [
+                            "Rapid prototyping",
+                            "Customización"
+                        ]
+                    },
+                    {
+                        "id": "bootstrap",
+                        "name": "Bootstrap",
+                        "type": "framework",
+                        "tcg_type": "artifact",
+                        "level": "expert",
+                        "quote": "El estándar que acelera proyectos",
+                        "description": "Implementación de sistemas de diseño responsive con componentes personalizables. Experiencia en theming avanzado.",
+                        "projects": [
+                            "RefineriaWeb",
+                            "GF-tic"
+                        ]
+                    },
+                    {
+                        "id": "material-ui",
+                        "name": "Material UI",
+                        "type": "library",
+                        "tcg_type": "artifact",
+                        "level": "intermediate",
+                        "quote": "Diseño sistemático para interfaces complejas",
+                        "description": "Implementación de sistemas de diseño con componentes Material adaptados a necesidades específicas.",
+                        "integrations": [
+                            "React",
+                            "Vue"
+                        ]
+                    },
+                    {
+                        "id": "vanillajs",
+                        "name": "Vanilla JS",
+                        "type": "language",
+                        "tcg_type": "spell",
+                        "level": "expert",
+                        "quote": "Dominar los fundamentos es tener el verdadero poder",
+                        "description": "Manipulación avanzada del DOM, APIs modernas (Fetch, Intersection Observer) y programación asíncrona.",
+                        "features": [
+                            "ES6+",
+                            "Web APIs",
+                            "Performance Optimization"
+                        ]
+                    },
+                    {
+                        "id": "vuejs",
+                        "name": "Vue",
+                        "type": "framework",
+                        "tcg_type": "spell",
+                        "subtype": "reactivity",
+                        "level": "advanced",
+                        "icon": "vue-icon.svg",
+                        "quote": [
+                            "Reactividad elegante para interfaces mágicas",
+                            "Reactividad que fluye como mana."
+                        ],
+                        "description": "SPAs con Composition API, gestión de estado con Pinia y optimización de rendimiento. Experiencia en SSR.",
+                        "projects": [
+                            "Amigaria",
+                            "DummyPortfolio"
+                        ],
+                        "stats": {
+                            "performance": 4,
+                            "learning_curve": 3
+                        }
+                    },
+                    {
+                        "id": "react",
+                        "name": "React",
+                        "type": "library",
+                        "tcg_type": "artifact",
+                        "level": "intermediate",
+                        "quote": "Componentes que construyen universos",
+                        "description": "Desarrollo de componentes reutilizables con hooks. Integración con estado global (Context/Redux) y testing.",
+                        "ecosystem": [
+                            "React Router",
+                            "Jest",
+                            "Context API"
+                        ]
+                    },
+                    {
+                        "id": "angular",
+                        "name": "Angular",
+                        "type": "framework",
+                        "tcg_type": "structure",
+                        "level": "beginner",
+                        "quote": "El bastión de las aplicaciones empresariales",
+                        "description": "Desarrollo de componentes con TypeScript. Conocimientos en inyección de dependencias y RxJS.",
+                        "learning_path": [
+                            "Components",
+                            "Services",
+                            "RxJS"
+                        ]
+                    },
+                    {
+                        "id": "svelte",
+                        "name": "Svelte",
+                        "type": "compiler",
+                        "tcg_type": "illusion",
+                        "level": "beginner",
+                        "quote": "La magia sucede en tiempo de compilación",
+                        "description": "Enfoque innovador sin virtual DOM. Experimentación con reactividad única y bundles optimizados.",
+                        "advantages": [
+                            "No Virtual DOM",
+                            "Small Bundle Size"
+                        ]
+                    },
+                    {
+                        "id": "alpine",
+                        "name": "Alpine.js",
+                        "type": "library",
+                        "tcg_type": "utility",
+                        "level": "intermediate",
+                        "quote": "Reactividad ligera cuando necesitas agilidad",
+                        "description": "Mejoras progresivas para proyectos tradicionales. Integración perfecta con HTML existente.",
+                        "use_cases": [
+                            "Progressive Enhancement",
+                            "Legacy Projects"
+                        ]
+                    },
+                    {
+                        "id": "figma",
+                        "name": "Figma",
+                        "type": "design_tool",
+                        "tcg_type": "blueprint",
+                        "level": "advanced",
+                        "quote": "Donde las ideas toman forma visual",
+                        "description": "Creación de sistemas de diseño, prototipado interactivo y colaboración en tiempo real.",
+                        "workflows": [
+                            "Design Systems",
+                            "Prototyping",
+                            "Developer Handoff"
+                        ]
+                    },
+                    {
+                        "id": "adobexd",
+                        "name": "Adobe XD",
+                        "type": "design_tool",
+                        "tcg_type": "blueprint",
+                        "level": "intermediate",
+                        "quote": "Prototipado rápido para experiencias fluidas",
+                        "description": "Diseño de interfaces interactivas y flujos de usuario. Integración con Creative Cloud.",
+                        "strengths": [
+                            "Auto-Animate",
+                            "Repeat Grid"
+                        ]
+                    },
+                    {
+                        "id": "storybook",
+                        "name": "Storybook",
+                        "type": "tool",
+                        "tcg_type": "catalog",
+                        "level": "intermediate",
+                        "quote": "El grimoire de componentes",
+                        "description": "Documentación viva de componentes UI. Desarrollo aislado y testing visual automatizado.",
+                        "features": [
+                            "Component Isolation",
+                            "Visual Testing"
+                        ]
+                    },
+                    {
+                        "id": "animations",
+                        "name": "Animaciones Web",
+                        "type": "skill",
+                        "tcg_type": "illusion",
+                        "level": "advanced",
+                        "quote": "Dar vida a la interfaz",
+                        "description": "Transiciones fluidas con CSS/JS. Experiencia en GSAP para animaciones complejas y performantes.",
+                        "techniques": [
+                            "CSS Transitions",
+                            "GSAP",
+                            "Web Animations API"
+                        ]
+                    },
+                    {
+                        "id": "canvas",
+                        "name": "Canvas API",
+                        "type": "api",
+                        "tcg_type": "canvas",
+                        "level": "intermediate",
+                        "quote": "El lienzo infinito de posibilidades",
+                        "description": "Gráficos dinámicos y visualizaciones interactivas. Manipulación de píxeles y animaciones complejas.",
+                        "projects": [
+                            "Data Visualizations",
+                            "Creative Coding"
+                        ]
+                    },
+                    {
+                        "id": "svg",
+                        "name": "SVG",
+                        "type": "technology",
+                        "tcg_type": "vector",
+                        "level": "advanced",
+                        "quote": "Precisión vectorial en la web",
+                        "description": "Gráficos escalables con manipulación dinámica. Animaciones SMIL y optimización avanzada.",
+                        "uses": [
+                            "Icon Systems",
+                            "Data Visualizations",
+                            "Complex Illustrations"
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "backend",
+                "name": "🧙‍♂️ Backend",
+                "description": "El Dominio de las Profundidades",
+                "tcg_theme": {
+                    "primary_color": "#5d4157",
+                    "secondary_color": "#a8c0ff"
+                },
+                "cards": [
+                    {
+                        "id": "nodejs",
+                        "name": "Node.js",
+                        "type": "runtime",
+                        "tcg_type": "creature",
+                        "level": "advanced",
+                        "quote": "JavaScript donde menos lo esperas",
+                        "description": "Desarrollo de APIs escalables con Express/Fastify. Manejo de operaciones asíncronas y streams avanzados.",
+                        "tags": [
+                            "Express",
+                            "Event Loop",
+                            "NPM"
+                        ],
+                        "projects": [
+                            "Hoteligy Social Network"
+                        ]
+                    },
+                    {
+                        "id": "deno",
+                        "name": "Deno",
+                        "type": "runtime",
+                        "tcg_type": "creature",
+                        "level": "beginner",
+                        "quote": "La evolución segura del ecosistema JS",
+                        "description": "Entorno moderno con TypeScript nativo y enfoque en seguridad. Experimentación con APIs estándar.",
+                        "features": [
+                            "TypeScript First",
+                            "Secure by Default"
+                        ]
+                    },
+                    {
+                        "id": "php",
+                        "name": "PHP",
+                        "type": "language",
+                        "tcg_type": "golem",
+                        "level": "intermediate",
+                        "quote": "El viejo mago aún tiene trucos poderosos",
+                        "description": "Desarrollo de aplicaciones web con enfoque en CMS y sistemas legacy. Dominio de Composer y nuevas características de PHP 8.",
+                        "experience_years": 4
+                    },
+                    {
+                        "id": "python",
+                        "name": "Python",
+                        "type": "language",
+                        "tcg_type": "serpent",
+                        "level": "beginner",
+                        "quote": "Sencillez y poder en armonía",
+                        "description": "Scripting para automatización y prototipado rápido. Conocimientos básicos de Flask y Django.",
+                        "usecases": [
+                            "Scripting",
+                            "Automation",
+                            "Flask"
+                        ]
+                    },
+                    {
+                        "id": "java",
+                        "name": "Java",
+                        "type": "language",
+                        "tcg_type": "construct",
+                        "level": "beginner",
+                        "quote": "Robustez empresarial en JVM",
+                        "description": "Fundamentos de POO y desarrollo básico con Spring Boot. Conocimiento de Maven y JVM.",
+                        "learning_path": [
+                            "Spring Boot",
+                            "Maven"
+                        ]
+                    },
+                    {
+                        "id": "laravel",
+                        "name": "Laravel",
+                        "type": "framework",
+                        "tcg_type": "fortress",
+                        "level": "intermediate",
+                        "quote": "Elegancia y productividad en armonía",
+                        "description": "Desarrollo de APIs RESTful con Eloquent ORM. Implementación de autenticación, colas y tareas programadas.",
+                        "ecosystem": [
+                            "Eloquent",
+                            "Blade",
+                            "Artisan"
+                        ]
+                    },
+                    {
+                        "id": "cakephp",
+                        "name": "CakePHP",
+                        "type": "framework",
+                        "tcg_type": "structure",
+                        "level": "intermediate",
+                        "quote": "Convención sobre configuración",
+                        "description": "Desarrollo rápido de aplicaciones MVC. Experiencia en mantenimiento de sistemas legacy (versiones 3.x y 4.x).",
+                        "projects": [
+                            "Hoteligy Legacy"
+                        ]
+                    },
+                    {
+                        "id": "express",
+                        "name": "Express.js",
+                        "type": "framework",
+                        "tcg_type": "pathway",
+                        "level": "intermediate",
+                        "quote": "Minimalismo con un gran ecosistema",
+                        "description": "Creación de APIs RESTful con middleware personalizado. Manejo de rutas y motores de plantillas.",
+                        "middleware": [
+                            "Helmet",
+                            "CORS",
+                            "Morgan"
+                        ]
+                    },
+                    {
+                        "id": "nestjs",
+                        "name": "NestJS",
+                        "type": "framework",
+                        "tcg_type": "citadel",
+                        "level": "beginner",
+                        "quote": "Arquitectura escalable inspirada en Angular",
+                        "description": "Desarrollo de aplicaciones modulares con TypeScript. Implementación de controladores, servicios e inyección de dependencias.",
+                        "architecture": [
+                            "Modules",
+                            "Providers",
+                            "Decorators"
+                        ]
+                    },
+                    {
+                        "id": "rest",
+                        "name": "REST API",
+                        "type": "protocol",
+                        "tcg_type": "ritual",
+                        "level": "advanced",
+                        "quote": "La lingua franca de la web",
+                        "description": "Diseño de APIs RESTful con buenas prácticas (HATEOAS, versionado). Documentación con Swagger/OpenAPI.",
+                        "principles": [
+                            "Stateless",
+                            "Resource-Oriented",
+                            "HTTP Verbs"
+                        ]
+                    },
+                    {
+                        "id": "graphql",
+                        "name": "GraphQL",
+                        "type": "query_language",
+                        "tcg_type": "oracle",
+                        "level": "beginner",
+                        "quote": "Pide exactamente lo que necesitas",
+                        "description": "Implementación de esquemas y resolvers. Experiencia con Apollo Server y consultas tipadas.",
+                        "advantages": [
+                            "Strong Typing",
+                            "No Overfetching",
+                            "Real-time"
+                        ]
+                    },
+                    {
+                        "id": "smarty",
+                        "name": "Smarty",
+                        "type": "template_engine",
+                        "tcg_type": "golem",
+                        "level": "intermediate",
+                        "quote": "Separación lógica-vista en entornos PHP",
+                        "description": "Mantenimiento de sistemas legacy con templates seguros. Uso de plugins y funciones personalizadas.",
+                        "context": [
+                            "Legacy Projects",
+                            "PHP"
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "complementary",
+                "name": "📚 Otros Conjuros",
+                "description": "Saberes Complementarios",
+                "tcg_theme": {
+                    "primary_color": "#9a8c98",
+                    "secondary_color": "#c9ada7"
+                },
+                "cards": [
+                    {
+                        "id": "mysql",
+                        "name": "MySQL",
+                        "type": "database",
+                        "tcg_type": "archive",
+                        "level": "intermediate",
+                        "quote": "La biblioteca estructurada de los datos",
+                        "description": "Diseño de esquemas relacionales y consultas complejas con JOINs. Optimización de índices y stored procedures.",
+                        "features": [
+                            "ACID Compliance",
+                            "Transactions",
+                            "Indexing"
+                        ]
+                    },
+                    {
+                        "id": "postgresql",
+                        "name": "PostgreSQL",
+                        "type": "database",
+                        "tcg_type": "archive",
+                        "level": "intermediate",
+                        "quote": "El erudito de las bases de datos",
+                        "description": "Implementación de tipos de datos avanzados (JSON, GIS) y funciones personalizadas. Replicación y particionamiento.",
+                        "strengths": [
+                            "JSONB",
+                            "Geospatial",
+                            "Full-text Search"
+                        ]
+                    },
+                    {
+                        "id": "mongodb",
+                        "name": "MongoDB",
+                        "type": "database",
+                        "tcg_type": "scroll",
+                        "level": "beginner",
+                        "quote": "Flexibilidad en formato de pergamino",
+                        "description": "Almacenamiento de documentos JSON-like con esquema dinámico. Consultas con Aggregation Framework.",
+                        "use_cases": [
+                            "Unstructured Data",
+                            "Rapid Prototyping"
+                        ]
+                    },
+                    {
+                        "id": "redis",
+                        "name": "Redis",
+                        "type": "cache",
+                        "tcg_type": "crystal",
+                        "level": "intermediate",
+                        "quote": "Velocidad instantánea en la palma de tu mano",
+                        "description": "Caché de datos frecuentes y sesiones de usuario. Implementación de colas con Redis Streams.",
+                        "data_structures": [
+                            "Strings",
+                            "Hashes",
+                            "Sorted Sets"
+                        ]
+                    },
+                    {
+                        "id": "prisma",
+                        "name": "Prisma",
+                        "type": "orm",
+                        "tcg_type": "key",
+                        "level": "beginner",
+                        "quote": "La llave maestra de los modelos de datos",
+                        "description": "Mapeo objeto-relacional con TypeScript. Generación de queries type-safe y migraciones automatizadas.",
+                        "integrations": [
+                            "Node.js",
+                            "TypeScript"
+                        ]
+                    },
+                    {
+                        "id": "jest",
+                        "name": "Jest",
+                        "type": "testing",
+                        "tcg_type": "ward",
+                        "level": "intermediate",
+                        "quote": "El guardián de la calidad del código",
+                        "description": "Testing unitario y de integración con cobertura automática. Snapshots y mocking avanzado.",
+                        "features": [
+                            "Snapshot Testing",
+                            "Mock Functions"
+                        ]
+                    },
+                    {
+                        "id": "mocha",
+                        "name": "Mocha",
+                        "type": "testing",
+                        "tcg_type": "trap",
+                        "level": "beginner",
+                        "quote": "Atrapando bugs en su guarida",
+                        "description": "Framework flexible con soporte para diferentes librerías de aserciones (Chai). Pruebas asíncronas.",
+                        "ecosystem": [
+                            "Chai",
+                            "Sinon"
+                        ]
+                    },
+                    {
+                        "id": "cypress",
+                        "name": "Cypress",
+                        "type": "testing",
+                        "tcg_type": "automaton",
+                        "level": "beginner",
+                        "quote": "El centinela automatizado del frontend",
+                        "description": "Pruebas E2E con ejecución en tiempo real. Interacción visual con la aplicación y debugging integrado.",
+                        "advantages": [
+                            "Time Travel",
+                            "Real-time Reloads"
+                        ]
+                    },
+                    {
+                        "id": "git",
+                        "name": "Git",
+                        "type": "vcs",
+                        "tcg_type": "tome",
+                        "level": "expert",
+                        "quote": "El grimorio de la historia del código",
+                        "description": "Gestión avanzada de ramas con GitFlow. Resolución de conflictos y uso de hooks para CI/CD.",
+                        "workflows": [
+                            "Feature Branches",
+                            "Rebase",
+                            "Cherry-pick"
+                        ]
+                    },
+                    {
+                        "id": "seo",
+                        "name": "SEO",
+                        "type": "optimization",
+                        "tcg_type": "compass",
+                        "level": "advanced",
+                        "quote": "Guiando a los viajeros hacia tu reino digital",
+                        "description": "Optimización técnica y de contenido para motores de búsqueda. Schema markup y rendimiento Core Web Vitals.",
+                        "techniques": [
+                            "Semantic HTML",
+                            "Structured Data",
+                            "Performance"
+                        ]
+                    },
+                    {
+                        "id": "accessibility",
+                        "name": "Accesibilidad",
+                        "type": "practice",
+                        "tcg_type": "aura",
+                        "level": "advanced",
+                        "quote": "La magia debe ser para todos",
+                        "description": "Implementación WCAG 2.1 AA. ARIA landmarks y navegación por teclado. Testing con lectores de pantalla.",
+                        "principles": [
+                            "Perceivable",
+                            "Operable",
+                            "Robust"
+                        ]
+                    },
+                    {
+                        "id": "pwa",
+                        "name": "PWA",
+                        "type": "technology",
+                        "tcg_type": "phoenix",
+                        "level": "intermediate",
+                        "quote": "Aplicaciones que renacen de sus cenizas offline",
+                        "description": "Implementación de service workers para offline mode. Web App Manifest y estrategias de caching.",
+                        "core_features": [
+                            "Offline Support",
+                            "Push Notifications",
+                            "Installable"
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "archmage",
+                "name": "🧠 Magia del Archimago",
+                "description": "Conocimientos como CTO",
+                "tcg_theme": {
+                    "primary_color": "#6d597a",
+                    "secondary_color": "#b56576"
+                },
+                "cards": [
+                    {
+                        "id": "plesk",
+                        "name": "Plesk",
+                        "type": "control_panel",
+                        "tcg_type": "console",
+                        "level": "intermediate",
+                        "quote": "El tablero de mandos del reino digital",
+                        "description": "Gestión de servidores web y dominios. Configuración de seguridad y automatización de despliegues.",
+                        "features": [
+                            "WordPress Toolkit",
+                            "Security Advisor",
+                            "Git Deployment"
+                        ]
+                    },
+                    {
+                        "id": "docker",
+                        "name": "Docker",
+                        "type": "containerization",
+                        "tcg_type": "pocket_dimension",
+                        "level": "intermediate",
+                        "quote": "Contenedores que encapsulan realidades completas",
+                        "description": "Creación de imágenes optimizadas y orquestación con Docker Compose. Gestión de volúmenes y redes.",
+                        "workflows": [
+                            "CI/CD Pipelines",
+                            "Development Environments"
+                        ]
+                    },
+                    {
+                        "id": "kubernetes",
+                        "name": "Kubernetes",
+                        "type": "orchestration",
+                        "tcg_type": "cosmos",
+                        "level": "beginner",
+                        "quote": "Gobernando constelaciones de contenedores",
+                        "description": "Despliegue escalable de aplicaciones en clusters. Gestión de pods, servicios y configmaps.",
+                        "concepts": [
+                            "Pods",
+                            "Services",
+                            "Ingress Controllers"
+                        ]
+                    },
+                    {
+                        "id": "nginx",
+                        "name": "NGINX",
+                        "type": "web_server",
+                        "tcg_type": "gatekeeper",
+                        "level": "intermediate",
+                        "quote": "El guardián de las puertas del tráfico web",
+                        "description": "Configuración avanzada de reverse proxies y balanceo de carga. Optimización de rendimiento con caching.",
+                        "configurations": [
+                            "Load Balancing",
+                            "SSL Termination",
+                            "Rate Limiting"
+                        ]
+                    },
+                    {
+                        "id": "certbot",
+                        "name": "Certbot",
+                        "type": "security_tool",
+                        "tcg_type": "ward",
+                        "level": "advanced",
+                        "quote": "Escudos de criptografía renovables automáticamente",
+                        "description": "Automatización de certificados SSL/TLS con Let's Encrypt. Renovación automática y configuración para múltiples dominios.",
+                        "integrations": [
+                            "NGINX",
+                            "Apache",
+                            "HAProxy"
+                        ]
+                    },
+                    {
+                        "id": "aws",
+                        "name": "AWS",
+                        "type": "cloud_platform",
+                        "tcg_type": "storm",
+                        "level": "intermediate",
+                        "quote": "La tormenta de servicios en la nube",
+                        "description": "Gestión de infraestructura en la nube: EC2 para computación, S3 para almacenamiento, Lambda para serverless.",
+                        "services": [
+                            "EC2",
+                            "S3",
+                            "Lambda",
+                            "Route 53"
+                        ]
+                    },
+                    {
+                        "id": "microservices",
+                        "name": "Microservicios",
+                        "type": "architecture",
+                        "tcg_type": "fractal",
+                        "level": "intermediate",
+                        "quote": "Pequeños reinos especializados que cooperan",
+                        "description": "Diseño de sistemas distribuidos con servicios desacoplados. Patrones de comunicación (gRPC, eventos).",
+                        "patterns": [
+                            "API Gateway",
+                            "Service Discovery",
+                            "Circuit Breaker"
+                        ]
+                    },
+                    {
+                        "id": "serverless",
+                        "name": "Serverless",
+                        "type": "architecture",
+                        "tcg_type": "illusion",
+                        "level": "beginner",
+                        "quote": "La magia sin servidor aparente",
+                        "description": "Arquitectura basada en funciones efímeras. Gestión de costos y optimización de cold starts.",
+                        "providers": [
+                            "AWS Lambda",
+                            "Vercel",
+                            "Netlify Functions"
+                        ]
+                    },
+                    {
+                        "id": "cdn",
+                        "name": "CDN",
+                        "type": "performance",
+                        "tcg_type": "echo",
+                        "level": "advanced",
+                        "quote": "Ecos que replican tu contenido por el mundo",
+                        "description": "Implementación de redes de distribución de contenido para baja latencia. Configuración de reglas de caching y purga.",
+                        "solutions": [
+                            "Cloudflare",
+                            "AWS CloudFront",
+                            "Akamai"
+                        ]
+                    },
+                    {
+                        "id": "agile",
+                        "name": "Agile",
+                        "type": "methodology",
+                        "tcg_type": "ritual",
+                        "level": "advanced",
+                        "quote": "El ritual iterativo de la creación constante",
+                        "description": "Implementación de ciclos iterativos con entregas incrementales. Adaptación de procesos a necesidades del equipo.",
+                        "frameworks": [
+                            "Scrum",
+                            "Kanban",
+                            "XP"
+                        ]
+                    },
+                    {
+                        "id": "technical_documentation",
+                        "name": "Documentación Técnica",
+                        "type": "practice",
+                        "tcg_type": "grimoire",
+                        "level": "expert",
+                        "quote": "El grimorio que preserva el conocimiento arcano",
+                        "description": "Creación de documentación clara para desarrolladores. Diagramas de arquitectura y guías de onboarding.",
+                        "tools": [
+                            "Markdown",
+                            "Swagger",
+                            "Architecture Diagrams"
+                        ]
+                    },
+                    {
+                        "id": "technical_communication",
+                        "name": "Comunicación Técnica",
+                        "type": "skill",
+                        "tcg_type": "telepathy",
+                        "level": "expert",
+                        "quote": "Transmitir conceptos complejos con claridad mágica",
+                        "description": "Traducción de requisitos técnicos a diferentes audiencias. Facilitación de reuniones técnicas y mentoring.",
+                        "techniques": [
+                            "Visual Aids",
+                            "Storytelling",
+                            "Active Listening"
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "leadership",
+                "name": "📜 Artes del Liderazgo & Comunicación",
+                "description": "Comunicación & Gestión",
+                "tcg_theme": {
+                    "primary_color": "#0077b6",
+                    "secondary_color": "#00b4d8"
+                },
+                "cards": [
+                    {
+                        "id": "slack",
+                        "name": "Slack",
+                        "type": "communication_tool",
+                        "tcg_type": "message_scroll",
+                        "level": "expert",
+                        "quote": "El pergamino que une al reino digital",
+                        "description": "Coordinación de equipos mediante canales temáticos e integraciones. Automatización de flujos con webhooks y bots personalizados.",
+                        "integrations": [
+                            "GitHub",
+                            "Jira",
+                            "Google Drive"
+                        ]
+                    },
+                    {
+                        "id": "discord",
+                        "name": "Discord",
+                        "type": "communication_tool",
+                        "tcg_type": "tavern_board",
+                        "level": "advanced",
+                        "quote": "La taberna donde se reúnen los aventureros digitales",
+                        "description": "Gestión de comunidades técnicas con roles personalizados y bots. Organización de eventos en vivo y sesiones de pair programming.",
+                        "features": [
+                            "Voice Channels",
+                            "Screen Sharing",
+                            "Bots"
+                        ]
+                    },
+                    {
+                        "id": "jira",
+                        "name": "Jira",
+                        "type": "project_management",
+                        "tcg_type": "quest_board",
+                        "level": "advanced",
+                        "quote": "El tablón de misiones del desarrollo ágil",
+                        "description": "Configuración de flujos Scrum/Kanban personalizados. Seguimiento de épicas, historias de usuario y métricas de velocidad.",
+                        "workflows": [
+                            "Sprint Planning",
+                            "Bug Tracking",
+                            "Release Management"
+                        ]
+                    },
+                    {
+                        "id": "trello",
+                        "name": "Trello",
+                        "type": "project_management",
+                        "tcg_type": "strategy_map",
+                        "level": "expert",
+                        "quote": "El mapa visual de las batallas por librar",
+                        "description": "Gestión visual de proyectos con metodología Kanban. Power-Ups para integraciones y automatización con Butler.",
+                        "strengths": [
+                            "Simplicidad",
+                            "Flexibilidad",
+                            "Visual Workflow"
+                        ]
+                    },
+                    {
+                        "id": "agile_leadership",
+                        "name": "Agile Leadership",
+                        "type": "methodology",
+                        "tcg_type": "war_council",
+                        "level": "expert",
+                        "quote": "Dirigir la batalla iteración tras iteración",
+                        "description": "Implementación de Agile a nivel organizacional. Creación de equipos autogestionados y eliminación de impedimentos.",
+                        "principles": [
+                            "Empowerment",
+                            "Transparency",
+                            "Continuous Improvement"
+                        ]
+                    },
+                    {
+                        "id": "scrum_mastery",
+                        "name": "Scrum Mastery",
+                        "type": "practice",
+                        "tcg_type": "ritual_circle",
+                        "level": "expert",
+                        "quote": "Facilitar el ritual sagrado de la entrega continua",
+                        "description": "Facilitación efectiva de ceremonias Scrum. Protección del equipo de interrupciones y gestión del cambio organizacional.",
+                        "ceremonies": [
+                            "Daily Standups",
+                            "Sprint Reviews",
+                            "Retrospectives"
+                        ]
+                    },
+                    {
+                        "id": "kanban_flow",
+                        "name": "Kanban Flow",
+                        "type": "methodology",
+                        "tcg_type": "current",
+                        "level": "advanced",
+                        "quote": "Deja que el trabajo fluya como un río poderoso",
+                        "description": "Visualización de flujos de trabajo con límites WIP. Optimización del flujo de valor y reducción de tiempos de entrega.",
+                        "metrics": [
+                            "Cycle Time",
+                            "Throughput",
+                            "Work in Progress"
+                        ]
+                    },
+                    {
+                        "id": "technical_leadership",
+                        "name": "Liderazgo Técnico",
+                        "type": "skill",
+                        "tcg_type": "crown",
+                        "level": "expert",
+                        "quote": "La corona no pesa cuando se comparte el conocimiento",
+                        "description": "Mentoring de desarrolladores y definición de estándares técnicos. Toma de decisiones arquitectónicas balanceando deuda técnica y entregas.",
+                        "responsibilities": [
+                            "Tech Vision",
+                            "Mentoring",
+                            "Architecture Decisions"
+                        ]
+                    },
+                    {
+                        "id": "stakeholder_communication",
+                        "name": "Comunicación con Stakeholders",
+                        "type": "skill",
+                        "tcg_type": "diplomacy",
+                        "level": "advanced",
+                        "quote": "Traducir el lenguaje arcano a términos de negocio",
+                        "description": "Presentación efectiva de avances técnicos a no técnicos. Gestión de expectativas y alineación de objetivos comerciales-técnicos.",
+                        "techniques": [
+                            "Storytelling",
+                            "Visual Aids",
+                            "Risk Communication"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "tcg_rules": {
+            "types": {
+                "artifact": {
+                    "color": "#c3cfe2",
+                    "description": "Tecnologías fundamentales de UI/estructura"
+                },
+                "spell": {
+                    "color": "#a1c4fd",
+                    "description": "Frameworks y librerías dinámicas"
+                },
+                "creature": {
+                    "color": "#f5d7e3",
+                    "description": "Backend/lenguajes Entornos de ejecución dinámicos"
+                },
+                "trap": {
+                    "color": "#ff9a9e",
+                    "description": "DevOps/seguridad"
+                },
+                "utility": {
+                    "color": "#76b852",
+                    "description": "Herramientas de productividad"
+                },
+                "blueprint": {
+                    "color": "#5d4157",
+                    "description": "Herramientas de diseño y planificación"
+                },
+                "illusion": {
+                    "color": "#a8c0ff",
+                    "description": "Efectos visuales y animaciones"
+                },
+                "golem": {
+                    "color": "#9a8c98",
+                    "description": "Lenguajes de programación robustos"
+                },
+                "fortress": {
+                    "color": "#8e9aaf",
+                    "description": "Frameworks de arquitectura sólida"
+                },
+                "ritual": {
+                    "color": "#5d4157",
+                    "description": "Protocolos de comunicación"
+                },
+                "oracle": {
+                    "color": "#a8c0ff",
+                    "description": "Sistemas de consulta avanzada"
+                },
+                "archive": {
+                    "color": "#6d6875",
+                    "description": "Almacenamiento estructurado de datos"
+                },
+                "scroll": {
+                    "color": "#e5989b",
+                    "description": "Sistemas de documentos flexibles"
+                },
+                "crystal": {
+                    "color": "#b5838d",
+                    "description": "Almacenamiento efímero de alto rendimiento"
+                },
+                "ward": {
+                    "color": "#ffb4a2",
+                    "description": "Protección contra errores"
+                },
+                "compass": {
+                    "color": "#ffcdb2",
+                    "description": "Guía para descubribilidad"
+                },
+                "aura": {
+                    "color": "#83c5be",
+                    "description": "Mejoras inclusivas"
+                },
+                "phoenix": {
+                    "color": "#ff9e6d",
+                    "description": "Tecnologías resilientes"
+                },
+                "console": {
+                    "color": "#9d4edd",
+                    "description": "Paneles de control de infraestructura"
+                },
+                "pocket_dimension": {
+                    "color": "#7b2cbf",
+                    "description": "Tecnologías de contenedores"
+                },
+                "cosmos": {
+                    "color": "#5a189a",
+                    "description": "Orquestación a gran escala"
+                },
+                "gatekeeper": {
+                    "color": "#3c096c",
+                    "description": "Servidores y proxies"
+                },
+                "storm": {
+                    "color": "#240046",
+                    "description": "Plataformas cloud complejas"
+                },
+                "fractal": {
+                    "color": "#10002b",
+                    "description": "Arquitecturas distribuidas"
+                },
+                "grimoire": {
+                    "color": "#e0aaff",
+                    "description": "Gestión del conocimiento"
+                },
+                "telepathy": {
+                    "color": "#c77dff",
+                    "description": "Habilidades de comunicación"
+                },
+                "message_scroll": {
+                    "color": "#48cae4",
+                    "description": "Herramientas de comunicación asíncrona"
+                },
+                "tavern_board": {
+                    "color": "#0096c7",
+                    "description": "Plataformas de comunidad en tiempo real"
+                },
+                "quest_board": {
+                    "color": "#0077b6",
+                    "description": "Sistemas de gestión de tareas"
+                },
+                "strategy_map": {
+                    "color": "#023e8a",
+                    "description": "Planificación visual de proyectos"
+                },
+                "war_council": {
+                    "color": "#03045e",
+                    "description": "Liderazgo estratégico"
+                },
+                "ritual_circle": {
+                    "color": "#00b4d8",
+                    "description": "Facilitación de procesos"
+                },
+                "current": {
+                    "color": "#0096c7",
+                    "description": "Gestión de flujos de trabajo"
+                },
+                "crown": {
+                    "color": "#ff9e00",
+                    "description": "Liderazgo técnico"
+                },
+                "diplomacy": {
+                    "color": "#ff7900",
+                    "description": "Comunicación estratégica"
+                }
+            },
+            "levels": {
+                "concepts": {
+                    "stars": 1,
+                    "color": "#afafaf"
+                },
+                "beginner": {
+                    "stars": 2,
+                    "color": "#4CAF50"
+                },
+                "intermediate": {
+                    "stars": 3,
+                    "color": "#2196F3"
+                },
+                "advanced": {
+                    "stars": 4,
+                    "color": "#9C27B0"
+                },
+                "expert": {
+                    "stars": 5,
+                    "color": "#FF9800"
+                }
+            }
+        }
+    }
+}

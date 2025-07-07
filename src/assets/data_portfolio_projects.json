@@ -1,0 +1,99 @@
+{
+    "portfolio_projects": [
+        {
+            "name": "Amigaria WebApp",
+            "type": "web_app",
+            "description": "Plataforma accesible para integración social, desarrollada en equipo durante el curso de frontend en EOI.",
+            "key_features": [
+                "Enfoque en accesibilidad",
+                "Metodologías Agile (Scrum/Kanban)",
+                "Control de versiones con Git"
+            ],
+            "tech_stack": [
+                {
+                    "code": "vue",
+                    "name": "Vue.js",
+                    "description": "Framework frontend para la construcción de la interfaz dinámica.",
+                    "short_description": "SPA con Vue Router",
+                    "level": "intermediate"
+                },
+                {
+                    "code": "git",
+                    "name": "Git",
+                    "description": "Colaboración en equipo mediante ramas y pull requests.",
+                    "short_description": "GitFlow",
+                    "level": "intermediate"
+                },
+                {
+                    "code": "css",
+                    "name": "CSS3",
+                    "description": "Estilos responsive con enfoque en accesibilidad (WCAG).",
+                    "short_description": "Flexbox/Grid",
+                    "level": "intermediate"
+                },
+                {
+                    "code": "agile",
+                    "name": "Agile",
+                    "description": "Sprints diarios y retrospectivas en equipo.",
+                    "short_description": "Scrum/Kanban",
+                    "level": "beginner"
+                }
+            ],
+            "links": [
+                {
+                    "type": "landing_page",
+                    "url": "#" // Reemplaza con el enlace real
+                },
+                {
+                    "type": "web_app",
+                    "url": "#"
+                }
+            ],
+            "quote": "La tecnología une cuando se diseña para todos."
+        },
+        {
+            "name": "Vue DummyPortfolio",
+            "type": "web_app",
+            "description": "Aplicación simple para renderizar y listar datos desde APIs REST (actualmente en desarrollo).",
+            "key_features": [
+                "Diseño responsive (mobile/desktop)",
+                "Componentes reutilizables con Quasar",
+                "Conexión a APIs externas"
+            ],
+            "tech_stack": [
+                {
+                    "code": "vue",
+                    "name": "Vue 3",
+                    "description": "Composition API para gestión de estado.",
+                    "short_description": "Reactividad",
+                    "level": "intermediate"
+                },
+                {
+                    "code": "quasar",
+                    "name": "Quasar",
+                    "description": "Componentes preconstruidos para UI consistente.",
+                    "short_description": "Material Design",
+                    "level": "beginner"
+                },
+                {
+                    "code": "rest",
+                    "name": "REST API",
+                    "description": "Fetch/Axios para consumo de datos.",
+                    "short_description": "Async/Await",
+                    "level": "intermediate"
+                }
+            ],
+            "links": [
+                {
+                    "type": "github",
+                    "url": "#" // Añade el repo
+                },
+                {
+                    "type": "demo",
+                    "url": "#"
+                }
+            ],
+            "quote": "Menos es más... pero bien conectado."
+        }
+    ]
+}

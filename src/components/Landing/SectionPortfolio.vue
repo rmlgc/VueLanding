@@ -28,6 +28,16 @@
         <a class="active" href="https://rmlgc.github.io/dummyportfolio-vue/" target="_blank">Web</a>
       </div>
     </div>
+    <!-- <div class="card spell-card">
+  <h3>Amigaria</h3>
+  <div class="card-type">Conjuro - Social</div>
+  <p class="card-desc">Plataforma accesible construida con Vue.js y Agile.</p>
+  <ul class="card-tech">
+    <li>Vue.js (Nivel: Intermedio)</li>
+    <li>WCAG AA (Accesibilidad)</li>
+  </ul>
+  <blockquote>"La tecnología une cuando se diseña para todos."</blockquote>
+</div> -->
   </section>
 </template>
 <style scoped lang="scss">

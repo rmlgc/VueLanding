@@ -8,7 +8,32 @@
             "date_end": "Actually",
             "tech_stack": [
                 {
-                    "name": "a"
+                    "code": "react",
+                    "name": "React",
+                    "description": "Frontend library for building dynamic UIs in the social network architecture.",
+                    "short_description": "UI Components & State Management",
+                    "level": "advanced"
+                },
+                {
+                    "code": "nodejs",
+                    "name": "Node.js",
+                    "description": "Backend runtime for API development and server-side logic.",
+                    "short_description": "API & Microservices",
+                    "level": "advanced"
+                },
+                {
+                    "code": "git",
+                    "name": "Git",
+                    "description": "Version control for team collaboration and deployment workflows.",
+                    "short_description": "Branching & CI/CD",
+                    "level": "expert"
+                },
+                {
+                    "code": "aws",
+                    "name": "AWS",
+                    "description": "Cloud services for hosting, storage, and scalability.",
+                    "short_description": "EC2, S3, Lambda",
+                    "level": "intermediate"
                 }
             ],
             "sort_order": 1
@@ -16,30 +41,136 @@
         {
             "job": "FullStack Web Developer",
             "company": "Hoteligy",
-            "description": "Daily maintenance of legacy webApp in PHP with \"smarty\" mannaged template into ERP and Html/JQuery for frontend. Was necessary learn HereMapsApi and TraccarApi for new integration of tracking vehicles. ",
+            "description": "Daily maintenance of legacy webApp in PHP with \"smarty\" mannaged template into ERP and Html/JQuery for frontend. Was necessary learn HereMapsApi and TraccarApi for new integration of tracking vehicles.",
             "date_start": "March 2023",
-            "date_end": "May 2023"
+            "date_end": "May 2023",
+            "tech_stack": [
+                {
+                    "code": "php",
+                    "name": "PHP",
+                    "description": "Backend logic for legacy ERP system with Smarty templates.",
+                    "short_description": "Legacy Code Maintenance",
+                    "level": "intermediate"
+                },
+                {
+                    "code": "jquery",
+                    "name": "jQuery",
+                    "description": "Frontend interactions and AJAX calls for the legacy system.",
+                    "short_description": "DOM Manipulation",
+                    "level": "intermediate"
+                },
+                {
+                    "code": "heremaps",
+                    "name": "Here Maps API",
+                    "description": "Integration for vehicle tracking and location services.",
+                    "short_description": "Geolocation & Routing",
+                    "level": "beginner"
+                },
+                {
+                    "code": "traccar",
+                    "name": "Traccar API",
+                    "description": "Real-time GPS tracking for fleet management.",
+                    "short_description": "Vehicle Monitoring",
+                    "level": "beginner"
+                }
+            ]
         },
         {
             "job": "FrontEnd Web Developer",
             "company": "GF-tic",
             "description": "I did craft webApps, ERP and CMS for Hotels and enterprise and even maintenance support and unit test.",
             "date_start": "July 2022",
-            "date_end": "Genuary 2023"
+            "date_end": "Genuary 2023",
+            "tech_stack": [
+                {
+                    "code": "javascript",
+                    "name": "JavaScript",
+                    "description": "Core logic for interactive hotel management systems.",
+                    "short_description": "Dynamic WebApps",
+                    "level": "intermediate"
+                },
+                {
+                    "code": "css",
+                    "name": "CSS",
+                    "description": "Styling for custom CMS and ERP interfaces.",
+                    "short_description": "Responsive Design",
+                    "level": "intermediate"
+                },
+                {
+                    "code": "php",
+                    "name": "PHP",
+                    "description": "Backend support for CMS/ERP features.",
+                    "short_description": "Server-side Logic",
+                    "level": "intermediate"
+                },
+                {
+                    "code": "jest",
+                    "name": "Jest",
+                    "description": "Unit testing for frontend components.",
+                    "short_description": "Test Suites",
+                    "level": "beginner"
+                }
+            ]
         },
         {
             "job": "FullStack Web Developer",
-            "company": "RefineriaWeb ",
-            "description": "I did develop, craft and deploy web Apps/CMS. besides, craft newsletters and email signs digital. Resolve users questions/issues and start/continue news projects were part of my day-to-day life ",
+            "company": "RefineriaWeb",
+            "description": "I did develop, craft and deploy web Apps/CMS. besides, craft newsletters and email signs digital. Resolve users questions/issues and start/continue news projects were part of my day-to-day life.",
             "date_start": "June 2018",
-            "date_end": "Novenber 2019"
+            "date_end": "Novenber 2019",
+            "tech_stack": [
+                {
+                    "code": "wordpress",
+                    "name": "WordPress",
+                    "description": "CMS development and customization for client websites.",
+                    "short_description": "Themes & Plugins",
+                    "level": "intermediate"
+                },
+                {
+                    "code": "html",
+                    "name": "HTML5",
+                    "description": "Semantic markup for newsletters and web apps.",
+                    "short_description": "Email Templates",
+                    "level": "advanced"
+                },
+                {
+                    "code": "css",
+                    "name": "CSS3",
+                    "description": "Styling for responsive emails and landing pages.",
+                    "short_description": "Flexbox/Grid",
+                    "level": "advanced"
+                },
+                {
+                    "code": "javascript",
+                    "name": "JavaScript",
+                    "description": "Frontend interactivity for custom web apps.",
+                    "short_description": "Form Validations",
+                    "level": "intermediate"
+                }
+            ]
         },
         {
             "job": "FullStack Web Developer (practice)",
-            "company": "Boomeraling ",
-            "description": "Wordpress maintenance and aplying new styles for new webs/blogs",
+            "company": "Boomeraling",
+            "description": "Wordpress maintenance and aplying new styles for new webs/blogs.",
             "date_start": "October 2013",
-            "date_end": "Novenber 2013"
+            "date_end": "Novenber 2013",
+            "tech_stack": [
+                {
+                    "code": "wordpress",
+                    "name": "WordPress",
+                    "description": "Basic theme customization and content updates.",
+                    "short_description": "Blog Maintenance",
+                    "level": "beginner"
+                },
+                {
+                    "code": "css",
+                    "name": "CSS",
+                    "description": "Minor style adjustments for client blogs.",
+                    "short_description": "Color/Font Tweaks",
+                    "level": "beginner"
+                }
+            ]
         }
     ]
 }

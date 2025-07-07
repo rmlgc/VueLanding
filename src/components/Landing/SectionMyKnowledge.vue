@@ -1,5 +1,76 @@
 <script setup lang="ts">
 import simplebar from 'simplebar-vue';
+import heroMenu from '@/components/hero/heroMenu.vue';
+import HeroAccordionMenu from '@/components/hero/heroAccordionMenu.vue'
+import jsondata from '@/assets/data_knowledges_cards.json'
+import { ref, onMounted } from 'vue'
+import { toggleHeight, setupToggleHeightOnClick } from '@/assets/erre-web-helpers/src/helpers/toggleHeight.js';
+
+const activeIndex = ref(null)
+const jsonData = jsondata;
+
+const sections = [
+	{
+		title: 'Frontend',
+		subtitle: 'Vue, React, Svelte',
+		items: ['Vue 3', 'React 18', 'SvelteKit']
+	},
+	{
+		title: 'Backend',
+		subtitle: 'Node, Laravel',
+		items: ['Laravel 9', 'Express', 'Bun']
+	},
+	{
+		title: 'Frontend',
+		subtitle: 'Vue, React, Svelte',
+		items: ['Vue 3', 'React 18', 'SvelteKit']
+	},
+	{
+		title: 'Backend',
+		subtitle: 'Node, Laravel',
+		items: ['Laravel 9', 'Express', 'Bun']
+	},
+	{
+		title: 'Frontend',
+		subtitle: 'Vue, React, Svelte',
+		items: ['Vue 3', 'React 18', 'SvelteKit']
+	},
+	{
+		title: 'Backend',
+		subtitle: 'Node, Laravel',
+		items: ['Laravel 9', 'Express', 'Bun']
+	}
+]
+
+onMounted(() => {
+	setupToggleHeightOnClick();
+});
+
+const mapJsonToHeroAccordion = (categories: object) => {
+	return categories.map((category: object) => ({
+		title: category.name,
+		subtitle: category.description,
+		items: category.cards.map(card => {
+			return {
+				name: card.name,
+				description: card.description,
+				level: card.level,
+				quote: Array.isArray(card.quote) ? card.quote.join(' / ') : card.quote,
+				type: card.type,
+				tcg_type: card.tcg_type,
+				id: card.id,
+				tags: card.tags || [],
+				features: card.features || card.strengths || [],
+				icon: card.icon || null,
+				stats: card.stats || {},
+				projects: card.projects || [],
+				interactions: card.interactions || {}
+			}
+		}),
+		theme: category.tcg_theme // si necesitas usarlo para color u otro prop extendido
+	}))
+}
+const accordionData = mapJsonToHeroAccordion(jsondata.tech_stack_cards.categories)
 </script>
 <template>
 	<section role="region" aria-labelledby="knowledge-title" lang="es" class="knowledge-section">
@@ -11,288 +82,138 @@ import simplebar from 'simplebar-vue';
 				Conocimientos Técnicos
 			</p>
 		</header>
-		<div class="resume-content">
-			<article id="resumeFrontend" class="resume-item resume-item--frontend" role="region"
-				aria-labelledby="frontend-title" tabindex="0">
-				<simplebar :autoHide="false" class="simplebar-height">
-					<h2 id="frontend-title" class="text-body1">🪄 Frontend</h2>
-					<small class="text-body2" aria-hidden="true">El Arte de la Ilusión Visual</small>
-					<nav class="skills-nav" aria-label="Navegación de habilidades de Frontend">
-						<ul role="list" class="skills-list">
-							<li role="listitem" class="skill-item">
-								<h3>HTML & CSS</h3>
-								<ul role="list" class="subskills-list">
-									<li role="listitem" class="subskill-item">
-										<span role="text" class="skill-tag" aria-label="HTML5">HTML5</span>
-									</li>
-									<li role="listitem">
-										<span role="text" class="skill-tag" aria-label="CSS3">CSS3</span>
-									</li>
-									<li role="listitem">
-										<span role="text" class="skill-tag" aria-label="SCSS">SCSS</span>
-										<span role="text" class="skill-tag" aria-label="SASS">SASS</span>
-										<span role="text" class="skill-tag" aria-label="PostCSS">PostCSS</span>
-										<span role="text" class="skill-tag" aria-label="LESS">LESS</span>
-									</li>
-									<li role="listitem">
-										<span role="text" class="skill-tag" aria-label="Tailwind">Tailwind</span>
-										<span role="text" class="skill-tag" aria-label="Bootstrap">Bootstrap</span>
-										<span role="text" class="skill-tag" aria-label="Material UI">Material UI</span>
-									</li>
-								</ul>
-							</li>
-							<li role="listitem" class="skill-item">
-								<h3>JavaScript & Frameworks</h3>
-								<ul role="list" class="subskills-list">
-									<li role="listitem" class="subskill-item">
-										<span role="text" class="skill-tag" aria-label="Vanilla JS">Vanilla JS</span>
-									</li>
-									<li role="listitem">
-										<span role="text" class="skill-tag" aria-label="Vue">Vue</span>
-										<span role="text" class="skill-tag" aria-label="React">React</span>
-										<span role="text" class="skill-tag" aria-label="Angular">Angular</span>
-										<span role="text" class="skill-tag" aria-label="Svelte">Svelte</span>
-										<span role="text" class="skill-tag" aria-label="Alpine">Alpine</span>
-									</li>
-								</ul>
-							</li>
-							<li role="listitem" class="skill-item">
-								<h3>Diseño</h3>
-								<ul role="list" class="subskills-list">
-									<li role="listitem" class="subskill-item">
-										<span role="text" class="skill-tag" aria-label="Figma">Figma</span>
-										<span role="text" class="skill-tag" aria-label="Adobe XD">Adobe XD</span>
-										<span role="text" class="skill-tag" aria-label="Storybook">Storybook</span>
-									</li>
-									<li role="listitem">
-										<span role="text" class="skill-tag" aria-label="Animaciones">Animaciones</span>
-										<span role="text" class="skill-tag" aria-label="Canvas">Canvas</span>
-										<span role="text" class="skill-tag" aria-label="SVG">SVG</span>
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</nav>
-				</simplebar>
-			</article>
-			<article id="resumeBackend" class="resume-item resume-item--backend" role="region"
-				aria-labelledby="backend-title" tabindex="0">
-				<simplebar :autoHide="false" class="simplebar-height">
-					<h2 id="backend-title" class="text-body1">🧙‍♂️ Backend</h2>
-					<small class="text-body2" aria-hidden="true">El Dominio de las Profundidades</small>
-					<nav class="skills-nav" aria-label="Navegación de habilidades de Backend">
-						<ul role="list" class="skills-list">
-							<li role="listitem" class="skill-item">
-								<h3>Lenguajes</h3>
-								<ul role="list" class="subskills-list">
-									<li role="listitem" class="subskill-item">
-										<span role="text" class="skill-tag" aria-label="Node.js">Node.js</span>
-										<span role="text" class="skill-tag" aria-label="Deno">Deno</span>
-									</li>
-									<li role="listitem">
-										<span role="text" class="skill-tag" aria-label="PHP">PHP</span>
-										<span role="text" class="skill-tag" aria-label="Python">Python</span>
-										<span role="text" class="skill-tag" aria-label="Java">Java</span>
-									</li>
-								</ul>
-							</li>
-							<li role="listitem" class="skill-item">
-								<h3>Frameworks</h3>
-								<ul role="list" class="subskills-list">
-									<li role="listitem" class="subskill-item">
-										<span role="text" class="skill-tag" aria-label="Laravel">Laravel</span>
-										<span role="text" class="skill-tag" aria-label="CakePHP">CakePHP</span>
-										<span role="text" class="skill-tag" aria-label="Express">Express</span>
-										<span role="text" class="skill-tag" aria-label="NestJS">NestJS</span>
-									</li>
-								</ul>
-							</li>
-							<li role="listitem" class="skill-item">
-								<h3>APIs y Plantillas</h3>
-								<ul role="list" class="subskills-list">
-									<li role="listitem" class="subskill-item">
-										<span role="text" class="skill-tag" aria-label="REST">REST</span>
-										<span role="text" class="skill-tag" aria-label="GraphQL">GraphQL</span>
-										<span role="text" class="skill-tag" aria-label="Smarty">Smarty</span>
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</nav>
-				</simplebar>
-			</article>
-			<article id="resumeOthers" class="resume-item resume-item--others" role="region"
-				aria-labelledby="others-title" tabindex="0">
-				<simplebar :autoHide="false" class="simplebar-height">
-					<h2 id="others-title" class="text-body1">📚 Otros Conjuros</h2>
-					<small class="text-body2" aria-hidden="true">Saberes Complementarios</small>
-					<nav class="skills-nav" aria-label="Navegación de habilidades complementarias">
-						<ul role="list" class="skills-list">
-							<li role="listitem" class="skill-item">
-								<h3>Bases de Datos</h3>
-								<ul role="list" class="subskills-list">
-									<li role="listitem" class="subskill-item">
-										<span role="text" class="skill-tag" aria-label="MySQL">MySQL</span>
-										<span role="text" class="skill-tag" aria-label="PostgreSQL">PostgreSQL</span>
-										<span role="text" class="skill-tag" aria-label="MongoDB">MongoDB</span>
-									</li>
-									<li role="listitem">
-										<span role="text" class="skill-tag" aria-label="Redis">Redis</span>
-										<span role="text" class="skill-tag" aria-label="Prisma">Prisma</span>
-									</li>
-								</ul>
-							</li>
-							<li role="listitem" class="skill-item">
-								<h3>Testing</h3>
-								<ul role="list" class="subskills-list">
-									<li role="listitem" class="subskill-item">
-										<span role="text" class="skill-tag" aria-label="Jest">Jest</span>
-										<span role="text" class="skill-tag" aria-label="Mocha">Mocha</span>
-										<span role="text" class="skill-tag" aria-label="Cypress">Cypress</span>
-									</li>
-								</ul>
-							</li>
-							<li role="listitem" class="skill-item">
-								<h3>Herramientas</h3>
-								<ul role="list" class="subskills-list">
-									<li role="listitem" class="subskill-item">
-										<span role="text" class="skill-tag" aria-label="Git">Git</span>
-										<span role="text" class="skill-tag" aria-label="SEO">SEO</span>
-										<span role="text" class="skill-tag"
-											aria-label="Accesibilidad">Accesibilidad</span>
-										<span role="text" class="skill-tag" aria-label="PWA">PWA</span>
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</nav>
-				</simplebar>
-			</article>
-			<article id="resumeCTO" class="resume-item resume-item--others" role="region" aria-labelledby="cto-title"
-				tabindex="0">
-				<simplebar :autoHide="false" class="simplebar-height">
-					<h2 id="cto-title" class="text-body1">🧠 Magia del Archimago</h2>
-					<small class="text-body2" aria-hidden="true">Conocimientos como CTO</small>
-					<nav class="skills-nav" aria-label="Navegación de habilidades de CTO">
-						<ul role="list" class="skills-list">
-							<li role="listitem" class="skill-item">
-								<h3>DevOps & Infraestructura</h3>
-								<ul role="list" class="subskills-list">
-									<li role="listitem" class="subskill-item">
-										<span role="text" class="skill-tag" aria-label="Plesk">Plesk</span>
-										<span role="text" class="skill-tag" aria-label="CloudPanel">CloudPanel</span>
-										<span role="text" class="skill-tag" aria-label="cPanel">cPanel</span>
-									</li>
-									<li role="listitem">
-										<span role="text" class="skill-tag" aria-label="Docker">Docker</span>
-										<span role="text" class="skill-tag" aria-label="Kubernetes">Kubernetes</span>
-									</li>
-									<li role="listitem">
-										<span role="text" class="skill-tag" aria-label="NGINX">NGINX</span>
-										<span role="text" class="skill-tag" aria-label="Certbot">Certbot</span>
-										<span role="text" class="skill-tag" aria-label="AWS">AWS</span>
-									</li>
-								</ul>
-							</li>
-							<li role="listitem" class="skill-item">
-								<h3>Arquitectura</h3>
-								<ul role="list" class="subskills-list">
-									<li role="listitem" class="subskill-item">
-										<span role="text" class="skill-tag"
-											aria-label="Microservicios">Microservicios</span>
-										<span role="text" class="skill-tag" aria-label="Monolitos">Monolitos</span>
-										<span role="text" class="skill-tag" aria-label="Serverless">Serverless</span>
-									</li>
-									<li role="listitem">
-										<span role="text" class="skill-tag" aria-label="CDN">CDN</span>
-										<span role="text" class="skill-tag"
-											aria-label="Balanceadores">Balanceadores</span>
-									</li>
-								</ul>
-							</li>
-							<li role="listitem" class="skill-item">
-								<h3>Gestión</h3>
-								<ul role="list" class="subskills-list">
-									<li role="listitem" class="subskill-item">
-										<span role="text" class="skill-tag" aria-label="Agile">Agile</span>
-										<span role="text" class="skill-tag" aria-label="Scrum">Scrum</span>
-									</li>
-									<li role="listitem">
-										<span role="text" class="skill-tag"
-											aria-label="Documentación">Documentación</span>
-										<span role="text" class="skill-tag" aria-label="Liderazgo">Liderazgo</span>
-									</li>
-									<li role="listitem">
-										<span role="text" class="skill-tag"
-											aria-label="Comunicación técnica">Comunicación
-											técnica</span>
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</nav>
-				</simplebar>
-			</article>
-			<article id="resumeLeadership" class="resume-item resume-item--others" role="region"
-				aria-labelledby="leadership-title" tabindex="0">
-				<simplebar :autoHide="false" class="simplebar-height">
-					<h2 id="leadership-title" class="text-body1">📜 Artes del Liderazgo & Comunicación</h2>
-					<small class="text-body2" aria-hidden="true">Comunicación & Gestión</small>
-					<nav class="skills-nav" aria-label="Navegación de habilidades de Liderazgo">
-						<ul role="list" class="skills-list">
-							<li role="listitem" class="skill-item">
-								<h3>Herramientas de Comunicación</h3>
-								<ul role="list" class="subskills-list">
-									<li role="listitem" class="subskill-item">
-										<span role="text" class="skill-tag" aria-label="Slack">Slack</span>
-										<span role="text" class="skill-tag" aria-label="Discord">Discord</span>
-										<span role="text" class="skill-tag" aria-label="etc">etc.</span>
-									</li>
-								</ul>
-							</li>
-							<li role="listitem" class="skill-item">
-								<h3>Gestión de Proyectos</h3>
-								<ul role="list" class="subskills-list">
-									<li role="listitem" class="subskill-item">
-										<span role="text" class="skill-tag" aria-label="Jira">Jira</span>
-										<span role="text" class="skill-tag" aria-label="Trello">Trello</span>
-										<span role="text" class="skill-tag" aria-label="etc">etc.</span>
-									</li>
-									<li role="listitem">
-										<span role="text" class="skill-tag" aria-label="CDN">CDN</span>
-										<span role="text" class="skill-tag"
-											aria-label="Balanceadores">Balanceadores</span>
-									</li>
-								</ul>
-							</li>
-							<li role="listitem" class="skill-item">
-								<h3>Flujos y Metodologías</h3>
-								<ul role="list" class="subskills-list">
-									<li role="listitem" class="subskill-item">
-										<span role="text" class="skill-tag" aria-label="Agile">Agile</span>
-										<span role="text" class="skill-tag" aria-label="Scrum">Scrum</span>
-										<span role="text" class="skill-tag" aria-label="Kanban">Kanban</span>
-									</li>
-									<li role="listitem">
-										<span role="text" class="skill-tag"
-											aria-label="Documentación">Documentación</span>
-										<span role="text" class="skill-tag" aria-label="Liderazgo">Liderazgo</span>
-									</li>
-									<li role="listitem">
-										<span role="text" class="skill-tag"
-											aria-label="Comunicación técnica">Comunicación
-											técnica</span>
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</nav>
-				</simplebar>
-			</article>
+		<!-- 
+		<simplebar :autoHide="false" class="simplebar-width">
+			<div class="hero-content">
+
+				<hero-menu
+					v-for="({ name, description, tcg_theme, cards }, index) in jsonData.tech_stack_cards.categories"
+					:title="name" :cards="cards" :description="description" />
+			</div>
+		</simplebar>
+		 -->
+		<div class="hero-accordion-menu">
+			<HeroAccordionMenu v-for="(section, index) in accordionData" :key="index" v-model="activeIndex"
+				:index="index" :title="section.title" :subtitle="section.subtitle" height="75svh" direction="row"
+				class="amin-w-[320px]" cardClass="accordion-card">
+				<template #body>
+					<div class="hero-accordion-body-content">
+
+
+						<div :id="item.id + '-' + item.level" v-for="(item) in section.items"
+							v-on:click.prevent="toggleHeight($event.currentTarget.querySelector('.accordion-details'))"
+							class="hero-accordion-body-content-items">
+							<h4>
+								<span>
+									{{ item.name }} <span class="material-symbols-outlined">touch_app</span>
+								</span>
+							</h4>
+							<div class="accordion-details is-collapsed">
+								<p>
+									<small>
+										{{ item.type }}
+									</small> |
+									<small>{{ item.level }} </small> |
+									<small v-for="(name) in item.features">
+										<span style="display: inline-block;">
+											{{ name }} -
+										</span>
+									</small>
+								</p>
+								<hr />
+								<p>
+
+									{{ item.description }}
+								</p>
+								<!-- <p>
+							<small v-for="(name) in item.tags">
+								{{ name }} -
+							</small>
+						</p> -->
+								<p>
+
+								</p>
+								<!-- <p>
+							{{ item.icon }}
+						</p>
+						<p>
+							{{ item.stats }}
+						</p> -->
+								<p>
+									<small v-for="(name) in item.projects">
+										{{ name ?? "" }} -
+									</small>
+								</p>
+								<!-- <p>
+							{{ item.interactions }}
+						</p> -->
+							</div>
+							<hr><br>
+						</div>
+					</div>
+				</template>
+				<template #footer>
+				</template>
+			</HeroAccordionMenu>
 		</div>
 	</section>
 </template>
 <style scoped lang="scss">
+.is-collapsed {
+	overflow: hidden;
+	height: 0;
+}
+
+.hero-accordion-menu {
+	display: flex;
+	overflow-x: auto;
+	gap: 1rem;
+	padding-right: 2rem;
+	padding-left: 2rem;
+	margin-top: 1rem;
+	margin-bottom: 2rem;
+}
+
+.hero-content {
+	display: flex;
+	flex-direction: row;
+	// justify-content: center;
+	align-items: center;
+	// flex-wrap: wrap;
+	width: 100%;
+	gap: 16px;
+
+	min-height: 60svh;
+	height: 97svh;
+	max-height: 97svh;
+
+	// @media (min-width: 600px) {
+	// 	flex-flow: row wrap;
+	// }
+}
+
+.accordion-card {
+	background: var(--text-color-opacity);
+	color: var(--background-color);
+	display: flex;
+	flex-direction: column;
+}
+
+.accordion-details {
+	background: var(--text-color-opacity);
+	border-radius: 8px;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+}
+
+.hero-accordion-body-content {
+	overflow: auto;
+}
+
+.hero-accordion-body-content-items {
+	cursor: pointer;
+}
+
 .simplebar-height {
 	max-height: 60vh;
 }
