@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nav-Hero Dinámico</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            /* Habilita el scroll suave para toda la página */
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .nav-hero-container {
+            display: flex;
+            width: 90vw;
+            margin: 20px auto;
+            /* Permite que los elementos se desborden para hacer scroll horizontal */
+            overflow-x: auto;
+            /* Oculta la barra de scroll estándar */
+            -ms-overflow-style: none;
+            /* IE y Edge */
+            scrollbar-width: none;
+            /* Firefox */
+            flex-wrap: wrap;
+        }
+
+        /* Oculta la barra de scroll para Chrome, Safari y Opera */
+        .nav-hero-container::-webkit-scrollbar {
+            display: none;
+        }
+
+
+        .item {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 80vh;
+            border-radius: 50px;
+            color: #fff;
+            cursor: pointer;
+            flex: 0.5;
+            /* Estado minimizado */
+            margin: 10px;
+            position: relative;
+            /* Transición para el tamaño (flex) y la posición (order) */
+            transition: flex 0.7s ease-in-out, order 0.7s ease-in-out;
+            order: 0;
+            /* Posición por defecto */
+            flex-basis: 100%;
+            min-width: 300px;
+            max-width: 600px;
+        }
+
+        .item.active {
+            flex: 5;
+            flex-basis: 100%;
+            /* Estado expandido */
+            order: -1;
+            /* Mueve el elemento a la primera posición */
+        }
+
+        .content {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            transition: opacity 0.3s ease-in 0.4s;
+        }
+
+        .title {
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .description {
+            opacity: 0;
+            margin-top: 10px;
+            max-width: 300px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+        }
+
+        .item.active .description {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .nav-hero-container {
+                width: 100vw;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Nav-Hero Dinámico</h1>
+
+    <div class="nav-hero-container">
+        <div class="item"
+            style="background-image: url('https://images.unsplash.com/photo-1558979158-65a1eaa08691?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+            <div class="content">
+                <h2 class="title">Explora el Mundo</h2>
+                <p class="description">Descubre destinos increíbles y planifica tu próxima aventura.</p>
+            </div>
+        </div>
+        <div class="item"
+            style="background-image: url('https://images.unsplash.com/photo-1572276596237-5db2c3e16c5d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+            <div class="content">
+                <h2 class="title">Aventura en el Bosque</h2>
+                <p class="description">Sumérgete en la naturaleza y vive una experiencia única.</p>
+            </div>
+        </div>
+        <div class="item"
+            style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723a9ce6890?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+            <div class="content">
+                <h2 class="title">Playas Soleadas</h2>
+                <p class="description">Relájate y disfruta del sol en las mejores playas del mundo.</p>
+            </div>
+        </div>
+        <div class="item"
+            style="background-image: url('https://images.unsplash.com/photo-1551009175-8a68da93d5f9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80');">
+            <div class="content">
+                <h2 class="title">Montañas Nevadas</h2>
+                <p class="description">Conquista las cimas más altas y disfruta de la nieve.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const items = document.querySelectorAll('.item');
+        const container = document.querySelector('.nav-hero-container');
+
+        items.forEach(item =>
+        {
+            item.addEventListener('click', () =>
+            {
+                // No hacer nada si el item ya está activo
+                if (item.classList.contains('active'))
+                {
+                    return;
+                }
+
+                // 1. Quitar la clase 'active' y resetear el 'order' de todos los items
+                items.forEach(el =>
+                {
+                    el.classList.remove('active');
+                    el.style.order = '0'; // Resetea la posición
+                });
+
+                // 2. Añadir la clase 'active' al item clicado
+                item.classList.add('active');
+
+                // 3. Cambiar el 'order' para moverlo al principio
+                item.style.order = '-1';
+
+                // 4. Hacer scroll suave hacia el item activado
+                // Usamos un pequeño delay para asegurar que el DOM se actualice antes del scroll
+                setTimeout(() =>
+                {
+                    console.log('asd');
+                    item.scrollIntoView({
+                        behavior: 'smooth',
+                        inline: 'start', // Se alinea con el inicio del contenedor
+                        block: 'start'
+                        // block: 'nearest'
+                    });
+                    console.log('asd2');
+                }, 500); // 100ms de espera
+            });
+        });
+    </script>
+</body>
+
+</html>

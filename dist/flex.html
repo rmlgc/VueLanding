@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nav-Hero Expandible</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            margin: 0;
+        }
+
+        .nav-hero-container {
+            display: flex;
+            width: 90vw;
+        }
+
+        .item {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 80vh;
+            border-radius: 50px;
+            color: #fff;
+            cursor: pointer;
+            flex: 0.5;
+            margin: 10px;
+            position: relative;
+            transition: flex 0.7s ease-in;
+            -webkit-transition: flex 0.7s ease-in;
+        }
+
+        .item.active {
+            flex: 5;
+        }
+
+        .content {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            transition: opacity 0.3s ease-in 0.4s;
+        }
+
+        .title {
+            margin: 0;
+        }
+
+        .description {
+            opacity: 0;
+            margin-top: 10px;
+        }
+
+        .item.active .description {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .nav-hero-container {
+                width: 100vw;
+            }
+
+            .item:nth-of-type(4),
+            .item:nth-of-type(5) {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="nav-hero-container">
+        <div class="item"
+            style="background-image: url('https://images.unsplash.com/photo-1558979158-65a1eaa08691?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');">
+            <div class="content">
+                <h2 class="title">Explora el Mundo</h2>
+                <p class="description">Descubre destinos increíbles y planifica tu próxima aventura.</p>
+            </div>
+        </div>
+        <div class="item active"
+            style="background-image: url('https://images.unsplash.com/photo-1572276596237-5db2c3e16c5d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');">
+            <div class="content">
+                <h2 class="title">Aventura en el Bosque</h2>
+                <p class="description">Sumérgete en la naturaleza y vive una experiencia única.</p>
+            </div>
+        </div>
+        <div class="item"
+            style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723a9ce6890?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');">
+            <div class="content">
+                <h2 class="title">Playas Soleadas</h2>
+                <p class="description">Relájate y disfruta del sol en las mejores playas del mundo.</p>
+            </div>
+        </div>
+        <div class="item"
+            style="background-image: url('https://images.unsplash.com/photo-1551009175-8a68da93d5f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80');">
+            <div class="content">
+                <h2 class="title">Montañas Nevadas</h2>
+                <p class="description">Conquista las cimas más altas y disfruta de la nieve.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const items = document.querySelectorAll('.item');
+
+        items.forEach(item =>
+        {
+            item.addEventListener('click', () =>
+            {
+                removeActiveClasses();
+                item.classList.add('active');
+            });
+        });
+
+        function removeActiveClasses()
+        {
+            items.forEach(item =>
+            {
+                item.classList.remove('active');
+            });
+        }
+    </script>
+
+</body>
+
+</html>
