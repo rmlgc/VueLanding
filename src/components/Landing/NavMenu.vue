@@ -105,10 +105,10 @@ defineExpose({
     <div class="header social-header header-btns">
       <div id="headerMenuBtn" class="btn-hamburguer" :class="{ 'open': isMenuOpen }" @click="toggleMenu"></div>
       <div class="header-socials">
-        <a href="https://linktr.ee/" class="social-link" target="_blank" rel="noopener noreferrer">
-          <img class="social-icon" src="https://linktr.ee/favicon.ico" alt="Linktree Icon">
+        <a href="https://linktr.ee/rommelgc" class="social-link" target="_blank" rel="noopener noreferrer">
+          <img class="social-icon" src="/linktr.ee_favicon.png" alt="Linktree Icon">
         </a>
-        <a href="https://github.com/" class="social-link" target="_blank" rel="noopener noreferrer">
+        <a href="https://github.com/rmlgc" class="social-link" target="_blank" rel="noopener noreferrer">
           <svg aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32" data-view-component="true"
             class="octicon octicon-mark-github social-icon">
             <path
@@ -166,6 +166,7 @@ header {
     justify-content: center;
     align-items: center;
     gap: 2rem;
+    pointer-events: none;
   }
 
   &-socials {
@@ -219,6 +220,7 @@ header {
     border: 2px solid var(--text-color);
     box-shadow: inset 0px 0px 1px 4px var(--background-color);
     transition: all .75s ease-in-out;
+    pointer-events: auto;
 
     &::before,
     &::after {
@@ -273,10 +275,12 @@ header {
   }
 
   .header-socials {
+    transform: translateX(75px);
+
     .social-link {
       opacity: 0;
       transform: translateY(v-bind(socialLinkTranslateY));
-
+      pointer-events: auto;
 
       @for $i from 1 through 2 {
 
@@ -288,9 +292,13 @@ header {
     }
   }
 
-  .btn-hamburguer.open~.header-socials .social-link {
-    transform: translateY(0px);
-    opacity: 1;
+  .btn-hamburguer.open~.header-socials {
+    transform: translateX(0px);
+
+    .social-link {
+      transform: translateY(0px);
+      opacity: 1;
+    }
   }
 }
 </style>

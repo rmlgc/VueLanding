@@ -96,7 +96,7 @@ $textBorderColorOpen: var(--text-color);
 }
 
 .wrap-wip {
-  min-height: 90vh;
+  min-height: 86vh;
   cursor: pointer;
 }
 

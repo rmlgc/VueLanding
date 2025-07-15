@@ -42,9 +42,9 @@ const sections = [
 	}
 ]
 
-onMounted(() => {
-	setupToggleHeightOnClick();
-});
+// onMounted(() => {
+// 	setupToggleHeightOnClick();
+// });
 
 const mapJsonToHeroAccordion = (categories: object) => {
 	return categories.map((category: object) => ({
@@ -82,80 +82,81 @@ const accordionData = mapJsonToHeroAccordion(jsondata.tech_stack_cards.categorie
 				Conocimientos Técnicos
 			</p>
 		</header>
-		<!-- 
 		<simplebar :autoHide="false" class="simplebar-width">
+			<!-- 
 			<div class="hero-content">
 
 				<hero-menu
 					v-for="({ name, description, tcg_theme, cards }, index) in jsonData.tech_stack_cards.categories"
 					:title="name" :cards="cards" :description="description" />
 			</div>
-		</simplebar>
-		 -->
-		<div class="hero-accordion-menu">
-			<HeroAccordionMenu v-for="(section, index) in accordionData" :key="index" v-model="activeIndex"
-				:index="index" :title="section.title" :subtitle="section.subtitle" height="75svh" direction="row"
-				class="amin-w-[320px]" cardClass="accordion-card">
-				<template #body>
-					<div class="hero-accordion-body-content">
+			-->
+
+			<div class="hero-accordion-menu">
+				<HeroAccordionMenu v-for="(section, index) in accordionData" :key="index" v-model="activeIndex"
+					:index="index" :title="section.title" :subtitle="section.subtitle" height="75svh" direction="row"
+					class="" cardClass="accordion-card">
+					<template #body>
+						<div class="hero-accordion-body-content">
 
 
-						<div :id="item.id + '-' + item.level" v-for="(item) in section.items"
-							v-on:click.prevent="toggleHeight($event.currentTarget.querySelector('.accordion-details'))"
-							class="hero-accordion-body-content-items">
-							<h4>
-								<span>
-									{{ item.name }} <span class="material-symbols-outlined">touch_app</span>
-								</span>
-							</h4>
-							<div class="accordion-details is-collapsed">
-								<p>
-									<small>
-										{{ item.type }}
-									</small> |
-									<small>{{ item.level }} </small> |
-									<small v-for="(name) in item.features">
-										<span style="display: inline-block;">
-											{{ name }} -
-										</span>
-									</small>
-								</p>
-								<hr />
-								<p>
+							<div :id="item.id + '-' + item.level" v-for="(item) in section.items"
+								v-on:click.prevent="toggleHeight($event.currentTarget.querySelector('.accordion-details'))"
+								class="hero-accordion-body-content-items">
+								<h4>
+									<span>
+										{{ item.name }} <span class="material-symbols-outlined">touch_app</span>
+									</span>
+								</h4>
+								<div class="accordion-details is-collapsed">
+									<p>
+										<small>
+											{{ item.type }}
+										</small> |
+										<small>{{ item.level }} </small> |
+										<small v-for="(name) in item.features">
+											<span style="display: inline-block;">
+												{{ name }} -
+											</span>
+										</small>
+									</p>
+									<hr />
+									<p>
 
-									{{ item.description }}
-								</p>
-								<!-- <p>
+										{{ item.description }}
+									</p>
+									<!-- <p>
 							<small v-for="(name) in item.tags">
 								{{ name }} -
 							</small>
 						</p> -->
-								<p>
+									<p>
 
-								</p>
-								<!-- <p>
+									</p>
+									<!-- <p>
 							{{ item.icon }}
 						</p>
 						<p>
 							{{ item.stats }}
 						</p> -->
-								<p>
-									<small v-for="(name) in item.projects">
-										{{ name ?? "" }} -
-									</small>
-								</p>
-								<!-- <p>
+									<p>
+										<small v-for="(name) in item.projects">
+											{{ name ?? "" }} -
+										</small>
+									</p>
+									<!-- <p>
 							{{ item.interactions }}
 						</p> -->
+								</div>
+								<hr><br>
 							</div>
-							<hr><br>
 						</div>
-					</div>
-				</template>
-				<template #footer>
-				</template>
-			</HeroAccordionMenu>
-		</div>
+					</template>
+					<template #footer>
+					</template>
+				</HeroAccordionMenu>
+			</div>
+		</simplebar>
 	</section>
 </template>
 <style scoped lang="scss">
@@ -166,12 +167,23 @@ const accordionData = mapJsonToHeroAccordion(jsondata.tech_stack_cards.categorie
 
 .hero-accordion-menu {
 	display: flex;
-	overflow-x: auto;
-	gap: 1rem;
+	// overflow-x: auto;
+	scroll-behavior: smooth;
+	/* Hace el scroll más suave */
+	scroll-snap-type: x mandatory;
+	gap: 12px;
+	padding-block: 1rem;
 	padding-right: 2rem;
-	padding-left: 2rem;
+	padding-left: 0rem;
 	margin-top: 1rem;
 	margin-bottom: 2rem;
+	// transform: translateX(-15px);
+	transition: all 0.75s ease-in-out;
+
+	&.visible {
+		padding-left: 2rem;
+		transform: translateX(0px);
+	}
 }
 
 .hero-content {

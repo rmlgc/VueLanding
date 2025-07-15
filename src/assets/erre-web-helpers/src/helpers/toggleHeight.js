@@ -10,7 +10,6 @@ export function toggleHeight(el, options = {})
         easing: 'ease'
     };
     const cfg = { ...defaultOpts, ...options };
-    console.log(el);
     const isCollapsed = el.classList.contains(cfg.collapsedClass);
     const startH = el.offsetHeight;
     const targetH = isCollapsed
@@ -49,7 +48,6 @@ export function setupToggleHeightOnClick(selector = '[data-toggle-height]', opti
         const targetSel = btn.getAttribute('data-toggle-target');
         const tgt = targetSel ? document.querySelector(targetSel) : btn;
         const initialState = btn.getAttribute('data-toggle-initial') || 'expanded';
-
         if (tgt && initialState === 'collapsed')
         {
             tgt.classList.add(options.collapsedClass || 'is-collapsed');

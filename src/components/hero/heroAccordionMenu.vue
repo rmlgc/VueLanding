@@ -41,7 +41,12 @@ watch(isActive, (val) =>
     {
         nextTick(() =>
         {
-            containerRef.value.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'start' });
+            setTimeout(() =>
+            {
+                containerRef.value.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'start' });
+
+            }
+                , 700);
         });
     }
 });
@@ -50,7 +55,7 @@ watch(isActive, (val) =>
 <template>
     <article ref="containerRef" class="hero-accordion-container"
         :class="[{ active: isActive }, direction, cardClass, containerClass]"
-        :style="{ flex: isActive ? '5 0 0%' : '1 0 0%', height }" @click="emit('update:modelValue', props.index)">
+        :style="{ flex: isActive ? '5 0 95%' : '1 0 0%', height }" @click="emit('update:modelValue', props.index)">
         <!-- Header -->
         <div :class="['hero-accordion-header', headerClass]">
             <slot name="header">
@@ -77,15 +82,22 @@ watch(isActive, (val) =>
     </article>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .hero-accordion-container {
-    min-width: 350px;
-    transition: all 0.75s cubic-bezier(0.6, 0.04, 0.98, 0.335);
-    scroll-margin-top: 130px
+    min-width: 300px;
+    transition: all 0.75s ease-in-out;
+
+    scroll-margin-top: 130px;
+    scroll-margin-right: 45px;
+    scroll-margin-left: 25px;
+
+    @media (min-width: 600px) {
+        max-width: 600px;
+    }
 }
 
 .hero-accordion-container.active {
-    transition: all 0.75s cubic-bezier(0.335, 0.98, 0.04, 0.6);
+    // transition: all 0.55s cubic-bezier(0.335, 0.98, 0.04, 0.6);
 }
 
 .hero-accordion-card {

@@ -4,7 +4,7 @@
             "job": "fullstack/Chief Technology Officer (CTO)",
             "company": "Hoteligy",
             "description": "Responsible for the design and implementation of the architecture in a social media network. Full stack development, task and time management. Server maintenance, Git, integrations and deployments.",
-            "date_start": "Febrary 2024",
+            "date_start": "February 2024",
             "date_end": "Actually",
             "tech_stack": [
                 {
@@ -80,7 +80,7 @@
             "company": "GF-tic",
             "description": "I did craft webApps, ERP and CMS for Hotels and enterprise and even maintenance support and unit test.",
             "date_start": "July 2022",
-            "date_end": "Genuary 2023",
+            "date_end": "January 2023",
             "tech_stack": [
                 {
                     "code": "javascript",
@@ -117,7 +117,7 @@
             "company": "RefineriaWeb",
             "description": "I did develop, craft and deploy web Apps/CMS. besides, craft newsletters and email signs digital. Resolve users questions/issues and start/continue news projects were part of my day-to-day life.",
             "date_start": "June 2018",
-            "date_end": "Novenber 2019",
+            "date_end": "November 2019",
             "tech_stack": [
                 {
                     "code": "wordpress",
@@ -154,7 +154,7 @@
             "company": "Boomeraling",
             "description": "Wordpress maintenance and aplying new styles for new webs/blogs.",
             "date_start": "October 2013",
-            "date_end": "Novenber 2013",
+            "date_end": "November 2013",
             "tech_stack": [
                 {
                     "code": "wordpress",
@@ -168,6 +168,180 @@
                     "name": "CSS",
                     "description": "Minor style adjustments for client blogs.",
                     "short_description": "Color/Font Tweaks",
+                    "level": "beginner"
+                }
+            ]
+        }
+    ],
+    "academic_complementary_trajectory": [
+        {
+            "name": "Eureka",
+            "description": "",
+            "date_start": "April 2012",
+            "date_end": "April 2012",
+            "tech_stack": []
+        }
+    ],
+    "academic_trajectory": [
+        {
+            "name": "Always learning, never unlearning 💪",
+            "description": "",
+            "date_start": "January 2023",
+            "date_end": "Actually",
+            "tech_stack": []
+        },
+        {
+            "name": "FP grado superior de Desarrollo de Aplicaciones Web (DAW)",
+            "description": "",
+            "date_start": "September 2018",
+            "date_end": "July 2021",
+            "tech_stack": [
+                {
+                    "code": "HTML5",
+                    "name": "HTML5",
+                    "description": "HTML5",
+                    "short_description": "HTML5",
+                    "level": "beginner"
+                },
+                {
+                    "code": "CSS3",
+                    "name": "CSS3",
+                    "description": "CSS3",
+                    "short_description": "CSS3",
+                    "level": "beginner"
+                },
+                {
+                    "code": "JavaScript",
+                    "name": "JavaScript",
+                    "description": "JavaScript",
+                    "short_description": "JavaScript",
+                    "level": "beginner"
+                },
+                {
+                    "code": "PHP",
+                    "name": "PHP",
+                    "description": "PHP",
+                    "short_description": "PHP",
+                    "level": "beginner"
+                },
+                {
+                    "code": "MySQL",
+                    "name": "MySQL",
+                    "description": "MySQL",
+                    "short_description": "MySQL",
+                    "level": "beginner"
+                },
+                {
+                    "code": "Oracle",
+                    "name": "Oracle",
+                    "description": "Oracle",
+                    "short_description": "Oracle",
+                    "level": "beginner"
+                },
+                {
+                    "code": "BASH",
+                    "name": "BASH",
+                    "description": "BASH",
+                    "short_description": "BASH",
+                    "level": "beginner"
+                },
+                {
+                    "code": "JAVA",
+                    "name": "JAVA",
+                    "description": "JAVA",
+                    "short_description": "JAVA",
+                    "level": "beginner"
+                },
+                {
+                    "code": "Python",
+                    "name": "Python",
+                    "description": "Python",
+                    "short_description": "Python",
+                    "level": "beginner"
+                }
+            ]
+        },
+        {
+            "name": "FP grado medio de Sistemas Microinformaticos y Redes (SMR)",
+            "description": "",
+            "date_start": "September 2010",
+            "date_end": "July 2012",
+            "tech_stack": [
+                {
+                    "code": "MySQL",
+                    "name": "MySQL",
+                    "description": "MySQL",
+                    "short_description": "MySQL",
+                    "level": "beginner"
+                },
+                {
+                    "code": "PHP",
+                    "name": "PHP",
+                    "description": "PHP",
+                    "short_description": "PHP",
+                    "level": "beginner"
+                },
+                {
+                    "code": "BASH",
+                    "name": "BASH",
+                    "description": "BASH",
+                    "short_description": "BASH",
+                    "level": "beginner"
+                },
+                {
+                    "code": "Python",
+                    "name": "Python",
+                    "description": "Python",
+                    "short_description": "Python",
+                    "level": "beginner"
+                },
+                {
+                    "code": "Apache2",
+                    "name": "Apache2",
+                    "description": "Apache2",
+                    "short_description": "Apache2",
+                    "level": "beginner"
+                },
+                {
+                    "code": "IPtables",
+                    "name": "IPtables",
+                    "description": "IPtables",
+                    "short_description": "IPtables",
+                    "level": "beginner"
+                },
+                {
+                    "code": "SAMBA",
+                    "name": "SAMBA",
+                    "description": "SAMBA",
+                    "short_description": "SAMBA",
+                    "level": "beginner"
+                },
+                {
+                    "code": "Squid",
+                    "name": "Squid",
+                    "description": "Squid",
+                    "short_description": "Squid",
+                    "level": "beginner"
+                },
+                {
+                    "code": "PXE",
+                    "name": "PXE",
+                    "description": "PXE",
+                    "short_description": "PXE",
+                    "level": "beginner"
+                },
+                {
+                    "code": "DHCP",
+                    "name": "DHCP",
+                    "description": "DHCP",
+                    "short_description": "DHCP",
+                    "level": "beginner"
+                },
+                {
+                    "code": "RADIUS",
+                    "name": "RADIUS",
+                    "description": "RADIUS",
+                    "short_description": "RADIUS",
                     "level": "beginner"
                 }
             ]

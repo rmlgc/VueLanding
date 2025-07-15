@@ -22,11 +22,12 @@ const jsonData = jsondata;
     <div class="academic-timeline">
       <h3 class="title-tag">Academic grade</h3>
       <ul class="academic-timeline-content">
-        <li>
-          FP grado superior DAW (Desarrollo de Aplicaciones Web)
-        </li>
-        <li>
-          FP grado medio SMR (Sistemas Microinformaticos y Redes)
+        <li v-for="{ name, description, date_start, date_end } in jsonData.academic_trajectory" :key="name">
+          <span>{{ name }}</span>
+          <span>{{ description }}</span>
+          <br>
+          <span>{{ date_start }}</span> -
+          <span>{{ date_end }}</span>
         </li>
       </ul>
     </div>
@@ -68,8 +69,13 @@ const jsonData = jsondata;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    flex-flow: row;
+    flex-direction: row;
     gap: 2rem;
+
+    &>* {
+      flex: 1 0 0%;
+      min-width: 320px;
+    }
   }
 }
 </style>

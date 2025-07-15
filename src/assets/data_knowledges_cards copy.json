@@ -1,0 +1,124 @@
+{
+    "tech_stack_cards": [
+        {
+            "__comment": "🪄 Frontend (Cartas de Tipo \"Conjuro\" o \"Artefacto\")",
+            "category": "frontend",
+            "cards": [
+                {
+                    "name": "HTML5",
+                    "type": "lenguaje",
+                    "tcg_type": "artefacto",
+                    "level": "expert",
+                    "quote": "La semántica es la base del reino digital.",
+                    "description": "Maquetación accesible y SEO-friendly con semántica avanzada."
+                },
+                {
+                    "name": "CSS3",
+                    "type": "lenguaje",
+                    "tcg_type": "artefacto",
+                    "level": "expert",
+                    "quote": "El estilo es poder, la especificidad es el arma.",
+                    "description": "Animaciones, Grid/Flexbox y diseño responsive."
+                },
+                {
+                    "name": "Vue.js",
+                    "type": "framework",
+                    "tcg_type": "conjuro",
+                    "level": "advanced",
+                    "quote": "Reactividad que fluye como mana.",
+                    "description": "SPAs con Composition API y gestión de estado (Pinia)."
+                },
+                {
+                    "name": "React",
+                    "type": "biblioteca",
+                    "tcg_type": "artefacto",
+                    "level": "intermediate",
+                    "quote": "Divide y vencerás... en componentes.",
+                    "description": "Construcción de interfaces con hooks y context API."
+                },
+                {
+                    "name": "Figma",
+                    "type": "herramienta",
+                    "tcg_type": "utilidad",
+                    "level": "intermediate",
+                    "quote": "El lienzo del arquitecto UI/UX.",
+                    "description": "Prototipado colaborativo y sistemas de diseño."
+                }
+            ]
+        },
+        {
+            "__comment": "Backend (Cartas de Tipo \"Criatura\" o \"Ritual\")",
+            "category": "backend",
+            "cards": [
+                {
+                    "name": "Node.js",
+                    "type": "entorno",
+                    "tcg_type": "ritual",
+                    "level": "advanced",
+                    "quote": "JavaScript en las profundidades del servidor.",
+                    "description": "APIs RESTful con Express y autenticación JWT."
+                },
+                {
+                    "name": "Laravel",
+                    "type": "framework",
+                    "tcg_type": "criatura",
+                    "level": "intermediate",
+                    "quote": "Elegancia sobre complejidad.",
+                    "description": "Eloquent ORM, migraciones y autenticación."
+                },
+                {
+                    "name": "Docker",
+                    "type": "herramienta",
+                    "tcg_type": "utilidad",
+                    "level": "beginner",
+                    "quote": "Contenedores que encapsulan el caos.",
+                    "description": "Despliegue consistente con containers."
+                }
+            ]
+        },
+        {
+            "__comment": "// 📚 Otros (Cartas de Tipo \"Encantamiento\" o \"Trampa\")",
+            "category": "devops",
+            "cards": [
+                {
+                    "name": "AWS",
+                    "type": "servicio",
+                    "tcg_type": "trampa",
+                    "level": "intermediate",
+                    "quote": "La nube es solo alguien más's computadora.",
+                    "description": "EC2, S3 y despliegue de aplicaciones escalables."
+                },
+                {
+                    "name": "Git",
+                    "type": "herramienta",
+                    "tcg_type": "encantamiento",
+                    "level": "expert",
+                    "quote": "El tiempo viaja en commits.",
+                    "description": "Flujo GitFlow y resolución de conflictos."
+                }
+            ]
+        },
+        {
+            "__comment": "// 🧠 Soft Skills (Cartas de Tipo \"Habilidad\" o \"Terreno\")",
+            "category": "leadership",
+            "cards": [
+                {
+                    "name": "Scrum",
+                    "type": "metodología",
+                    "tcg_type": "habilidad",
+                    "level": "advanced",
+                    "quote": "El caos bajo control, sprint a sprint.",
+                    "description": "Sprints, retrospectivas y gestión de backlog."
+                },
+                {
+                    "name": "Comunicación Técnica",
+                    "type": "habilidad",
+                    "tcg_type": "terreno",
+                    "level": "expert",
+                    "quote": "Traducir código a palabras es magia arcana.",
+                    "description": "Documentación clara y mentoring."
+                }
+            ]
+        }
+    ]
+}

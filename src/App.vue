@@ -11,6 +11,8 @@ import SectionMyKnowledge from '@/components/Landing/SectionMyKnowledge.vue'
 import SectionPortfolio from '@/components/Landing/SectionPortfolio.vue'
 import SectionContact from '@/components/Landing/SectionContact.vue'
 
+import { setupToggleHeightOnClick } from '@/assets/erre-web-helpers/src/helpers/toggleHeight.js';
+
 
 const pageIsLoad = ref(false)
 
@@ -64,6 +66,8 @@ onMounted(() => {
 	document.onreadystatechange = () => {
 		isDocumentReadyStateComplete()
 	}
+
+	setupToggleHeightOnClick();
 })
 const isDocumentReadyStateComplete = () => {
 	if (document.readyState == "complete") {
