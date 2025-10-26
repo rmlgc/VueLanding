@@ -221,6 +221,8 @@ header {
     box-shadow: inset 0px 0px 1px 4px var(--background-color);
     transition: all .75s ease-in-out;
     pointer-events: auto;
+    backdrop-filter: blur(5px) contrast(50%);
+    background: var(--link-color-opacity);
 
     &::before,
     &::after {

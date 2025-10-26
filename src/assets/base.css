@@ -11,6 +11,8 @@
     --link-background-color: hsl(120deg 85% 54%);
     --link-background-color-opacity: hsl(120deg 85% 54% / 50%);
 
+    --font-size-base: clamp(1.0625rem, 1.0294rem + 0.1765vw, 1.25rem);
+    --scale-factor: 1.25;
 }
 
 /* semantic color variables for this project */
@@ -37,10 +39,11 @@
     position: relative;
 }
 
-/* font-size: 20px; */
-
 html {
     font-size: clamp(1.0625rem, 1.0294rem + 0.1765vw, 1.25rem);
+    font-size: var(--font-size-base);
+    /* overflow-wrap: break-word; */
+    /* hyphens: auto; */
 }
 
 body {
@@ -57,39 +60,40 @@ body {
     scroll-behavior: smooth;
 }
 
-p {
-    /* font-size: 1rem; */
-    /* Or within the acceptable range */
+h1,
+.text-h1 {
+    font-size: calc(var(--font-size-base) * (var(--scale-factor) * var(--scale-factor) * var(--scale-factor) * var(--scale-factor) * var(--scale-factor)));
+    line-height: 1.1;
 }
 
-h1 {
-    font-size: clamp(2rem, calc(2rem + 0.5vw), 2.5rem);
-    /* Example using clamp for responsiveness */
+h2,
+.text-h2 {
+    font-size: calc(var(--font-size-base) * (var(--scale-factor) * var(--scale-factor) * var(--scale-factor) * var(--scale-factor)));
 }
 
-h2 {
-    font-size: clamp(1.6rem, calc(1.6rem + 0.4vw), 2rem);
+h3,
+.text-h3 {
+    font-size: calc(var(--font-size-base) * (var(--scale-factor) * var(--scale-factor) * var(--scale-factor)));
 }
 
-h3 {
-    font-size: clamp(1.3rem, calc(1.3rem + 0.3vw), 1.6rem);
+h4,
+.text-h4 {
+    font-size: calc(var(--font-size-base) * (var(--scale-factor) * var(--scale-factor)));
 }
 
-h4 {
-    font-size: clamp(1.1rem, calc(1.1rem + 0.2vw), 1.3rem);
+h5,
+.text-h5 {
+    font-size: calc(var(--font-size-base) * var(--scale-factor));
 }
 
-h5 {
-    font-size: clamp(1rem, calc(1rem + 0.1vw), 1.1rem);
-}
-
-h6 {
-    font-size: clamp(0.9rem, calc(0.9rem + 0.05vw), 1rem);
+h6,
+.text-h6 {
+    font-size: var(--font-size-base);
+    opacity: 0.8;
 }
 
 small {
     font-size: 0.8rem;
-    /* Or within the acceptable range */
 }
 
 h1,
@@ -106,6 +110,7 @@ h6,
 .text-h6 {
     margin: 1rem 0.5rem 0.75rem 0.5rem;
     letter-spacing: 0.1em;
+    line-height: 1;
 }
 
 p,
@@ -127,37 +132,6 @@ hr {
     font-weight: 100;
 }
 
-/* h1,
-.text-h1 {
-    font-size: 3.2rem;
-    line-height: 1.2;
-}
-
-h2,
-.text-h2 {
-    font-size: 2.8rem;
-}
-
-h3,
-.text-h3 {
-    font-size: 1.8rem;
-}
-
-h4,
-.text-h4 {
-    font-size: 1.4rem;
-}
-
-h5,
-.text-h5 {
-    font-size: 1.4rem;
-}
-
-h6,
-.text-h6 {
-    font-size: 1.2rem;
-} */
-
 .text-center {
     text-align: center;
 }
@@ -165,14 +139,6 @@ h6,
 .text-right {
     text-align: right;
 }
-
-.inline-block {
-    display: inline-block;
-}
-
-/* small {
-    font-size: 75%;
-} */
 
 ul {
     padding-top: 0.5rem;
@@ -185,4 +151,108 @@ li {
 
 .is-collapsed {
     overflow: hidden;
+}
+
+blockquote {
+    margin: 1rem 0;
+    padding: 1rem 0;
+    text-align: center;
+    position: relative;
+    /* Necesario para posicionar las comillas */
+}
+
+blockquote p {
+    font-size: var(--font-size-base);
+    font-weight: 300;
+    color: var(--text-color);
+    line-height: 1.3;
+    position: relative;
+    z-index: 2;
+}
+
+blockquote::before {
+    content: "“";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    font-size: 8rem;
+    color: var(--link-background-color-opacity);
+    color: var(--link-background-color);
+    opacity: 0.2;
+    z-index: 1;
+}
+
+blockquote cite {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 1em;
+    font-weight: 500;
+    color: var(--color-texto-principal, #333);
+    color: var(--text-color-opacity);
+    color: var(--text-color-opacity);
+}
+
+@media (max-width: 1024px) {
+    :root {
+        --scale-factor: 1.20;
+    }
+
+    h1,
+    .text-h1 {
+        font-size: calc(var(--font-size-base) * (var(--scale-factor) * var(--scale-factor) * var(--scale-factor) * var(--scale-factor) * var(--scale-factor)));
+        line-height: 1.15;
+    }
+
+    h2,
+    .text-h2 {
+        font-size: clamp(1.6rem, calc(1.6rem + 0.4vw), 2rem);
+        font-size: calc(var(--font-size-base) * (var(--scale-factor) * var(--scale-factor) * var(--scale-factor) * var(--scale-factor)));
+    }
+
+    h3,
+    .text-h3 {
+        font-size: clamp(1.3rem, calc(1.3rem + 0.3vw), 1.6rem);
+        font-size: calc(var(--font-size-base) * (var(--scale-factor) * var(--scale-factor) * var(--scale-factor)));
+    }
+
+    h4,
+    .text-h4 {
+        font-size: clamp(1.1rem, calc(1.1rem + 0.2vw), 1.3rem);
+        font-size: calc(var(--font-size-base) * (var(--scale-factor) * var(--scale-factor)));
+    }
+
+    h5,
+    .text-h5 {
+        font-size: clamp(1rem, calc(1rem + 0.1vw), 1.1rem);
+        font-size: calc(var(--font-size-base) * var(--scale-factor));
+    }
+
+    h6,
+    .text-h6 {
+        font-size: clamp(1.0625rem, 1.0294rem + 0.1765vw, 1.25rem);
+        font-size: var(--font-size-base);
+        /* opacity: 0.8; */
+    }
+
+    h1,
+    .text-h1,
+    h2,
+    .text-h2,
+    h3,
+    .text-h3,
+    h4,
+    .text-h4,
+    h5,
+    .text-h5,
+    h6,
+    .text-h6 {
+        /* margin: 1rem 0rem 0.75rem 0rem; */
+        letter-spacing: 0em;
+    }
+
+    .inline-block {
+        display: inline-block;
+    }
 }

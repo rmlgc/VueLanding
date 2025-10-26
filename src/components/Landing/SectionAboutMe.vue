@@ -55,21 +55,58 @@ function monthDiff(start: any, end: any) {
 </script>
 
 <template>
+
 	<section class="aboutMe">
-		<div class="title-tag">
-			<h2 class="text-h3"> 👋 Hi There? I’m Rommel</h2>
+		<div class="hero">
+			<div class="title-tag">
+				<h1 class="text-h1 title-tag-text">Rommel:</h1>
+				<h2 class="text-h4 title-tag-text">Senior Web Developer and Project Mentor</h2>
+			</div>
+			<!-- <blockquote class="text-body2">
+				<p>
+					Kanban, Scrum, KISS...
+					Methodology is just the map; the project is the destination. The map must adapt
+					to the terrain.
+				</p>
+				<cite>Geminis AI</cite> -->
+			<!-- La metodología es solo el mapa; el proyecto es el destino. El mapa debe adaptarse al terreno. -->
+			<!-- </blockquote> -->
+			<blockquote>
+				<p>
+					<!-- 
+					Kanban, Scrum, KISS... la metodología es una <strong>herramienta, no una regla</strong>. Siempre
+					debe ser <strong>flexible y adaptarse</strong> a las <strong>necesidades específicas del
+						proyecto</strong>.
+						 -->
+					<span class="inline-block">
+						Kanban, Scrum, KISS...
+					</span>
+					<span class="inline-block">
+						methodology is a <strong>tool, not a rule</strong>.
+					</span>
+					<span class="inline-block">
+						It must always be <strong>flexible and adapt</strong> to the <strong>project’s specific
+							needs</strong>.
+					</span>
+				</p>
+				<cite>Rommel Garcia Coronado</cite>
+			</blockquote>
 		</div>
 		<p class="text-body2">
-			<br />
-			I have a {{ totalYears > 0 ? totalYears : "" }} years {{ totalMonths > 0 ? totalMonths + " mounth" : "" }}
-			career as a 'web developer' &&
-			<span class="inline-block">
-				{{ totalYearsAcademic > 0 ? totalYearsAcademic : "" }} years
-				{{ totalMonthsAcademic > 0 ? totalMonthsAcademic + " mounth" : "" }}
-				of learning progress
-				by my
-				own projects
-			</span>
+			<!-- Desarrollador Web con
+			<strong>
+				más de {{ totalYearsAcademic > 0 ? totalYearsAcademic : "" }} años de experiencia
+			</strong>
+			combinada:
+			{{ totalYears > 0 ? totalYears : "" }} años en el sector profesional y
+			{{ totalYearsAcademic - totalYears > 0 ? totalYearsAcademic - totalYears : "" }}
+			años de aprendizaje académicos y a través de proyectos personales.
+			<br>
+			<br> -->
+			Web Developer with {{ totalYearsAcademic > 0 ? totalYearsAcademic : "" }}+ years of combined experience:
+			{{ totalYears > 0 ? totalYears : "" }} years in the professional sector and
+			{{ totalYearsAcademic - totalYears > 0 ? totalYearsAcademic - totalYears : "" }} years of academic learning
+			and personal projects.
 		</p>
 		<hr>
 		<simplebar :autoHide="false" class="simplebar-height">

@@ -169,6 +169,11 @@ const initIntersection = (element: any, elementIsVisible: any, elementScroll: an
 		background: var(--text-color);
 		clip-path: polygon(0 0, 0% 100%, 100% 50%);
 	}
+
+	&>*,
+	&>&-text {
+		margin: 0rem 0rem 0.5rem;
+	}
 }
 </style>
 
@@ -178,7 +183,6 @@ const initIntersection = (element: any, elementIsVisible: any, elementScroll: an
 }
 
 #elAboutMe {
-
 	@media only screen and (min-width:820px) {
 		min-width: 400px;
 		max-width: 40dvw;
